@@ -71,3 +71,16 @@ jQuery选择器之属性筛选选择器
 	$("div[id][name^='test']") 匹配有id属性且name值开头为test的div元素
 	
 	$("*[name]")和$("[name]") 匹配有name属性的所有标签
+	
+jQuery选择器之子元素筛选选择器
+
+	$(".first-div a:first-child")查找class="first-div"下所有的a元素，且该a元素是它父元素下第一个子元素（父元素不需要满足.first-div）
+
+	$(".first-div a:last-child")与first-child类似
+
+	$(".first-div a:only-child")查找class="first-div"下所有的a元素，且该a元素是它父元素下唯一的子元素（父元素不需要满足.first-div，且不算文本元素）
+
+	$(".last-div a:nth-child(2)")查找class="last-div"下的第二个a元素，条件同上
+
+	$(".last-div a:nth-last-child(2)")查找class="last-div"下的倒数第二个a元素，条件同上
+
