@@ -36,12 +36,14 @@ jQuery选择器之基本筛选选择器
     - 匹配索引为奇数的元素：`$(":odd")`
     
     $('div:not(has(p)')         #含有不是p标签的任何其他标签的div，也可以含有p标签，p两边可以加引号可以不加
+    
+    $('div:not(has(.pa)')         #含有不是p标签的任何其他标签的div，也可以含有.pa(class=pa)，.pa两边可以加引号可以不加
     
     $('div:contains(:not("asd")')     #内部任何文本不含有asd的div，asd两边可以加引号可以不加
     
    
 jQuery选择器之内容筛选选择器
-	$(':contains(text)')  			查找指定标签内字符串，文本含有text
+	$(':contains(text)')  			查找指定标签内字符串，文本含有text（后代元素含有也行）
 
 	$(':parent')				查找有内容的标签,也可以是文本（包括空格），似乎等于:not(:empty)
 
