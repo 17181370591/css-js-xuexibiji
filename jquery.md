@@ -111,5 +111,5 @@ javascript>this
 jquery>this
     <script type="text/javascript">
 	$('#test1').mouseover(function(){$(this).css('color','red').css('font-size','22px')});
-	$('#test1').mouseout(function(){$(this).removeAttr('style'));
+	$('#test1').mouseout(function(){$(this).removeAttr('style')});
     </script>
