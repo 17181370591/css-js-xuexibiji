@@ -40,3 +40,11 @@ jQuery选择器之基本筛选选择器
     $('div:contains(:not("asd")')     #内部任何文本不含有asd的div，asd两边可以加引号可以不加
     
    
+jQuery选择器之内容筛选选择器
+	$(':contains(text)')  			查找指定标签内字符串，文本含有text
+
+	$(':parent')				查找有内容的标签,也可以是文本（包括空格），似乎等于:not(:empty)
+
+	$(':empty')				查找内容为空的标签，不能含有任何标签和文本，似乎等于:not(:parent)
+
+	$('has:(selector)')			查找指定标签，内部含有selector（后代元素含有也行）
