@@ -2,14 +2,17 @@
 学习css/js/jq的笔记：
 jquery：
 jQuery对象转化成DOM对象
+
 		var $div = $('div'); //jQuery对象
 		var div=$div.get(0);  //这里div是dom对象
     
 DOM对象转化成jQuery对象  
+
     var div = document.getElementsByTagName('div'); //dom对象
     $div =  $(div);         //这里div是jQuery对象
     
 Query选择器之层级选择器    
+
     > （大于号）紧跟父子关系 如$("div > p")表示选择div下的直接层是p的节点。
 
     + （加号）  紧跟兄弟关系 如$("div + p")表示选择div同层的后面的相邻的p节点。
@@ -21,6 +24,7 @@ Query选择器之层级选择器
     ,(逗号)   表示选择器组合，如$("div p, span p")表示div下p节点和span下p节点。
     
 jQuery选择器之基本筛选选择器
+
     - 匹配第一个元素：`$(":first")`，如`$("div:first").css('color', 'red');`
 
     - 匹配最后一个元素：`$(":last")`
@@ -43,6 +47,7 @@ jQuery选择器之基本筛选选择器
     
    
 jQuery选择器之内容筛选选择器
+
 	$(':contains(text)')  			查找指定标签内字符串，文本含有text（后代元素含有也行）
 
 	$(':parent')				查找有内容的标签,也可以是文本（包括空格），似乎等于:not(:empty)
