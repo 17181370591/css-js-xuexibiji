@@ -101,3 +101,15 @@ jQuery选择器之表单对象属性筛选选择器
 
 	$(':selected').attr('selected',false) 选取被选中的<option>元素，selected用于下拉列表
 
+javascript>this
+    <script type="text/javascript">
+        var p1 = document.getElementById('test1');
+	p1.addEventListener('mouseover',function(){this.style.color='red';this.style.fontSize='22px';},false);
+	p1.addEventListener('mouseout',function(){this.removeAttribute('style')},false);
+    </script>
+
+jquery>this
+    <script type="text/javascript">
+	$('#test1').mouseover(function(){$(this).css('color','red').css('font-size','22px')});
+	$('#test1').mouseout(function(){$(this).removeAttr('style'));
+    </script>
