@@ -50,3 +50,24 @@ jQuery选择器之内容筛选选择器
 	$(':empty')				查找内容为空的标签，不能含有任何标签和文本，似乎等于:not(:parent)
 
 	$('has:(selector)')			查找指定标签，内部含有selector（后代元素含有也行）
+	
+	
+jQuery选择器之属性筛选选择器
+	
+	$("div[name]") 匹配含有name属性的div元素
+
+	$("div[name='test']") 匹配name值为test的div元素
+	
+	$("div[name|='test']") 匹配name值内部含有test的div元素,如name=aatestaa
+
+	$("div[name!='test']") 匹配name值不为test的div元素,name=test a的元素也能匹配,没有name属性也能匹配
+
+	$("div[name*='test']") 匹配name值包含test的div元素
+
+	$("div[name^='test']") 匹配name值开头为test的div元素
+
+	$("div[name$='test']") 匹配name值结尾为test的div元素
+
+	$("div[id][name^='test']") 匹配有id属性且name值开头为test的div元素
+	
+	$("*[name]")和$("[name]") 匹配有name属性的所有标签
