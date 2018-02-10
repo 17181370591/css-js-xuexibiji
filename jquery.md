@@ -90,4 +90,14 @@ jQuery选择器之子元素筛选选择器
 	$(".last-div a:nth-child(2)")查找class="last-div"下的第二个a元素，条件同上
 
 	$(".last-div a:nth-last-child(2)")查找class="last-div"下的倒数第二个a元素，条件同上
+	
+jQuery选择器之表单对象属性筛选选择器
+
+	$(':enabled')选取可用的表单元素
+
+	$(':disabled')选取不可用的表单元素
+
+	$(':checked').attr('checked',false) 选取被选中的<input>元素,checked用于单选框和多选框
+
+	$(':selected').attr('selected',false) 选取被选中的<option>元素，selected用于下拉列表
 
