@@ -39,11 +39,11 @@ jQuery选择器之基本筛选选择器
 
     - 匹配索引为奇数的元素：`$(":odd")`
     
-    $('div:not(has(p)')         #含有不是p标签的任何其他标签的div，也可以含有p标签，p两边可以加引号可以不加
+    $('div:has(:not(p))')         #含有不是p标签的任何其他标签的div，也可以含有p标签，p两边可以加引号可以不加
     
-    $('div:not(has(.pa)')         #含有不是p标签的任何其他标签的div，也可以含有.pa(class=pa)，.pa两边可以加引号可以不加
+    $('div:has(:not(.pa))')         #含有不是p标签的任何其他标签的div，也可以含有.pa(class=pa)，.pa两边可以加引号可以不加
     
-    $('div:contains(:not("asd")')     #内部任何文本不含有asd的div，asd两边可以加引号可以不加
+    $('div:not(:contains("asd"))')     #内部任何文本不含有asd的div，asd两边可以加引号可以不加
     
    
 jQuery选择器之内容筛选选择器
@@ -63,15 +63,17 @@ jQuery选择器之属性筛选选择器
 
 	$("div[name='test']") 匹配name值为test的div元素
 	
-	$("div[name|='test']") 匹配name值内部含有test的div元素,如name=aatestaa
+	$("div[name|='test']") 匹配name值等于test或以test-开头的的div元素,只能含有一个值（如name=aatest1 aatest2不匹配）
 
 	$("div[name!='test']") 匹配name值不为test的div元素,name=test a的元素也能匹配,没有name属性也能匹配
 
-	$("div[name*='test']") 匹配name值包含test的div元素
+	$("div[name*='test']") 匹配name值的文本含有test的div元素，如name='abc 8test1'
+	
+	$("div[name~='test']") 匹配有name值是test的div元素，如name='abc test'
 
-	$("div[name^='test']") 匹配name值开头为test的div元素
+	$("div[name^='test']") 匹配name值开头为test的div元素,如name='test123 asd'
 
-	$("div[name$='test']") 匹配name值结尾为test的div元素
+	$("div[name$='test']") 匹配name值结尾为test的div元素,如name='t3 asdtest'
 
 	$("div[id][name^='test']") 匹配有id属性且name值开头为test的div元素
 	
