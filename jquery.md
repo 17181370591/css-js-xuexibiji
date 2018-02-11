@@ -133,3 +133,13 @@ jQuery的属性与样式之.val()
 	1,.val()无参数，获取匹配的元素集合中第一个元素的当前值
 	2,.val( value )，设置匹配的元素集合中每个元素的值
 	3,.val( function ) ，一个用来返回设置值的函数
+	
+	
+jQuery的属性与样式之增加样式.addClass()
+
+	$('.left div').addClass('newClass');	#直接添加className
+	$("div").addClass(function() {		
+		if(-1 !== $(this).attr('class').indexOf('imo')){
+                	$(this).addClass('imoocClass')
+            }
+	})
