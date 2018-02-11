@@ -122,3 +122,14 @@ jQuery的属性与样式之.attr()与.removeAttr()
 	$(':input').attr('value','bakabaka');		#$(':input')似乎返回一个列表，attr赋值时会被遍历
 	$(':input:eq(3)').removeAttr('value');
 	$(':input').eq(3).removeAttr('value');		#和上面一样的结果
+
+jQuery的属性与样式之.val()
+
+	$(document).ready(function(){
+		$('#multiple').change(function(){
+			$('p').text($('#multiple').val());
+						})
+					})
+	1,.val()无参数，获取匹配的元素集合中第一个元素的当前值
+	2,.val( value )，设置匹配的元素集合中每个元素的值
+	3,.val( function ) ，一个用来返回设置值的函数
