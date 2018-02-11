@@ -155,3 +155,15 @@ jQuery的属性与样式之删除样式.removeClass()
 jQuery的属性与样式之切换样式.toggleClass()
 
 	$("#table tr").toggleClass("c");		#classname里没有c就添加c，有就删除c，进行切换
+	
+jQuery的属性与样式之样式操作.css()
+
+	$('.first').css('background')    	#返回background的值
+	$('.fourth').css({'color':'red','font-size':'33px'}) 		
+	$('.fifth').css('background','green')
+	$('.sixth').click(function(){
+		$('.sixth').css('font-size',function(){
+            		b=$(this).css('font-size').split('px');
+        		return Number(b[0])+1+'px'
+			})
+		})
