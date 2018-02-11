@@ -4,6 +4,9 @@ jQuery节点创建与属性的处理/DOM内部插入append()与appendTo()
 
     $(body).append($('<input type="text" value="hehe">asd'))  #$('<div></div>'))用来产生div对象，用append添加
     append()和appendTo()似乎作用一样，只是攻受关系颠倒
+    
+DOM内部插入prepend()与prependTo()
+    用法与append和appendTo一样，作为子元素，在父元素最前面插入，append是最后面
 
 DOM外部插入after()与before()
 
