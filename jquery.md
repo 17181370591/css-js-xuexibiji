@@ -115,3 +115,8 @@ jquery>this
 	$('#test1').mouseover(function(){$(this).css('color','red').css('font-size','22px')});
 	$('#test1').mouseout(function(){$(this).removeAttr('style')});
     </script>
+
+jQuery的属性与样式之.attr()与.removeAttr()
+
+	$(':input').attr('value',function(){return $(this).attr('type')});			
+	$(':input').attr('value','bakabaka');		#$(':input')似乎返回一个列表，attr赋值时会被遍历
