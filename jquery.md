@@ -138,7 +138,7 @@ jQuery的属性与样式之.val()
 jQuery的属性与样式之增加样式.addClass()
 
 	$('.left div').addClass('newClass');	#直接添加className
-	$("div").addClass(function() {		
+	$("div").addClass(function() {		 #用函数添加
 		if(-1 !== $(this).attr('class').indexOf('imo')){
                 	$(this).addClass('imoocClass')
             }
