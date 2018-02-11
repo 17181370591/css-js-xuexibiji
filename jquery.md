@@ -140,6 +140,15 @@ jQuery的属性与样式之增加样式.addClass()
 	$('.left div').addClass('newClass');	#直接添加className
 	$("div").addClass(function() {		 #用函数添加
 		if(-1 !== $(this).attr('class').indexOf('imo')){
-                	$(this).addClass('imoocClass')
-            }
+                	$(this).addClass('imoocClass')        #直接删除，不return
+            }
 	})
+	
+jQuery的属性与样式之删除样式.removeClass()
+	
+	$('div').removeClass('newClass');
+	$('.right > div:first').removeClass(function(){
+           	$(this).next().addClass($(this).attr('class'));
+        	return 'imoocClass' 		#return什么删除什么
+        	})
+
