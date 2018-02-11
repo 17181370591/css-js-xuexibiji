@@ -159,9 +159,9 @@ jQuery的属性与样式之切换样式.toggleClass()
 jQuery的属性与样式之样式操作.css()
 
 	$('.first').css('background')    	#返回background的值
-	$('.fourth').css({'color':'red','font-size':'33px'}) 		
-	$('.fifth').css('background','green')
-	$('.sixth').click(function(){
+	$('.fourth').css({'color':'red','font-size':'33px'}) 	 #用字典传参数
+	$('.fifth').css('background','green')			 #传参数
+	$('.sixth').click(function(){				 #函数传参
 		$('.sixth').css('font-size',function(){
             		b=$(this).css('font-size').split('px');
         		return Number(b[0])+1+'px'
