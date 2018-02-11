@@ -16,4 +16,10 @@ DOM外部插入after()与before()
     2个方法都支持多个参数传递after(div1,div2,....) 可以参考右边案例代码
     after向元素的后边添加html代码，如果元素后面有元素了，那将后面的元素后移，然后将html代码插入
     before向元素的前边添加html代码，如果元素前面有元素了，那将前面的元素前移，然后将html代码插
+    
+DOM外部插入insertAfter()与insertBefore()
+    insertAfter与after的关系和append()与appendTo()关系一样；
+    所以insertAfter()，insertBefore()，appendTo()，prependTo()这四个东西根本没用
+    
+    
 
