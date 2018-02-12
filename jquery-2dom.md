@@ -41,17 +41,12 @@ DOM节点删除之保留数据的删除操作detach()
     $("p").detach()这一句会移除对象，仅仅是显示效果没有了。但是内存中还是存在的。当你append之后，又重新回到了文档流中。就又显示出来了。
     
     $("#bt1").click(function(){        
-        if(!$("p").length){return}
-	else{p = $("p").remove();
-	alert(p.length)}
-	//去重，不加if的话连续点两次按钮1，p会被赋值成length=0的object，类似于空集合
+        if(!$("p").length){return} 	//去重，不加if的话连续点两次按钮1，p会被赋值成length=0的object，类似于空集合
         //通过detach方法删除元素  
-        //只是页面不可见，但是这个节点还是保存在内存中 
-        //数据与事件都不会丢失
-    	//p = $("p").detach();
-        //数据与事件会丢失
-
-    });
+        //只是页面不可见，但是这个节点还是保存在内存中         
+    	p = $("p").detach();	//数据与事件都不会丢失
+	//p = $("p").remove();  //数据与事件会丢失
+	alert(p.length)});
 
     $("#bt2").click(function() {
         //把p元素在添加到页面中
