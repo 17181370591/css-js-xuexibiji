@@ -114,11 +114,18 @@ jQuery遍历之children()方法
 
 jQuery遍历之find()方法
 
-	find()方法可以查找后代元素，children是父子关系查找，find是后代关系（包含父子关系),必须加参数。find()相当于空格，children相当于>
+	find()方法可以查找后代元素，children是父子关系查找，find是后代关系（包含父子关系),必须加参数。
+	find()相当于空格，children相当于>
 	
 jQuery遍历之parents()方法
 	
 	parents()方法可以查找祖先元素，类似find与children的区别，parent只会查找一级，parents则会往上一直查到查找到祖先节点
 	
-	
-	
+
+jQuery遍历之closest()方法（从自己开始找祖先）
+
+	$("div").closet("li');
+	起始位置不同：.closest开始于当前元素 .parents开始于父元素(如果起始位置本身满足条件closet就返回本身）
+	遍历的目标不同：.closest要找到指定的目标，.parents遍历到文档根元素，closest向上查找，
+	直到找到一个匹配的就停止查找，parents一直查找到根元素，并将匹配的元素加入集合
+	结果不同：.closest返回的是包含零个或一个元素的jquery对象，parents返回的是包含零个或一个或多个元素的jquery对象
