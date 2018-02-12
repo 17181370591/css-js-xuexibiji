@@ -89,3 +89,16 @@ DOM包裹wrap()方法
 	$('.aaron1').on('click',function(){$('p').wrap($('<div></div>').css('padding','5px'))});
 	$('.aaron2').on('click',function(){$('a').wrap(function(){return '<div></div>'})})
 	
+DOM包裹wrapAll()方法
+	
+	 给所有有元素添加同一个父元素a（父元素a包裹所有子元素）。所有元素的父元素会被全部清空，
+	 元素间的其他元素会被移动到父元素a外（后面）。参数为函数时会分开包裹，切勿使用
+	$('p').wrapAll('<div></div>')
+	
+DOM包裹unwrap()方法
+	
+	 把父元素删除，unwrap()括号里输入任何参数都无效
+	$(".aaron1").click(function(){$('p:first').unwrap()})
+
+
+	
