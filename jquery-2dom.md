@@ -45,10 +45,10 @@ DOM节点删除之保留数据的删除操作detach()
         //通过detach方法删除元素  
         //只是页面不可见，但是这个节点还是保存在内存中 
         //数据与事件都不会丢失
-    //    p = $("p").detach();
+    	//p = $("p").detach();
         //数据与事件会丢失
-		p = $("p").remove();
-		alert(p.length)
+	p = $("p").remove();
+	alert(p.length)
     });
 
     $("#bt2").click(function() {
