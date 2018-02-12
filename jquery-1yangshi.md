@@ -172,10 +172,3 @@ jQuery的属性与样式之样式操作.css()
 	通过.css方法设置的样式属性优先级要高于.addClass方法
 	.addClass()本质只是针对class的类的增加删除，不能获取到指定样式的属性的值，.css()可以获取到指定的样式值。
 
-jQuery遍历之closest()方法（从自己开始找祖先）
-
-	$("div").closet("li');
-	起始位置不同：.closest开始于当前元素 .parents开始于父元素(如果起始位置本身满足条件closet就返回本身）
-	遍历的目标不同：.closest要找到指定的目标，.parents遍历到文档根元素，closest向上查找，
-	直到找到一个匹配的就停止查找，parents一直查找到根元素，并将匹配的元素加入集合
-	结果不同：.closest返回的是包含零个或一个元素的jquery对象，parents返回的是包含零个或一个或多个元素的jquery对象
