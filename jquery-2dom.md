@@ -82,7 +82,7 @@ DOM替换replaceWith()和replaceAll()
 	
 DOM包裹wrap()方法
 
-	 给匹配的元素包裹指定标签，第一行是rap('<div></div>')，第二行是wrap(function(){return '<div></div>';})
+	 给匹配的元素包裹指定标签，wrap('<div></div>')和wrap(function(){return '<div></div>';}),效果一样
 	 wrap('<div>')/wrap('<div/>')/wrap('<div></div>')三种写法都可以,
 	但若写成$('p').wrap('div')，它就会复制文档中的第一个div元素作为包裹元素
 	
@@ -94,6 +94,12 @@ DOM包裹wrapAll()方法
 	 给所有有元素添加同一个父元素a（父元素a包裹所有子元素）。所有元素的父元素会被全部清空，
 	 元素间的其他元素会被移动到父元素a外（后面）。参数为函数时会分开包裹，切勿使用
 	$('p').wrapAll('<div></div>')
+	
+DOM包裹wrapInner()方法
+	
+	 为选定元素的所有子元素加一个wrap.如果子元素只有文本元素也添加
+	 $('div').wrapInner('<p></p>')
+	 $('div').wrapInner(function() {return '<p></p>'; })
 	
 DOM包裹unwrap()方法
 	
