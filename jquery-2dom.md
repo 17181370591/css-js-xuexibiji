@@ -38,17 +38,19 @@ DOM节点删除之empty()的基本用法
 DOM节点删除之保留数据的删除操作detach()
 
     detach可以删除节点，类似remove，但remove后的节点重新添加事件已经被销毁掉，detach会保留
+    $("p").detach()这一句会移除对象，仅仅是显示效果没有了。但是内存中还是存在的。当你append之后，又重新回到了文档流中。就又显示出来了。
     
     $("#bt1").click(function(){        
-        if (!$("p").length){return}; 
+        if(!$("p").length){return}
+	else{p = $("p").remove();
+	alert(p.length)}
 	//去重，不加if的话连续点两次按钮1，p会被赋值成length=0的object，类似于空集合
         //通过detach方法删除元素  
         //只是页面不可见，但是这个节点还是保存在内存中 
         //数据与事件都不会丢失
     	//p = $("p").detach();
         //数据与事件会丢失
-	p = $("p").remove();
-	alert(p.length)
+
     });
 
     $("#bt2").click(function() {
