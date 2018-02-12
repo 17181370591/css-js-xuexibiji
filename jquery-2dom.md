@@ -106,5 +106,14 @@ DOM包裹unwrap()方法
 	 把父元素删除，unwrap()括号里输入任何参数都无效
 	$(".aaron1").click(function(){$('p:first').unwrap()})
 
+jQuery遍历之children()方法
+	
+	 childeren只找子元素，不找其他后代元素，参数是进一步筛选
+	$("div").children().children()
+	$("div").children(".selected")
 
+jQuery遍历之find()方法
+
+	find()方法可以查找后代元素，children是父子关系查找，find是后代关系（包含父子关系),必须加参数。find()相当于空格，children相当于>
+	
 	
