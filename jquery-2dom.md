@@ -1,5 +1,17 @@
 #https://www.imooc.com/code/10369
 
+innerHTML会提取/输入标签，textContent不会
+
+	<ul id="myList"><li id="item1">Coffee</li><li id="item2">Tea</li></ul>
+	x.textContent=lst.textContent;
+		 //CoffeeTea
+	x.textContent=lst.innerHTML
+		 //<li id="item1">Coffee</li><li id="item2">Tea</li>
+	x.innerHTML=lst.textContent;
+		 //CoffeeTea
+	x.innerHTML=lst.innerHTML;
+	 	 //*Coffee *Tea
+			
 jQuery节点创建与属性的处理/DOM内部插入append()与appendTo()
 
     $(body).append($('<input type="text" value="hehe">asd'))  #$('<div></div>'))用来产生div对象，用append添加
