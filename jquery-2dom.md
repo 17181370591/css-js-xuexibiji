@@ -80,5 +80,10 @@ DOM替换replaceWith()和replaceAll()
 	#将第二个p替换成'<a style="color:red">替换第二段的内容</a>'，下一行作用一样。replaceWith()和replaceAll()也是攻受关系颠倒
 	$('<a style="color:red">替换第二段的内容</a>').replaceAll('p:eq(1)')
 	
+DOM包裹wrap()方法
+
+	 给匹配的元素包裹指定标签，第一行是rap('<div></div>')，第二行是wrap(function(){return '<div></div>';})
 	
+	$('.aaron1').on('click',function(){$('p').wrap($('<div></div>').css('padding','5px'))});
+	$('.aaron2').on('click',function(){$('a').wrap(function(){return '<div></div>'})})
 	
