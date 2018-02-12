@@ -147,5 +147,39 @@ jQuery遍历之siblings()
 	$('.item').siblings(':last').css('border', '2px solid blue')
 	
 	
+jQuery遍历之add()方法
 	
+	 add()方法表示多选，下行表示$('li')和('html')都添加css
+	 $('li').add('html').css('background', 'red')
+	 
+	 下行表示把$('li').和('<a href="">haha</a>')都添加到$('.right');
+	 $('li')每次都会被从原位置移除，再添加到.right的最后
+	 $('li').add('<a href="">haha</a>').appendTo($('.right'))
+
+jQuery遍历之each()
 	
+	$("button:first").click(function() {
+        //遍历所有的li
+        //修改每个li内的字体颜色
+		$("li").each(function() {
+		    $(this).css('background','#f00')
+		    })
+	})
+	
+	$("button:last").click(function() {
+        //遍历所有的li
+        //修改偶数li内的字体颜色
+        $("li").each(function(index, element) {
+            if (index % 3) {
+                $(this).css('color','blue')
+           		 }
+        	})
+    	})
+	 上面这段和下面这段效果一样
+	    $("button:last").click(function() {
+        //遍历所有的li
+        //修改偶数li内的字体颜色
+        $("li").css('color',function(){
+			if($(this).index()%3){return 'blue'}            
+		})
+   	 })	
