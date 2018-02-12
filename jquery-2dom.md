@@ -54,3 +54,19 @@ DOM节点删除之保留数据的删除操作detach()
 		alert(p.length);
         $("body").append(p);
     });
+
+DOM拷贝clone()
+	clone方法比较简单就是克隆节点，但是需要注意，如果节点有事件或者数据之类的其他处理，我们需要通过clone(ture)传递一个布尔值ture用来指定，这样不仅仅只是克隆单纯的节点结构，还要把附带的事件与数据给一并克隆了
+	
+    <script type="text/javascript"> 
+        //只克隆节点
+    	//不克隆事件
+	    $(".aaron1").on('click', function() {  
+	        $(".left").append( $(this).clone().css('color','red') )
+	    })
+    	//克隆节点
+    	//克隆事件
+	    $(".aaron2").on('click', function() {
+	        $(".left").append( $(this).clone(true).css('color','yellow') )
+	    })
+    </script>
