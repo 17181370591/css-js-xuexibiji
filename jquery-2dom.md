@@ -73,3 +73,12 @@ DOM拷贝clone()
 	        $(".left").append( $(this).clone(true).css('color','yellow') )
 	    })
     </script>
+    
+DOM替换replaceWith()和replaceAll()
+	
+	$("p:eq(1)").replaceWith('<a style="color:red">替换第二段的内容</a>')
+	#将第二个p替换成'<a style="color:red">替换第二段的内容</a>'，下一行作用一样。replaceWith()和replaceAll()也是攻受关系颠倒
+	$('<a style="color:red">替换第二段的内容</a>').replaceAll('p:eq(1)')
+	
+	
+	
