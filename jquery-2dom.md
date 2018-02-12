@@ -83,6 +83,8 @@ DOM替换replaceWith()和replaceAll()
 DOM包裹wrap()方法
 
 	 给匹配的元素包裹指定标签，第一行是rap('<div></div>')，第二行是wrap(function(){return '<div></div>';})
+	 wrap('<div>')/wrap('<div/>')/wrap('<div></div>')三种写法都可以,
+	但若写成$('p').wrap('div')，它就会复制文档中的第一个div元素作为包裹元素
 	
 	$('.aaron1').on('click',function(){$('p').wrap($('<div></div>').css('padding','5px'))});
 	$('.aaron2').on('click',function(){$('a').wrap(function(){return '<div></div>'})})
