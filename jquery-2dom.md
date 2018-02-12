@@ -22,4 +22,15 @@ DOM外部插入insertAfter()与insertBefore()
     所以insertAfter()，insertBefore()，appendTo()，prependTo()这四个东西根本没用
     
     
+DOM节点删除之empty()的基本用法
+    
+    $("#test").empty();
+    empty 顾名思义，清空方法，但是与删除又有点不一样，因为它只移除了 指定元素中的所有子节点。
+    这个方法不仅移除子元素（和其他后代元素），同样移除元素里的文本。因为，根据说明，元素里任何文本字符串都被看做是该元素的子节点。
 
+ DOM节点删除之remove()的有参用法和无参用法
+ 
+        $("p:contains(1)").remove()         无参数。remove移除本身，empty删除自身内部所有东西，匹配:empty
+        $("p").remove(":contains('1')")         有参数，效果和上一行一样
+        
+        
