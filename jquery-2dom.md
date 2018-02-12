@@ -129,3 +129,23 @@ jQuery遍历之closest()方法（从自己开始找祖先）
 	遍历的目标不同：.closest要找到指定的目标，.parents遍历到文档根元素，closest向上查找，
 	直到找到一个匹配的就停止查找，parents一直查找到根元素，并将匹配的元素加入集合
 	结果不同：.closest返回的是包含零个或一个元素的jquery对象，parents返回的是包含零个或一个或多个元素的jquery对象
+	
+jQuery遍历之next()方法和prev方法
+	
+	next()方法查找指定元素集合中每一个元素紧邻的后面同辈元素的元素集合
+	 下行表示class=item的相邻的属性z含有文本asd的兄弟节点，更改其css
+	$('.item').next('[z*=asd]').css('color','#f00')
+	
+	 下行表示class=item的相邻的前一个兄弟节点，然后去掉第一个元素，更改css
+	$('.item').prev(':gt(0)').css('border', '1px solid blue');
+
+jQuery遍历之siblings()
+	
+	 下行表示class=item的所有兄弟节点（不选取自己）里class=item-1的元素，更改css
+	$('.item').siblings('.item-1').css('border', '2px solid blue')
+	 下行表示class=item的所有兄弟节点（不选取自己），然后取最后一个元素，更改css
+	$('.item').siblings(':last').css('border', '2px solid blue')
+	
+	
+	
+	
