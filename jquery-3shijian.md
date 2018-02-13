@@ -13,3 +13,26 @@ jQuery鼠标事件之click与dbclick事件
       });
     });
     
+jQuery鼠标事件之mousedown与mouseup事件
+jQuery鼠标事件之mousemove事件
+jQuery鼠标事件之mouseover与mouseout事件
+jQuery鼠标事件之mouseenter与mouseleave事件
+
+    mouseenter只监听当前元素，不监听子元素，mouseover会监听子元素
+    mouseenter监听 父元素，光标进入子元素不触发。mouseover监听 父元素，光标进入子元素会触发mouseout
+    
+jQuery鼠标事件之hover事件
+    
+    第一个函数是mouseenter ，第二个是mouseleave
+    $("p").hover(
+        function() {
+            $(this).css("background", 'red')
+        },
+		      function() {
+            $(this).css("background", 'yellow')
+        }  
+    ); 
+    
+jQuery鼠标事件之focusin事件
+jQuery鼠标事件之focusout事件
+
