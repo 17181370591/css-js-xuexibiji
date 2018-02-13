@@ -43,7 +43,8 @@ jQuery表单事件之blur与focus事件
 	blur与focus只对当前元素有效，不会冒泡；
 	 第1段.aaron是div，无法blur和focus，而且focus不冒泡，所以没有效果；
 	 第2段inupt获取光标后会加border；
-	 第3段.aaron是div，无法blur和focus，但focusin冒泡，所以div的子元素input被focusin后，val会改变；
+	 第3段.aaron是div，无法blur和focus，但focusin冒泡，所以div的子元素input被focusin后，val会改变，
+	 在点input的时候会一级一级的往上面查父元素，如果父元素有事件就执行了，所以看到了效果。这叫事件冒泡
 	$(".aaron").focus(function() {
         	$(this).css('border', '2px solid red')
     	})   ;
