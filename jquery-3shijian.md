@@ -65,3 +65,6 @@ jQuery表单事件之change事件(冒泡)
         	$("#result").html(v);
     	})
 
+jQuery表单事件之select事件
+
+	select事件只能用于<input>元素与<textarea>元素
