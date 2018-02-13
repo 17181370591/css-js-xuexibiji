@@ -13,13 +13,14 @@ jQuery鼠标事件之click与dbclick事件
       });
     });
     
-jQuery鼠标事件之mousedown与mouseup事件
-jQuery鼠标事件之mousemove事件
+jQuery鼠标事件之mousedown与mouseup事件（鼠标按下和松开，合在一起构成click）
+jQuery鼠标事件之mousemove事件（光标移动）
 jQuery鼠标事件之mouseover与mouseout事件
 jQuery鼠标事件之mouseenter与mouseleave事件
 
     mouseenter只监听当前元素，不监听子元素，mouseover会监听子元素
     mouseenter监听 父元素，光标进入子元素不触发。mouseover监听 父元素，光标进入子元素会触发mouseout
+    mouseleave mouseenter只会在当前绑定元素执行，不会冒泡执行父元素的事件;mouseover mouseout冒泡执行父元素事件
     
 jQuery鼠标事件之hover事件
     
@@ -33,6 +34,22 @@ jQuery鼠标事件之hover事件
         }  
     ); 
     
-jQuery鼠标事件之focusin事件
-jQuery鼠标事件之focusout事件
+jQuery鼠标事件之focusin事件(输入框等获得焦点)
 
+jQuery鼠标事件之focusout事件(输入框等失去焦点)
+
+jQuery表单事件之blur与focus事件
+
+	blur与focus只对当前元素有效，不会冒泡；
+	 第1段.aaron是div，无法blur和focus，而且focus不冒泡，所以没有效果；
+	 第2段inupt获取光标后会加border；
+	 第3段.aaron是div，无法blur和focus，但focusin冒泡，所以div的子元素input被focusin后，val会改变；
+	$(".aaron").focus(function() {
+        	$(this).css('border', '2px solid red')
+    	})   ;
+	$(".aaron").find('input').focus(function() {
+        	$(this).css('border', '2px solid red')
+   	 });
+    	$(".aaron1").focusin(function() {
+       	 	$(this).find('input').val('冒泡捕获了focusin事件')
+    	})
