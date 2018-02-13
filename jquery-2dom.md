@@ -1,6 +1,6 @@
 #https://www.imooc.com/code/10369
 
-innerHTML会提取/输入标签，textContent不会
+innerHTML会提取/输入标签，textContent不会(js)；类似于text()和html()的关系
 
 	<ul id="myList"><li id="item1">Coffee</li><li id="item2">Tea</li></ul>
 	x.textContent=lst.textContent;
