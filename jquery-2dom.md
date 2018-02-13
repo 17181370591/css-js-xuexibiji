@@ -129,6 +129,10 @@ jQuery遍历之find()方法
 	find()方法可以查找后代元素，children是父子关系查找，find是后代关系（包含父子关系),必须加参数。
 	find()相当于空格，children相当于>
 	
+jQuery遍历之parent()方法
+	
+	jQuery是一个合集对象，所以通过parent是匹配合集中每一个元素的父元素
+	
 jQuery遍历之parents()方法
 	
 	parents()方法可以查找祖先元素，类似find与children的区别，parent只会查找一级，parents则会往上一直查到查找到祖先节点
