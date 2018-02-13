@@ -199,14 +199,4 @@ jQuery遍历之each()
 			if($(this).index()%3){return 'blue'}            
 		})
    	 })	
-	 
-jQuery表单事件之change事件(冒泡)	 
-	 
-	  change在form元素有改变时调用，下几行表示被改变时s赋值为input父元素下的checked的合集，将val按顺序拼接后赋值v
-	 $(".aaron1>input").change(function(e) {
-		var v='';var s=$(this).parent().find(':checked');
-		for(i=0;i<s.length;i++){v=v+s.eq(i).val();}
-        	$("#result").html(v);
-    	})
-
 
