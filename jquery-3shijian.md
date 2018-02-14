@@ -177,3 +177,10 @@ event.stopPropagation() 方法：阻止事件冒泡
 	  });
 	});
 	</script>
+	
+event.preventDefault() 方法：阻止默认行为
+
+	 阻止默认行为后，点击a不会跳转href
+	  $("a").click(function(e){
+	    e.preventDefault();
+	  });
