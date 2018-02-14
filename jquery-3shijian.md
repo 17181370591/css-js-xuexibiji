@@ -68,3 +68,22 @@ jQuery表单事件之change事件(冒泡)
 jQuery表单事件之select事件
 
 	select事件只能用于<input>元素与<textarea>元素
+
+jQuery键盘事件之keydown()与keyup()事件
+
+    $('.target1').keypress(function(e) {
+        $("em:first").text(e.target.value)
+    });
+
+    //监听键盘按键
+    //获取输入的值
+    $('.target2').keyup(function(e) {
+        $("em:last").text(e.target.value)
+    });
+    
+jQuery键盘事件之keypress()事件
+	keypress事件与keydown和keyup的主要区别:
+	只能捕获单个字符，不能捕获组合键
+	无法响应系统功能键（如delete，backspace）
+	不区分小键盘和主键盘的数字字符
+	
