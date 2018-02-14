@@ -166,7 +166,8 @@ event.stopPropagation() 方法：阻止事件冒泡
 	$(document).ready(function(){
 	  $("span").click(function(event){
 	    event.stopPropagation();
-	    alert("The span element was clicked.");
+	    alert(e.isPropagationStopped());   	 #检查是否阻止冒泡成功
+	    alert("The span element was clicked.");
 	  });
 	  $("p").click(function(event){
 	    alert("The p element was clicked.");
