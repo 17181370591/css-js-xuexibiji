@@ -136,6 +136,9 @@ on()的高级用法
 	$("elem").off()				#删除所有事件
 
 jQuery事件对象的作用
+	
+	this和event.target的区别：
+	js中事件是会冒泡的，所以this是可以变化的，但event.target不会变化，它永远是直接接受事件的目标DOM元素
 
 	<div class="left">
 		<div class="aaron">
