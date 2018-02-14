@@ -105,3 +105,26 @@ on()的多事件绑定
             	$(this).text('触发事件：' + e.type)
         	}
     	})
+
+on()的高级用法
+
+	on如果提供了第二参数，那么事件在往上冒泡的过程中遇到选择器匹配的元素（.left），将会触发事件回调函数;
+	 这里往上冒泡到.left才会触发函数，所以必须是.left的子元素触发事件才会回调，即使document被绑定了事件
+	
+	<body>
+	    <div style='border:1px solid #f00'>on事件委托
+		<div class="left" style='border:1px solid #ff0'>
+			<div style='border:1px solid #f0f'>
+				<div style='border:1px solid #0ff'>点击这里</div>
+				</div>
+		</div>
+	    </div>
+	    <script type="text/javascript">
+	    //给body绑定一个click事件
+	    //没有直接a元素绑定点击事件
+	    //通过委托机制，点击a元素的时候，事件触发
+	    $(document).on('click', '.left',function(e) {
+	       alert($(this).prop('class'))
+	    })
+	    </script>
+	</body>
