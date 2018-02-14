@@ -88,19 +88,20 @@ jQuery键盘事件之keypress()事件
 	不区分小键盘和主键盘的数字字符
 
 on()的多事件绑定
-//多事件绑定一 ，多个event绑定一个函数
 
-    $("#test2").on('mousedown mouseup', function(e) {
-        $(this).text('触发事件：' + e.type)
-    });
+	//多事件绑定一 ，多个event绑定一个函数
+
+	$("#test2").on('mousedown mouseup', function(e) {
+        	$(this).text('触发事件：' + e.type)
+   	 });
     
 //多事件绑定二,字典
 
-    $("#test3").on({
-        mousedown: function(e) {
-            $(this).text('触发事件：' + e.type)
-        },
-        mouseup: function(e) {
-            $(this).text('触发事件：' + e.type)
-        }
-    })
+    	$("#test3").on({
+        	mousedown: function(e) {
+            	$(this).text('触发事件：' + e.type)
+        	},
+        	mouseup: function(e) {
+            	$(this).text('触发事件：' + e.type)
+        	}
+    	})
