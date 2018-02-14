@@ -157,3 +157,22 @@ jQuery事件对象的作用
 			alert('触发的元素是内容是: ' + $(this).prop('tagName'))		#ul
 		})
 	</script>
+	
+event.stopPropagation() 方法：阻止事件冒泡
+
+ 	 下面的代码表示：p被点击后冒泡，document也被点击；span由于stopPropagation被点击后不冒泡，document没被点击
+	
+	<script>
+	$(document).ready(function(){
+	  $("span").click(function(event){
+	    event.stopPropagation();
+	    alert("The span element was clicked.");
+	  });
+	  $("p").click(function(event){
+	    alert("The p element was clicked.");
+	  });
+	  $("div").click(function(){
+	    alert("The div element was clicked.");
+	  });
+	});
+	</script>
