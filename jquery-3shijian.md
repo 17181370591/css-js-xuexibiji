@@ -128,3 +128,11 @@ on()的高级用法
 	    })
 	    </script>
 	</body>
+	
+卸载事件off()方法
+
+	$("elem").off("mousedown")		#删除一个事件
+	$("elem").off("mousedown mouseup")	#删除2个事件
+	$("elem").off()				#删除所有事件
+
+
