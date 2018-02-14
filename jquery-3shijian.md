@@ -95,7 +95,7 @@ on()的多事件绑定
         	$(this).text('触发事件：' + e.type)
    	 });
     
-//多事件绑定二,字典
+	//多事件绑定二,字典
 
     	$("#test3").on({
         	mousedown: function(e) {
