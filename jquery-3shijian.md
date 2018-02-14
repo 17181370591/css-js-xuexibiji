@@ -135,4 +135,22 @@ on()的高级用法
 	$("elem").off("mousedown mouseup")	#删除2个事件
 	$("elem").off()				#删除所有事件
 
+jQuery事件对象的作用
 
+	<div class="left">
+		<div class="aaron">
+			<ul>
+				<li>点击：触发一</li>
+				<li>点击：触发二</li>
+				<li>点击：触发三</li>
+				<li>点击：触发四</li>
+		    	</ul>
+		</div>
+	</div>
+
+  	<script type="text/javascript">
+		$("ul").on('click',function(e){
+		   	alert('触发的元素是内容是: ' + e.target.tagName);		#li
+			alert('触发的元素是内容是: ' + $(this).prop('tagName'))		#ul
+		})
+	</script>
