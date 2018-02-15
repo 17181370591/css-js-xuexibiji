@@ -195,4 +195,5 @@ jQuery自定义事件之trigger事件
 		$('button:eq(0)').trigger('click','2b2b')
 	})
 	
-	
+
+jQuery自定义事件之triggerHaddler事件	
