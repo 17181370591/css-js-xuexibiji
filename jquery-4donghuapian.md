@@ -17,8 +17,9 @@ jQuery中隐藏元素的hide方法/show方法
 	
 jQuery中显示与隐藏切换toggle方法
 
-	  $("*").click(function(){
-			  $(".left").stop().toggle(333).css('background','red')});
+	  $("*").click(function(){ 
+		$( ".left" ).stop().slideToggle(333);    	#纵向
+		$( ".right" ).stop().toggle(333)});		 #横向
 	
 	 分开写相当于：
 	
