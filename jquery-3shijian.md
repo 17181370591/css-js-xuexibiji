@@ -184,3 +184,15 @@ event.preventDefault() 方法：阻止默认行为
 	  $("a").click(function(e){
 	    e.preventDefault();
 	  });
+
+jQuery自定义事件之trigger事件
+
+ 	var r=0;var s1=$('.left span:eq(0)');var s2=s1.next();
+	$('button:eq(0)').click(function(e,rr){
+		s1.text(rr||'first');s2.text(++r);			
+	});
+	$('button:eq(1)').click(function(){
+		$('button:eq(0)').trigger('click','2b2b')
+	})
+	
+	
