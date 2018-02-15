@@ -25,6 +25,7 @@ jQuery鼠标事件之mouseenter与mouseleave事件
 jQuery鼠标事件之hover事件
     
     第一个函数是mouseenter ，第二个是mouseleave
+    
     $("p").hover(
         function() {
             $(this).css("background", 'red')
@@ -51,7 +52,7 @@ jQuery表单事件之blur与focus事件
 	$(".aaron").find('input').focus(function() {
         	$(this).css('border', '2px solid red')
    	 });
-    	$(".aaron1").focusin(function() {
+    	$(".aaron").focusin(function() {
        	 	$(this).find('input').val('冒泡捕获了focusin事件')
     	})
 
