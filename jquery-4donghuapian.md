@@ -9,6 +9,23 @@ jQuery中隐藏元素的hide方法/show方法
 			$(this).css('background','#f00');
 	})
 
+	 连续点击多下，会重复多次，加上stop后会停止上一次的动画，从当前状态重新hide和show
+	
 	$("button").click(function() {
-        	$("#a1").hide(3000).show(3000)
-   	});
+        	$("#a1").stop().hide(3000).show(3000)
+   	})
+	
+jQuery中显示与隐藏切换toggle方法
+
+	  $("*").click(function(){
+			  $(".left").stop().toggle(333).css('background','red')});
+	
+	 分开写相当于：
+	
+	   $("*").click(function(){
+		 if ( $( ".left" ).css('display') == 'none' ) {
+			  $( ".left" ).show(); 
+		} else{
+			  $( ".left" ).hide();
+		}
+	  });
