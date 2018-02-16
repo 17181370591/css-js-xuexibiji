@@ -84,6 +84,6 @@ jQuery中动画animate
 	//width: "toggle"			//设置为左右隐藏
 	//height:"toggle"		//设置为上下滑动隐藏
 	//opacity:"toggle"		//设置为淡出淡入隐藏  opacity是透明度
-	
+	除了定义数值，每个属性能使用'show', 'hide', 和 'toggle'。这些快捷方式允许定制隐藏和显示动画用来控制元素的显示或隐藏
 	
 	
