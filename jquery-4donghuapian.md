@@ -47,7 +47,7 @@ jQuery中下拉动画slideDown/slideUp,jQuery中上卷下拉切换slideToggle
 	
 jQuery中淡出动画fadeOut,fadeIn,fadeTo
 	
-	淡入淡出效果，通过设置opacity,通过show显示;fadeTo可以改变透明度
+	淡入淡出效果，通过设置opacity,通过show显示;fadeTo可以自定义透明度最终值
 	
     <script type="text/javascript">
 	$('#animation').change(function(){
