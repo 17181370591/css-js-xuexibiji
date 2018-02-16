@@ -68,3 +68,22 @@ jQuery中淡出动画fadeOut,fadeIn,fadeTo
 	$("#mb").mouseout(function(){ $(this).fadeTo(0,1)})
 	
 	
+jQuery中动画animate
+	
+	 y用来判断interval是否运行；f函数用来每0.1秒增加10px宽度；
+	
+	var y=1;
+   	function f() {
+		$("#aaron").animate({width:'+=10'},100);
+		$("#exec").val($("#aaron").css('width'))}
+	$("#exec").click(function(){
+		if(y){s=setInterval("f()",100);y=0}
+		else{clearInterval(s);y=1};
+	})
+	
+	//width: "toggle"			//设置为左右隐藏
+	//height:"toggle"		//设置为上下滑动隐藏
+	//opacity:"toggle"		//设置为淡出淡入隐藏  opacity是透明度
+	
+	
+	
