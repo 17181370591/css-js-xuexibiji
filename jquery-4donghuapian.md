@@ -86,4 +86,29 @@ jQuery中动画animate
 	//opacity:"toggle"		//设置为淡出淡入隐藏  opacity是透明度
 	除了定义数值，每个属性能使用'show', 'hide', 和 'toggle'。这些快捷方式允许定制隐藏和显示动画用来控制元素的显示或隐藏
 	
+	step:fx只返回最后一个动画里改变的属性，now是这个属性的当前值，step的fx和progress的fx不一样;
+	$(fx.elem)是被改变对象的jquery对象，可直接用各种jquery方法和属性
+
+	   $aaron.animate({
+                height: '50',
+		opacity:0.5,
+		width:'toggle',
+            }, {
+                duration :2000,
+                //每一个动画都会调用
+                step: function(now, fx) {
+                   $aaron.text('开始:'+fx.start+'结束:'+fx.end+'属性:'+fx.elem+'当前值:'+now);
+		   $aaron.text('开始:'+fx.elem.id+'结束:'+$(fx.elem).prop('class'))
+                }
+	progress:arguments有3个值，分别是'改变的对象','完成度'和'剩余时间（ms）'
 	
+	 $aaron.animate({
+                height: '50'
+            }, {
+                duration :2000,
+                //每一步动画完成后调用的一个函数，
+                //无论动画属性有多少，每个动画元素都执行单独的函数
+                progress: function(now, fx) {			
+                   $aaron.text('改变的对象:'+arguments[0]+'完成了:'+Math.round(arguments[1]*100)+'%剩余时间:'+arguments[2])
+
+                }
