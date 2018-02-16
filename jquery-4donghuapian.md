@@ -52,7 +52,7 @@ jQuery中淡出动画fadeOut
     <script type="text/javascript">
 	$('#animation').change(function(){
 	v=$('#animation>option:selected').val();
-	if(v==1){$("p").fadeOut(function(){setTimeout(function(){$("p").show()},333)})}
+	if(v==1){$("p").fadeOut(function(){setTimeout(function(){$("p").fadeIn()},333)})}
 	else if(v==2){$("p").fadeOut('slow',function(){setTimeout(function(){$("p").show()},333)})}
 	else if(v==3){$("p").fadeOut(3000,function(){setTimeout(function(){$("p").show()},333)})}
 	else if(v==4){$("p").fadeOut(1000, "linear" ,function(){setTimeout(function(){$("p").show();alert('complete')},333)})}
