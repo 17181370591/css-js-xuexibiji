@@ -30,3 +30,17 @@ jQuery中显示与隐藏切换toggle方法
 			  $( ".left" ).hide();
 		}
 	  });
+
+jQuery中下拉动画slideDown/slideUp
+
+	 slideDown/slideUp是竖直向下show/hide，与slideToggle效果类似。下面的代码$("#a1").toggle(1500)不会
+	 等$("#a1").slideDown的回调函数结束，而是500ms秒和回调函数一同执行
+	
+	$("button:first").click(function(){
+        	$("#a1").slideDown(500,function(){
+			setTimeout(function(){$("#a1").css("background","#f0f")},555)
+						})
+		$("#a1").toggle(1500)			
+        });
+	
+	
