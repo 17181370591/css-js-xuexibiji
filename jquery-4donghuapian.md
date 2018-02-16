@@ -45,9 +45,9 @@ jQuery中下拉动画slideDown/slideUp,jQuery中上卷下拉切换slideToggle
         });
 	
 	
-jQuery中淡出动画fadeOut
+jQuery中淡出动画fadeOut,fadeIn,fadeTo
 	
-	淡入淡出效果，通过设置opacity,通过show显示
+	淡入淡出效果，通过设置opacity,通过show显示;fadeTo可以改变透明度
 	
     <script type="text/javascript">
 	$('#animation').change(function(){
@@ -62,3 +62,9 @@ jQuery中淡出动画fadeOut
 	//     显示隐藏           .hide()+.show() = .toggle()
 	//     下拉上卷           .slideUp()+.slideDown() = .slideToggle()
 	//     淡入淡出           .fadeOut()+.fadeIn() = .fadeToggle()
+	
+	 <div id="mb" style="border:1px solid ;width:150px;height:50px;margin-top:20px;background:red">测试蒙版效果</div>
+    	$("#mb").mouseover(function(){$(this).fadeTo(0,0.1)});
+	$("#mb").mouseout(function(){ $(this).fadeTo(0,1)})
+	
+	
