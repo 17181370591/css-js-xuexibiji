@@ -125,6 +125,9 @@ jQuery的属性与样式之.attr()与.removeAttr()
 
 jQuery的属性与样式之.val()
 
+	.val()方法，当没设置value属性时，获取的是<option>中的文本，如“ <option>慕课网</option>”获取到的是“慕课网”；
+	设置了value属性的话，获取到就是value的值，如“<option value=‘imooc’>慕课网</option>”获取到的是“imooc”而不是“慕课网”了。
+
 	$(document).ready(function(){
 		$('#multiple').change(function(){
 			$('p').text($('#multiple').val());
