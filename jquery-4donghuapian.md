@@ -58,3 +58,7 @@ jQuery中淡出动画fadeOut
 	else if(v==4){$("p").fadeOut(1000, "linear" ,function(){setTimeout(function(){$("p").show();alert('complete')},333)})}
 	else if(v==5){$("p").fadeOut(function(){setTimeout(function(){$("p").show()},333)})}})
     </script>
+
+	//     显示隐藏           .hide()+.show() = .toggle()
+	//     下拉上卷           .slideUp()+.slideDown() = .slideToggle()
+	//     淡入淡出           .fadeOut()+.fadeIn() = .fadeToggle()
