@@ -146,3 +146,30 @@ jQuery中停止动画stop
 		    $aaron.stop(false,true)
 		} 
    	 });
+
+jQuery中each方法的应用
+	
+	回调函数中传入的两个参数，如果遍历的是数组，第一个参数是索引值，第二个参数是数组的值；
+	如果遍历是对象，第一个参数是属性，第二个参数是属性值。
+    <select id="animation">
+        <option value="1">each数组</option>
+        <option value="2">each对象</option>
+		<option value="3">each</option>
+		<option value="4" selected>each</option>
+    </select>
+    <script>
+    if (v == "1") {
+            // 遍历数组元素
+            $.each(['Aaron', '慕课网'], function(i, item) {
+                $aaron.append("<br>索引=" + i + "; 元素=" + item);
+            });
+        } else if (v == "2") {
+            // 遍历对象属性
+            $.each({
+                name: "张三",
+                age: 18
+            }, function(p, v) {
+                $aaron.append("属性名=" + p + "; 属性值=" + v);
+            });
+        } 
+	</script>
