@@ -97,8 +97,7 @@ https://www.imooc.com/learn/762
                 })</script>
 
 使用ajax()方法加载服务器数据
-
-           type类型是post，data是 post的数据，  success 是请求 成功时调用的函数
+type类型是post，data是 post的数据，  success 是请求 成功时调用的函数
           
                 $("#btnCheck").bind("click", function () {
                     $.ajax({
