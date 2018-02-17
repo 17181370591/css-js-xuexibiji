@@ -197,7 +197,10 @@ https://www.imooc.com/learn/762
             </div>
         </form>
         
-        $('form').validate，rules是对各个输入框的name添加规则，errorPlacement设置错误显示在哪个地方
+        $('form').validate，rules是对各个输入框的name添加规则，errorPlacement设置错误显示在哪个地方,
+        messages自己定义报错信息。 下面是validate的插件和不设置messages时用中文报错的插件
+        <script type="text/javascript" src="https://www.imooc.com/data/jquery.validate.js"></script>
+        <script type="text/javascript" src="https://www.imooc.com/data/jquery.validate.messages_cn.js"></script>
        
         <script type="text/javascript">
         $('#frmV').validate({
@@ -210,6 +213,13 @@ https://www.imooc.com/learn/762
                     
                 }
                 
+            },
+             messages:{
+                   email:{
+                   required:'请输入email',email:'email格式错误'                    
+                },email2:{
+                    required:'请输入2b',rangelength:'3到5谢谢',max:'小鱼1'                    
+                }                
             },
             errorPlacement:function(e,el){
                 n=el.prop('name');
@@ -225,4 +235,37 @@ https://www.imooc.com/learn/762
             }
         })</script>
         
+ 表单插件——form
         
+        form插件：<script type="text/javascript" src="http://www.imooc.com/data/jquery.form.js"></script>
+        
+        <form id="frmV" method="post" action="#">
+            <div id="divtest">
+                <div class="title">
+                    <span class="fl">个人信息页</span> 
+                    <span class="fr">
+                        <input id="btnSubmit" type="submit" value="提交" />
+                    </span>
+                </div>
+                <div class="tip"></div>
+                <div class="content">
+                    <span class="fl">用户名：</span><br />
+                    <input id="user" name="user" type="text" /><br />
+                    <span class="fl">昵称：</span><br />
+                    <input id="nick" name="nick" type="text" />
+                    <div class='e'></div>
+                </div>
+            </div>
+        </form>
+        
+        option 里写了type：post，form的html代码没有method：post也会以post方式提交。target似乎是ajax数据展示的target
+        
+        <script type="text/javascript">
+            $(function () {
+                var options = {
+                    url: "https://www.imooc.com/data/form_f.php",  
+                    target: ".tip",
+                    type:'post' 
+                } 
+                $('#frmV').ajaxForm(options)
+            })</script>
