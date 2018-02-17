@@ -1,4 +1,13 @@
 https://www.imooc.com/learn/762
+
+使用load()方法异步请求数据
+
+        $("#btnShow").bind("click", function () {
+            var $this = $(this);
+            $("ul").load('https://www.imooc.com/data/fruit_part.html',function(){$this.attr("disabled", "true"); 
+            });
+        })
+        
 使用getJSON()方法异步加载JSON格式数据
 
         点击按钮getJSON从第一个参数获取json数据，点击后禁用按钮，json数据被遍历添加到ul里做li
@@ -103,3 +112,69 @@ https://www.imooc.com/learn/762
                         }
                     });
                 })
+                
+使用ajaxSetup()方法设置全局Ajax默认选项
+
+                $('body').append('<div class="a"></div>');
+                $.ajaxSetup({type:'post',success:function(data){
+                       $('.a').empty(); $('.a').append(data)
+                }}); 
+                
+
+                $("#btnShow_1").bind("click", function () {
+                    $.ajax({
+                        data: { num: $("#txtNumber").val() },
+                        url: "https://www.imooc.com/data/check.php"
+                    });
+                })
+                $("#btnShow_2").bind("click", function () {
+                    $.ajax({
+                        data: { num: $("#txtNumber").val() },
+                        url: "https://www.imooc.com/data/check_f.php"
+                    });
+                })
+                
+使用ajaxStart()和ajaxStop()方法
+
+        ajaxStart()和ajaxStop()方法是绑定Ajax事件。
+        ajaxStart()方法用于在Ajax请求发出前触发函数，ajaxStop()方法用于在Ajax请求完成后触发函数。它们的调用格式为：
+        $(selector).ajaxStart(function())和$(selector).ajaxStop(function())
+        其中，两个方法中括号都是绑定的函数，当发送Ajax请求前执行ajaxStart()方法绑定的函数，请求成功后，执行ajaxStop ()方法绑定的函数。                  
+          <div id="divtest">
+            <div class="title">
+                <span class="fl">加载一段文字</span> 
+                <span class="fr">
+                    <input id="btnShow" type="button" value="加载" />
+                </span>
+            </div>
+            <ul> 
+               <li id="divload"></li>
+            </ul>
+        </div> 
+        
+        <script type="text/javascript">
+            $("#divload").ajaxStart(       //请求 成功前显示
+                function () { 
+                    $(this).html("正在请求数据...");
+                } 
+                );
+              $("#divload").ajaxStop(function(){    ///请求 完成后显示
+                   $(this).html("数据请求完成！");
+                }); 
+                
+                $("#btnShow").bind("click", function () { 
+                    var $this = $(this); 
+                    $.ajax({
+                        url: "https://www.imooc.com/data/info_f.php", 
+                        dataType: "json",
+                        success: function (data) {
+                        //    $this.attr("disabled", "true");
+                        $("ul").append("<li>我的名字叫：" + data.name + "</li>");
+                        $("ul").append("<li>男朋友对我说：" + data.say + "</li>");
+                        }
+                    });
+                })
+        </script> 
+        
+
+         
