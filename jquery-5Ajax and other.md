@@ -103,13 +103,13 @@ type类型是post，data是 post的数据，  success 是请求 成功时调�
                     $.ajax({
                         url:'https://www.imooc.com/data/check.php',
                         type:'post',
-                    data: { num: $("#txtNumber").val()},
-                            success: function (data) {
-                            $("ul").append("<li>你输入的<b>  "
-                            + $("#txtNumber").val() + " </b>是<b> "
-                            + data + " </b></li>"+data.responseTex);
-                        }
-                    });
+                        data: { num: $("#txtNumber").val()},
+                                success: function (data) {
+                                $("ul").append("<li>你输入的<b>  "
+                                        + $("#txtNumber").val() + " </b>是<b> "
+                                        + data + " </b></li>"+data.responseTex);
+                                }
+                        });
                 })
                 
 使用ajaxSetup()方法设置全局Ajax默认选项
@@ -117,9 +117,7 @@ type类型是post，data是 post的数据，  success 是请求 成功时调�
                 $('body').append('<div class="a"></div>');
                 $.ajaxSetup({type:'post',success:function(data){
                        $('.a').empty(); $('.a').append(data)
-                }}); 
-                
-
+                }});                 
                 $("#btnShow_1").bind("click", function () {
                     $.ajax({
                         data: { num: $("#txtNumber").val() },
