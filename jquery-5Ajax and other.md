@@ -69,7 +69,7 @@ https://www.imooc.com/learn/762
        使用serialize()方法可以将表单中有name属性的元素值进行序列化，生成标准URL编码文本字符串，直接可用于ajax请求
        下面的alert内容是"Text1=%E5%95%8A&Text=10&Checkbox1=on"
            
-       // <form action="">
+        <form action="">
             <ul>
                 <li>姓名：<input name="Text1" type="text" size="12" /></li>
                 <li>
