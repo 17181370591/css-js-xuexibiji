@@ -125,6 +125,9 @@ jQuery中停止动画stop
 	stop(false,true)：停止当前动画，跳到最终状态，后续动画继续执行；
 	stop(true,true)：停止当前动画，跳到最终状态，后续动画不予执行；
 	
+	如果把动画队列中的动画都比作一集电视剧，那stop()相当于下一集，stop(true)相当于暂停，stop(true,true)相当于直接跳到
+	当前这一集的片尾并且不会自动播放下一集，stop(true,true)相当于直接跳到这一集的片尾并自动播放下一集
+	
 	$('div').click(function() {
 		var v = $("#animation").val();
 		var $aaron = $("#aaron");
