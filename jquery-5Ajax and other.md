@@ -86,3 +86,20 @@ https://www.imooc.com/learn/762
                 $("#btnAction").bind("click", function () {                    
                     alert($('form').serialize())                      
                 })</script>
+
+使用ajax()方法加载服务器数据
+
+           type类型是post，data是 post的数据，  success 是请求 成功时调用的函数
+          
+                $("#btnCheck").bind("click", function () {
+                    $.ajax({
+                        url:'https://www.imooc.com/data/check.php',
+                        type:'post',
+                    data: { num: $("#txtNumber").val()},
+                            success: function (data) {
+                            $("ul").append("<li>你输入的<b>  "
+                            + $("#txtNumber").val() + " </b>是<b> "
+                            + data + " </b></li>"+data.responseTex);
+                        }
+                    });
+                })
