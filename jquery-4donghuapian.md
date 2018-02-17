@@ -87,7 +87,7 @@ jQuery中动画animate
 	除了定义数值，每个属性能使用'show', 'hide', 和 'toggle'。这些快捷方式允许定制隐藏和显示动画用来控制元素的显示或隐藏
 	
 	step:fx只返回最后一个动画里改变的属性，now是这个属性的当前值，step的fx和progress的fx不一样;
-	$(fx.elem)是被改变对象的jquery对象，可直接用各种jquery方法和属性
+	$(fx.elem)是被改变对象的jquery对象，可直接用各种jquery方法和属性。动画作用在多个元素上时fx.elem取最后一个
 
 	   $aaron.animate({
                 height: '50',
