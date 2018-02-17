@@ -176,5 +176,53 @@ https://www.imooc.com/learn/762
                 })
         </script> 
         
-
-         
+表单验证插件——validate 
+           
+       <form id="frmV" method="get" action="#">
+            <div id="divtest">
+                <div class="title">
+                    <span class="fl">表单验证插件</span>  
+                    <span class="fr">
+                        <input id="btnSubmit" type="submit" value="提交" />
+                    </span> 
+                </div>
+                <div class="content">
+                    <span class="fl">邮箱：</span><br />
+                    <input id="email3" name="email" type="text" /><br />
+                    <span class="tip">1<br></span>
+                       <span class="f2">shouji：</span><br />
+                    <input id="email23" name="email2" type="text" /><br />
+                    <span class="tip2">2</span>
+                </div> 
+            </div>
+        </form>
+        
+        $('form').validate，rules是对各个输入框的name添加规则，errorPlacement设置错误显示在哪个地方
+       
+        <script type="text/javascript">
+        $('#frmV').validate({
+            rules:{
+                email:{
+                    required:true,email:true
+                    
+                },email2:{
+                    required:true,rangelength:[3,6],max:1
+                    
+                }
+                
+            },
+            errorPlacement:function(e,el){
+                n=el.prop('name');
+                if(n=='email'){
+                    $('.tip').append(e)
+                    
+                }
+                else if(n=='email2'){
+                    $('.tip2').append(e)
+                    
+                }
+                
+            }
+        })</script>
+        
+        
