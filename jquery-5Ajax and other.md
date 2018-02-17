@@ -29,7 +29,7 @@ https://www.imooc.com/learn/762
          <script type="text/javascript">
                 $("#btnShow").bind("click", function () {
                     var $this = $(this);
-                    jQuery.getScript('https://www.imooc.com/data/sport_f.js',function(){
+                    jQuery.getScript('https://www.imooc.com/data/sport_f.js',function(data){
                         $this.attr("disabled", "true");
                         for(i=0;i<data.length;i++){alert(data[i].name)} 
                     });
