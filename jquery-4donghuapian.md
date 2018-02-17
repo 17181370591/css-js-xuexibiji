@@ -110,5 +110,36 @@ jQuery中动画animate
                 //无论动画属性有多少，每个动画元素都执行单独的函数
                 progress: function(now, fx) {			
                    $aaron.text('改变的对象:'+arguments[0]+'完成了:'+Math.round(arguments[1]*100)+'%剩余时间:'+arguments[2])
-
                 }
+
+jQuery中停止动画stop
+
+	$(selector).stop(stopAll,goToEnd)
+	stopAll	可选。布尔值，规定是否停止被选元素的所有加入队列的动画。默认是 false。
+	goToEnd	可选。布尔值，规定是否立即完成当前的动画。默认是 false。
+	
+	stop():停止当前动画，后续动画继续执行
+	stop()==stop(false,false)==stop(false)
+	stop(true):停止当前和之后动画；
+	stop(true,false)==stop(true)
+	stop(false,true)：停止当前动画，跳到最终状态，后续动画继续执行；
+	stop(true,true)：停止当前动画，跳到最终状态，后续动画不予执行；
+	
+	$('div').click(function() {
+		var v = $("#animation").val();
+		var $aaron = $("#aaron");
+		if (v == "1") {
+		    //当前当前动画
+		    $aaron.stop().css("backgroundColor","blue")
+		} else if (v == "2") {
+		    //停止所以队列
+		    $aaron.stop(true)
+		} else if (v == "3") {
+		    //停止动画，直接跳到当前动画的结束
+		    $aaron.stop(true,true)
+		} 
+			else if (v == "4") {
+		    //停止动画，直接跳到当前动画的结束
+		    $aaron.stop(false,true)
+		} 
+   	 });
