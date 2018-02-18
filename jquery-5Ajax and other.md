@@ -324,4 +324,40 @@ type类型是post，data是 post的数据，  success 是请求 成功时调�
                 });
             });
         </script>
+
+cookie插件——cookie
+
+        <script src="https://www.imooc.com/data/jquery.cookie.js" type="text/javascript"></script>
+         <div id="divtest">
+            <div class="title">   
+                <span class="fl">cookie插件</span> 
+                <span class="fr">
+                    <input id="btnSet" type="button" value="设置" />
+                </span>
+            </div>
+            <div class="content"> 
+                <span class="fl">邮箱：</span><br />
+                <input id="email" name="email" type="text" /><br />
+                <input id="chksave" type="checkbox" />是否保存邮箱
+            </div>
+        </div>
         
+        <script type="text/javascript">
+            $(function () {
+                if ($.cookie("email")) {                                //如果cookie里有email的值，则赋值给#email的value
+                    $("#email").val($.cookie("email"));    
+                } ; 
+                $("#btnSet").bind("click", function () {
+                 //   if ($("#chksave").is(":checked")) {               // 两种方法都可以用来判断是否单选框被选中；
+                       if ($("#chksave").prop('checked')) { 
+                        $.cookie("email", $("#email").val(), {             //如果  单选框被选中，#email的value赋值给cookie的email
+                            path: "/",expires:1/24/1200                  //过期时间3秒钟
+                        })
+                    }
+                    else {
+                        $.cookie("email", null, {               //如果 单选框没选中，cookie的email设置为null
+                            path: "/"                           // 表示该域名下所有页面此cookie有效？
+                       })
+                    }
+                }) 
+            }) </script>   
