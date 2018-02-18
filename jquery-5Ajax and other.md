@@ -366,3 +366,19 @@ cookie插件——cookie
 右键菜单插件——contextmenu
 
         暂时没记录
+        
+ 拖曳插件——draggable
+       
+        <script src="https://www.imooc.com/data/jquery-1.8.2.min.js" type="text/javascript"></script>
+        <script src="https://www.imooc.com/data/jquery-ui-1.9.2.min.js" type="text/javascript"></script>
+        
+        <div id="divtest">
+            <div id="x" class="drag">沿x轴拖拽</div>
+            <div id="y" class="drag">沿y轴拖拽</div>
+        </div>      
+        <script type="text/javascript">
+            $(function () {
+                $('#x').draggable({containment:"#divtest",axis:'y'});     # 只能在#divtest里沿y轴拖动
+                $('#y').draggable({scroll:'true'});                     # 拖动到边缘是会出现scroll
+            });
+        </script>
