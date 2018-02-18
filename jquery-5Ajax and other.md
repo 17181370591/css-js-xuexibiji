@@ -1,4 +1,5 @@
 https://www.imooc.com/learn/762
+后面全部跳过了。。
 
 使用load()方法异步请求数据
 
@@ -364,6 +365,8 @@ cookie插件——cookie
 
 搜索插件——autocomplete(似乎很重要）
 右键菜单插件——contextmenu
+面板折叠插件——accordion
+选项卡插件——tabs
 
         暂时没记录
         
@@ -409,4 +412,5 @@ cookie插件——cookie
             });
         </script>
         
-        
+.serialize()方法可以将表单中有name属性的元素值进行序列化，生成标准URL编码文本字符串，直接可用于ajax请求
+$.param() 序列化对象或者数组,常用于向服务端发送URL请求        
