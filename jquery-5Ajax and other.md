@@ -302,5 +302,26 @@ type类型是post，data是 post的数据，  success 是请求 成功时调�
             }); 
         </script>
         
-        
+ 图片放大镜插件——jqzoom
+
+        <script type="text/javascript" src="https://www.imooc.com/data/jquery.jqzoom.js"></script>
+        <div id="divtest">
+            <div class="title">
+                <span class="fl">图片放大镜</span> 
+            </div>
+            <div class="content">
+                <a href="https://img.mukewang.com/52e4aec90001924d06800599.jpg" id="jqzoom" title="小兔子乖乖">
+                     <img src="https://img.mukewang.com/52e4aee700012df702130212.jpg" alt=""/>
+                </a>
+            </div>
+        </div>  
+        <script type="text/javascript">
+            $(function () {
+              $('#jqzoom').jqzoom({//绑定图片放大插件jqzoom
+                    zoomWidth: 123, //小图片所选区域的宽
+                    zoomHeight: 123, //小图片所选区域的高
+                    zoomType: 'reverse' //设置放大镜的类型
+                });
+            });
+        </script>
         
