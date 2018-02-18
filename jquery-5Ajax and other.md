@@ -266,3 +266,41 @@ type类型是post，data是 post的数据，  success 是请求 成功时调�
                 } 
                 $('#frmV').ajaxForm(options)
             })</script>
+
+图片灯箱插件——lightBox
+
+        <script type="text/javascript" src="https://www.imooc.com/data/jquery.notesforlightbox.js"></script>
+
+        <div id="divtest">
+            <div class="title">   
+                <span class="fl">我的相册</span>
+            </div>
+            <div class="content">
+                <div class="divPics">
+                    <ul>
+                        <li><a href="https://img.mukewang.com/52e489f20001ecfc04480275.jpg" title="第1篇风景图片">
+                            <img src="https://img.mukewang.com/52e489f20001ecfc04480275.jpg" alt="" />
+                        </a></li>
+                        <li><a href="https://img.mukewang.com/52e48a1e0001eec804480275.jpg" title="第2篇风景图片">
+                            <img src="https://img.mukewang.com/52e48a1e0001eec804480275.jpg" alt="" />
+                        </a></li>
+                        <li><a href="https://img.mukewang.com/52e48a4c00015ad204480275.jpg" title="第3篇风景图片">
+                            <img src="https://img.mukewang.com/52e48a4c00015ad204480275.jpg" alt="" />
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+            $(function () {
+                $('a').lightBox({ 
+                    overlayBgColor: "#f00", //图片浏览时的背景色
+                    overlayOpacity: 0.3, //背景色的透明度
+                    containerResizeSpeed: 600 //图片切换时的速度 
+                })
+            }); 
+        </script>
+        
+        
+        
