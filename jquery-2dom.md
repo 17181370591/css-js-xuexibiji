@@ -11,7 +11,9 @@ innerHTML会提取/输入标签，textContent不会(js)；类似于text()和html
 		 //CoffeeTea
 	x.innerHTML=lst.innerHTML;
 	 	 //*Coffee *Tea
-			
+
+$(.asd).offset.top可以获取.asd到顶部的高度，scroll拖动的距离也会计算在内
+
 jQuery节点创建与属性的处理/DOM内部插入append()与appendTo()
 
     $(body).append($('<input type="text" value="hehe">asd'))  #$('<div></div>'))用来产生div对象，用append添加
