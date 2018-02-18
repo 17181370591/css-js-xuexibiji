@@ -382,3 +382,31 @@ cookie插件——cookie
                 $('#y').draggable({scroll:'true'});                     # 拖动到边缘是会出现scroll
             });
         </script>
+        
+拖曳排序插件——sortable
+
+        <script src="https://www.imooc.com/data/jquery-ui-1.9.2.min.js" type="text/javascript"></script>
+        <div id="divtest">
+            <div class="title">
+                <span class="fl">我最喜欢的运动</span>
+            </div>
+            <div class="content">
+                <ul>
+                    <li>1)足球</li>
+                    <li>2)散步</li>
+                    <li>3)篮球</li>
+                    <li>4)乒乓球</li>
+                    <li>5)骑自行车</li>
+                </ul>
+            </div>
+        </div>        
+        <script type="text/javascript">
+            $(function () {
+                $("ul").sortable({
+                    opacity:0.1,
+                    delay:2
+                })
+            });
+        </script>
+        
+        
