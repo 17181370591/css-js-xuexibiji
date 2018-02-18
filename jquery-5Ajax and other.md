@@ -361,3 +361,8 @@ cookie插件——cookie
                     }
                 }) 
             }) </script>   
+
+搜索插件——autocomplete(似乎很重要）
+右键菜单插件——contextmenu
+
+        暂时没记录
