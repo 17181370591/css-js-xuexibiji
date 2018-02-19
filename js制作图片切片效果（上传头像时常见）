@@ -1,0 +1,74 @@
+https://www.imooc.com/learn/144
+学习使用了clip：rect切图，draggable的stop回调函数，特别是box-shadow做阴影遮盖，以前只会用border遮盖，这次遇到draggable需要限定显示区域大小，
+无法使用border
+
+html代码
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="11.css" type="text/css" rel="stylesheet"></link>
+
+    <script type="text/javascript" src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script  src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+     <script type="text/javascript" src="11.js"></script>
+</head>
+<body>
+ <div class="a1">
+    <div class="a2">
+        <div class="a4 cur1" ></div>
+        <div class="a4 t50"></div>
+        <div class="a4 t50 l100"></div>
+        <div class="a4 t100 l50"></div>
+        <div class="a4 t100  cur2"></div>
+        <div class="a4 l50" ></div>
+        <div class="a4 t100 l100 cur1"></div>
+        <div class="a4 l100 cur2"></div>
+    </div>
+
+     <img class="a3" src="5.jpg"> </img>
+</div>
+<div class="a5"><img src="5.jpg"> </img></div>
+</body>
+</html>
+
+js代码
+$(function () {
+    var t1= $('.a5 img').eq(0).width()/$('.a2').eq(0).width();
+    var t2= $('.a5 img').eq(0).height()/$('.a2').eq(0).height();
+                $('.a5 img').css('clip','rect(0,100px,100px,0)')
+                .css('transform-origin','0 0')
+                .css('transform','scale(4,3)')
+   /*draggable的stop表示drag完后调用该函数，transform-origin默认左上角，该句可以省略，clip：rect（y1,x2,y2,x1）表示该图片被切片
+   的上右下左到图片顶/左的距离*/
+    $('.a2').draggable({                                    
+        containment: '.a3', stop: function () {
+            var y1 = $(this).position().top;
+            var y2 = $(this).position().top+$(this).height();
+            var x1 = $(this).position().left;
+            var x2 = $(this).position().left+$(this).width();
+            //alert('scale('+t1+','+t2+')');
+            $('.a5 img').css('clip','rect('+y1+'px,'+x2+'px,'+y2+'px,'+x1+'px)')
+                .css('transform-origin','0 0')
+                .css('transform','scale('+t1+','+t2+')')
+                .css('left',-x1*t1).css('top',-y1*t2)
+
+        }
+    });
+})
+
+css代码
+.a1{width:400px;height:300px;margin:50px auto;position:relative;border:1px solid #f00;overflow: hidden}
+.a2{position: absolute;width:100px;height:100px;box-shadow:0 0 0 400px rgba(0,0,0,0.6);
+    border:2px solid #fff;cursor:move;}
+.a3{position: absolute;width:400px;height:300px;z-index:-3;}
+.a4{position: absolute;width:8px;height:8px;margin:-4px 0 0 -4px;background: #fff;}
+.a5{width:400px;height:300px;border:1px solid #f00;position: absolute;top:0;margin:20px;}
+.a5 img{width:400px;height:300px;position: absolute;}
+.l100{left:100%}
+.l50{left:50%;cursor:n-resize}
+.t50{top:50%;cursor:e-resize}
+.t100{top:100%}
+.cur1{cursor:nw-resize}
+.cur2{cursor:ne-resize}
