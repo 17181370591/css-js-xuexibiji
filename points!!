@@ -1,0 +1,7 @@
+jquery获取元素坐标位置的两种方法：
+1、获取元素在文档中的位置:
+var X = $('#DivID').offset().top; 
+var Y = $('#DivID').offset().left; 
+2、获取相对(父元素)位置: 
+var X = $('#DivID').position().top; 
+var Y = $('#DivID').position().left; 
