@@ -6,10 +6,16 @@ jquery获取元素坐标位置的两种方法：
   var X = $('#DivID').position().top; 
   var Y = $('#DivID').position().left; 
 
-    //获取鼠标位置
+3,//获取鼠标位置
     $(function(){
         $('body').mousemove(function(e) {
             __xx = e.pageX;
             __yy = e.pageY;
         });
     });
+
+4,box-sizing: content-box|border-box|inherit;
+content-box	:宽度和高度分别应用到元素的内容框。在宽度和高度之外绘制元素的内边距和边框。
+border-box：为元素设定的宽度和高度决定了元素的边框盒。就是说，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。
+通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。
+inherit：规定应从父元素继承 box-sizing 属性的值。
