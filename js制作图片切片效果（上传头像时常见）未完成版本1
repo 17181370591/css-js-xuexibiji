@@ -2,7 +2,8 @@ https://www.imooc.com/learn/144
 学习使用了clip：rect切图，draggable的stop回调函数，特别是box-shadow做阴影遮盖，以前只会用border遮盖，这次遇到draggable需要限定显示区域大小，
 无法使用border；还有jquery的插件必须在引入jquery后在引入，即写在<script *** src="jquery.min.js"></script>的后面
 
-html代码
+html代码=================================================================
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +35,8 @@ html代码
 </body>
 </html>
 
-js代码
+js代码=================================================================
+
 $(function () {
     var dragtop;
     var t1= $('.a5 img').eq(0).width()/$('.a2').eq(0).width();
@@ -68,7 +70,8 @@ $(function () {
     });
 })
 
-css代码
+css代码=================================================================
+
 .a1{width:400px;height:300px;margin:50px auto;position:relative;border:1px solid #f00;overflow: hidden}
 .a2{position: absolute;width:100px;height:100px;box-shadow:0 0 0 400px rgba(0,0,0,0.6);
     border:2px solid #fff;cursor:move;}
