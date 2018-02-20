@@ -62,9 +62,12 @@ $(function () {
         var y2 = $('.a2').eq(0).position().top + $('.a2').eq(0).height();
         var x1 = $('.a2').eq(0).position().left;
         var x2 = $('.a2').eq(0).position().left + $('.a2').eq(0).width();
-        $('.a5 img').css('clip', 'rect(' + y1 + 'px,' + x2 + 'px,' + y2 + 'px,' + x1 + 'px)')
-            .css('transform', 'scale(' + t1 + ',' + t2 + ')')
-            .css('left', -x1 * t1).css('top', -y1 * t2)
+        var p1=$('.a5 img').eq(0).width() / $('.a3').eq(0).width();
+        var p2=$('.a5 img').eq(0).height() / $('.a3').eq(0).height();
+        $('.a5 img')
+            .css('transform', 'scale(' + t1/p1+ ',' + t2/p2 + ')')
+            .css('clip', 'rect(' + y1*p2 + 'px,' + x2*p1 + 'px,' + y2*p2 + 'px,' + x1*p1 + 'px)')
+             .css('left', -x1 * t1).css('top', -y1 * t2)
     }
 
     function go_right(e) {
@@ -149,13 +152,13 @@ $(function () {
 css代码=================================================================
 
 
-.a1{width:400px;height:300px;margin:50px auto;position:relative;border:1px solid #f00;overflow: hidden}
+.a1{width:400px;height:300px;margin:0 auto;position:relative;border:1px solid #f00;overflow: hidden}
 .a2{position: absolute;width:100px;height:100px;box-shadow:0 0 0 400px rgba(0,0,0,0.6);
     border:2px solid #fff;cursor:move;min-height: 50px;min-width: 50px;}
 .a3{position: absolute;width:400px;height:300px;z-index:-3;}
 .a4{position: absolute;width:8px;height:8px;margin:-4px 0 0 -4px;background: #fff;}
-.a5{width:400px;height:300px;border:1px solid #f00;position: absolute;top:50px;left:1200px;}
-.a5 img{width:400px;height:300px;position: absolute;}
+.a5{width:300px;height:200px;border:1px solid #f00;position: absolute;top:50px;left:200px;border-radius: 50%;overflow: hidden}
+.a5 img{width:300px;height:200px;position: absolute;}
 .a2 .hand{background:transparent;width:100%;height:100%;}
 .l100{left:100%}
 .l50{left:50%;cursor:n-resize}
@@ -163,3 +166,4 @@ css代码=================================================================
 .t100{top:100%}
 .cur1{cursor:nw-resize}
 .cur2{cursor:ne-resize}
+
