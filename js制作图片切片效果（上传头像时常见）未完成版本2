@@ -45,32 +45,32 @@ js代码=================================================================
 $(function () {
     var drag1 = false;                      /*drag1为true时可以拖动8的div改变镜头大小*/
     var dd = -1;                            /*用来存储当前被拖动div在8个div里的index*/
-    $('.a2').draggable({                    /*可以拖动镜头    */
+    $('.a2').draggable({                    /*可以拖动镜头*/
         handle: '.hand',
         containment: '.a3', stop: f_size
     })
     function f_size() {
-        t1 = $('.a5 img').eq(0).width() / $('.a2').eq(0).width();
+        t1 = $('.a5 img').eq(0).width() / $('.a2').eq(0).width();       /*t1表示展示图原图与镜头的x比例*/
         t2 = $('.a5 img').eq(0).height() / $('.a2').eq(0).height();
-        var y1 = $('.a2').eq(0).position().top;
+        var y1 = $('.a2').eq(0).position().top;                         /*获取clip：rect需要的四条边的坐标*/
         var y2 = $('.a2').eq(0).position().top + $('.a2').eq(0).height();
         var x1 = $('.a2').eq(0).position().left;
         var x2 = $('.a2').eq(0).position().left + $('.a2').eq(0).width();
-        var p1=$('.a5 img').eq(0).width() / $('.a3').eq(0).width();
+        var p1=$('.a5 img').eq(0).width() / $('.a3').eq(0).width();         /*p1表示展示图原图和基图的x比例*/
         var p2=$('.a5 img').eq(0).height() / $('.a3').eq(0).height();
         $('.a5 img')
-            .css('transform-origin', '0 0')
-            .css('transform', 'scale(' + t1/p1+ ',' + t2/p2 + ')')
+            .css('transform-origin', '0 0')                                 /*从左上角transform，方便定位*/
+            .css('transform', 'scale(' + t1/p1+ ',' + t2/p2 + ')')              
             .css('clip', 'rect(' + y1*p2 + 'px,' + x2*p1 + 'px,' + y2*p2 + 'px,' + x1*p1 + 'px)')
              .css('left', -x1 * t1).css('top', -y1 * t2)
     }
 
-    function go_right(e) {
+    function go_right(e) {                                              /*封装函数完成8个div的上拉功能*/
         w = e.pageX - $('.a2').offset().left - $('.a2').width() - 2;
         $('.a2').css('width', '+=' + w);
     }
 
-    function go_left(e) {
+    function go_left(e) {                                               /*左拉功能，下面类似*/
          w = e.pageX - $('.a2').offset().left - 2;
          $('.a2').css('left', '+=' + w).css('width', '-=' + w);
         // $('.a2').css('right', rr).css('width', '-=' + w);
@@ -87,15 +87,15 @@ $(function () {
         $('.a2').css('height', '+=' + h);
     }
 
-    var d1 = $('.a4');
-    d1.mousedown(function (e) {
+    var d1 = $('.a4');                                  /*获取8个div的集合*/
+    d1.mousedown(function (e) {                         /*8个div被按下左键后drag1为true，能改变镜头大小*/            
         drag1 = true;
-        dd = $('.a4').index(e.target);
+        dd = $('.a4').index(e.target);                  /*获取被点击div*/    
     });
-    $(document).mouseup(function () {
+    $(document).mouseup(function () {                   /*送了鼠标左键后不能改变镜头大小*/
         drag1 = false
     });
-    $('.a1').mousemove(function (e) {
+    $('.a1').mousemove(function (e) {                   /*在基图范围内移动鼠标*/
         if (drag1) {
             var w = 0;
             var h = 0;
@@ -109,13 +109,13 @@ $(function () {
                 Array(go_down),
                 Array(go_down,go_right)
             );
-            for (i = 0; i < funs[dd].length; i++) {
+            for (i = 0; i < funs[dd].length; i++) {         /*遍历使用函数*/
                 funs[dd][i](e);
             }
             f_size();
         }
     })
-    $('.a5').draggable();
+    $('.a5').draggable();                               /*展示图可以拖动*/
 })
 
 
@@ -128,7 +128,7 @@ css代码=================================================================
 .a3{position: absolute;width:400px;height:300px;z-index:-3;}
 .a4{position: absolute;width:8px;height:8px;margin:-4px 0 0 -4px;background: #fff;}
 .a5{width:300px;height:300px;border:1px solid #f00;position: absolute;border-radius: 50%;overflow: hidden}
-.a5 img{width:300px;height:300px;position: absolute;}
+.a5 img{width:300px;height:300px;position: absolute;}                   /*使用clip：rect必须设置position属性*/
 .a2 .hand{background:transparent;width:100%;height:100%;}
 .l100{left:100%}
 .l50{left:50%;cursor:n-resize}
