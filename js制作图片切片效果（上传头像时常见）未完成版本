@@ -9,7 +9,6 @@ html代码
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="11.css" type="text/css" rel="stylesheet"></link>
-
     <script type="text/javascript" src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
     <script  src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
      <script type="text/javascript" src="11.js"></script>
@@ -18,31 +17,32 @@ html代码
  <div class="a1">
     <div class="a2">
         <div class="a4 cur1" ></div>
+        <div class="a4 l50" ></div>
+        <div class="a4 l100 cur2"></div>
         <div class="a4 t50"></div>
         <div class="a4 t50 l100"></div>
-        <div class="a4 t100 l50"></div>
         <div class="a4 t100  cur2"></div>
-        <div class="a4 l50" ></div>
+        <div class="a4 t100 l50"></div>
         <div class="a4 t100 l100 cur1"></div>
-        <div class="a4 l100 cur2"></div>
+
     </div>
 
      <img class="a3" src="5.jpg"> </img>
 </div>
-<div class="a5"><img src="5.jpg"> </img></div>
+<div  class="a5"><img src="5.jpg"> </img></div>
+
 </body>
 </html>
 
 js代码
 $(function () {
+    var dragtop;
     var t1= $('.a5 img').eq(0).width()/$('.a2').eq(0).width();
     var t2= $('.a5 img').eq(0).height()/$('.a2').eq(0).height();
                 $('.a5 img').css('clip','rect(0,100px,100px,0)')
                 .css('transform-origin','0 0')
                 .css('transform','scale(4,3)')
-   /*draggable的stop表示drag完后调用该函数，transform-origin默认左上角，该句可以省略，clip：rect（y1,x2,y2,x1）表示该图片被切片
-   的上右下左到图片顶/左的距离*/
-    $('.a2').draggable({                                    
+    $('.a2').draggable({
         containment: '.a3', stop: function () {
             var y1 = $(this).position().top;
             var y2 = $(this).position().top+$(this).height();
@@ -50,9 +50,19 @@ $(function () {
             var x2 = $(this).position().left+$(this).width();
             //alert('scale('+t1+','+t2+')');
             $('.a5 img').css('clip','rect('+y1+'px,'+x2+'px,'+y2+'px,'+x1+'px)')
-                .css('transform-origin','0 0')
                 .css('transform','scale('+t1+','+t2+')')
                 .css('left',-x1*t1).css('top',-y1*t2)
+
+        }
+    });
+                $('.a4:eq(1)').draggable({
+        containment: '.a3', axis:'y',
+        start:function () {dragtop=$(this).offset().top;},
+        stop: function () {
+             var t=$(this).offset().top-dragtop;
+              $('.a5').after(t);
+             $(this).css('top','-='+t);
+             $('.a2').css('height','-='+t).css('top','-='+(-t));
 
         }
     });
@@ -72,3 +82,4 @@ css代码
 .t100{top:100%}
 .cur1{cursor:nw-resize}
 .cur2{cursor:ne-resize}
+
