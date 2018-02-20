@@ -43,9 +43,9 @@ js代码=================================================================
 
 
 $(function () {
-    var drag1 = false;
-    var dd = -1;
-    $('.a2').draggable({
+    var drag1 = false;                      /*drag1为true时可以拖动8的div改变镜头大小*/
+    var dd = -1;                            /*用来存储当前被拖动div在8个div里的index*/
+    $('.a2').draggable({                    /*可以拖动镜头    */
         handle: '.hand',
         containment: '.a3', stop: f_size
     })
