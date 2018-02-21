@@ -20,5 +20,6 @@ border-box：为元素设定的宽度和高度决定了元素的边框盒。就�
 通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。
 inherit：规定应从父元素继承 box-sizing 属性的值。
 
-5，offset（）是到document的距离。position（）是到有position属性的祖先元素的距离 （fixed，absolute。relative都可以）；
+5，offset（）是到document的距离，即坐标。position（）是到有position属性的祖先元素的距离 （fixed，absolute。relative都可以）；
+  使用position()方法时事实上是把该元素当绝对定位来处理，获取的是该元素相当于最近的一个拥有绝对或者相对定位的父元素的偏移位置 
   width（）不带单位，css('width')带单位
