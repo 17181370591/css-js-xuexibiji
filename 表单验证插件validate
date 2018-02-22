@@ -107,3 +107,17 @@ $(function () {
       $('#f2').validate();
 });
 
+depends进行条件校验，下面的代码表示$('[name=u]').is(':filled')即被填写后p也变成必填项
+$(function () {
+    $.validator.setDefaults({debug:true})
+    $('#f1').validate({
+        rules:{
+            u:{required:true},
+            p:{
+                required:{
+                depends:function(){return $('[name=u]').is(':filled')}
+                }
+            },
+        },
+    })
+})
