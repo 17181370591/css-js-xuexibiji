@@ -203,9 +203,13 @@ type类型是post，data是 post的数据，  success 是请求 成功时调�
         validate插件里的email，email2是找name，不是class和id，email的data里$('[name=email').val()是email的text input的值
         messages会被插件以<label class='error'></label>标签包裹放入html，所以可以提前设置css
         其他rules还有url（前面是http://或者https：//） ，date，dateISO，number（所有数字），digits（自然数）等
+        
+        $('[name=u]').rules()                   /*返回name=u的rules对象{required: true}*/
+        $('[name=u]').rules('add',{email:true})       /*为name=u的rules添加email：true，返回对象{required: true, email: true}*/
+        $('[name=u]').rules('remove','email')         /*为name=u的rules移除email：true，返回对象{email: true}*/
+        
         <script type="text/javascript" src="https://www.imooc.com/data/jquery.validate.js"></script>
-        <script type="text/javascript" src="https://www.imooc.com/data/jquery.validate.messages_cn.js"></script>
-       
+        <script type="text/javascript" src="https://www.imooc.com/data/jquery.validate.messages_cn.js"></script>      
         <script type="text/javascript">
         $('#frmV').validate({
             debug:true,
