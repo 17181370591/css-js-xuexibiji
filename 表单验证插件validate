@@ -78,8 +78,23 @@
                 else if(n=='email2'){
                     $('.tip2').append(e)
                     
-                }
-                
+                }               
             }
         })</script>
         
+==================================================
+           var v;
+           $(function(){
+                      v= $('#frmV').validate({
+                      ***************************************})
+           })
+这里v是一个validate对象，v.form表示填写是否有效，貌似相当于$('form').valid()，
+v.resetForm()重置表格，不知道有什么用，
+v.numberOfInvalids()表示填写错误的项数，不知道有什么用，
+v.element('[name=u]')表示查看该元素填写是否有效，
+v.showErrors({u:'asd',p:'ds'})可以让对应元素显示指定错误信息，不知道有什么用，
+f12里回车要按shift+enter
+
+var tem=$.validator.format('{0}好，我是{1}，今天{2}');
+alert(tem(1,2,3));
+相当于python里的format，js文件里要写在$(function(){})
