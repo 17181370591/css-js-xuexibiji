@@ -1,0 +1,85 @@
+表单验证插件——validate 
+           
+       <form id="frmV" method="get" action="#">
+            <div id="divtest">
+                <div class="title">
+                    <span class="fl">表单验证插件</span>  
+                    <span class="fr">
+                        <input id="btnSubmit" type="submit" value="提交" />
+                    </span> 
+                </div>
+                <div class="content">
+                    <span class="fl">邮箱：</span><br />
+                    <input id="email3" name="email" type="text" /><br />
+                    <span class="tip">1<br></span>
+                       <span class="f2">shouji：</span><br />
+                    <input id="email23" name="email2" type="text" /><br />
+                    <span class="tip2">2</span>
+                    <input id="e1" name="e2" type="text" /><br />
+                </div> 
+            </div>
+        </form>
+        
+        $('form').validate，rules是对各个输入框的name添加规则，errorPlacement设置错误显示在哪个地方,
+        messages自己定义报错信息。 下面是validate的插件和不设置messages时用中文报错的插件,设置debug:true点提交不会提交数据
+        
+        remote是进行异步验证，输入完直接验证（不需要点submit），url是验证的网址，内容只能是true或者false，data是提交的数据，type
+        是提交的方法，可以用f12进行测试；messages里的remote是验证失败的提示
+        
+        validate插件里的email，email2是找name，不是class和id，email的data里$('[name=email').val()是email的text input的值
+        messages会被插件以<label class='error'></label>标签包裹放入html，所以可以提前设置css
+        
+        其他rules还有url（前面是http://或者https：//） ，date，dateISO，number（所有数字），digits（自然数）等
+        
+        $('button').click(function(){alert($('form').valid()?'正确':'错误')})
+        valid（）方法用来验证表单是否全部填写正确
+        
+        $('[name=u]').rules()                   /*返回name=u的rules对象{required: true}*/
+        $('[name=u]').rules('add',{email:true})       /*为name=u的rules添加email：true，返回对象{required: true, email: true}*/
+        $('[name=u]').rules('remove','email')         /*为name=u的rules移除email：true，返回对象{email: true}*/
+        
+        <script type="text/javascript" src="https://www.imooc.com/data/jquery.validate.js"></script>
+        <script type="text/javascript" src="https://www.imooc.com/data/jquery.validate.messages_cn.js"></script>      
+        <script type="text/javascript">
+        $('#frmV').validate({
+            debug:true,
+            rules:{
+                email:{
+                    required:true,email:true,
+                    remote:{
+                    url:'1.html',type:'post',data:{
+                                now:function(){return +new Date},email:$('[name=email').val()
+                        }
+                    }
+                    
+                },email2:{
+                    required:true,rangelength:[3,6],max:1
+                    
+                },e2:{
+                    equalTo:'#email3'           /*equalTo后接选择器，如'[name=u]'，'.email123'等*/               
+                }
+                
+            },
+             messages:{
+                   email:{
+                   required:'请输入email',email:'email格式错误',remote:'ajax验证失败' 
+                },email2:{
+                    required:'请输入2b',rangelength:'3到5谢谢',max:'小鱼1'                    
+                }   ,e2:{
+                    equalTo:'两次输入不一样'                       
+                }             
+            },
+            errorPlacement:function(e,el){
+                n=el.prop('name');
+                if(n=='email'){
+                    $('.tip').append(e)
+                    
+                }
+                else if(n=='email2'){
+                    $('.tip2').append(e)
+                    
+                }
+                
+            }
+        })</script>
+        
