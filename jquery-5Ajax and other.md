@@ -191,6 +191,7 @@ type类型是post，data是 post的数据，  success 是请求 成功时调�
                        <span class="f2">shouji：</span><br />
                     <input id="email23" name="email2" type="text" /><br />
                     <span class="tip2">2</span>
+                    <input id="e1" name="e2" type="text" /><br />
                 </div> 
             </div>
         </form>
@@ -220,6 +221,8 @@ type类型是post，data是 post的数据，  success 是请求 成功时调�
                 },email2:{
                     required:true,rangelength:[3,6],max:1
                     
+                },e2:{
+                    equalTo:'#email3'           /*equalTo后接选择器，如'[name=u]'，'.email123'等*/               
                 }
                 
             },
@@ -228,7 +231,9 @@ type类型是post，data是 post的数据，  success 是请求 成功时调�
                    required:'请输入email',email:'email格式错误',remote:'ajax验证失败' 
                 },email2:{
                     required:'请输入2b',rangelength:'3到5谢谢',max:'小鱼1'                    
-                }                
+                }   ,e2:{
+                    equalTo:'两次输入不一样'                       
+                }             
             },
             errorPlacement:function(e,el){
                 n=el.prop('name');
