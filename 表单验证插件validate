@@ -69,6 +69,7 @@
                     equalTo:'两次输入不一样'                       
                 }             
             },
+            ignore:'[name=email2]',                   /*ignore表示不验证该元素*/
             errorPlacement:function(e,el){
                 n=el.prop('name');
                 if(n=='email'){
