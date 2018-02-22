@@ -111,6 +111,7 @@ depends进行条件校验，下面的代码表示$('[name=u]').is(':filled')即�
 $(function () {
     $.validator.setDefaults({debug:true})
     $('#f1').validate({
+        focusInvalid:false,                 /*是否focus到填写错误的第一个输入框，默认为true，即跳过去*/
         rules:{
             u:{required:true},
             p:{
