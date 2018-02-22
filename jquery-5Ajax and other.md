@@ -201,6 +201,7 @@ type类型是post，data是 post的数据，  success 是请求 成功时调�
         是提交的方法，可以用f12进行测试；messages里的remote是验证失败的提示
         validate插件里的email，email2是找name，不是class和id，email的data里$('[name=email').val()是email的text input的值
         messages会被插件以<label class='error'></label>标签包裹放入html，所以可以提前设置css
+        其他rules还有url（前面是http://或者https：//） ，date，dateISO，number（所有数字），digits（自然数）等
         <script type="text/javascript" src="https://www.imooc.com/data/jquery.validate.js"></script>
         <script type="text/javascript" src="https://www.imooc.com/data/jquery.validate.messages_cn.js"></script>
        
