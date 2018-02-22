@@ -38,5 +38,12 @@ inherit：规定应从父元素继承 box-sizing 属性的值。
      
 8,$(document).ready(function(){})可以简写成$(function(){});
 
-
+9,jquery关于transform的动画：
+  方法1：.css（）
+  方法2：.toggleClass('ss')
+  都是提前设置好transition里的时间
+      $(document).click(function () {
+        $(':submit').css({'transform':'rotate(33deg)'});setTimeout("$(':submit').val(' f f')",2000)   /*方法1*/
+        $(':submit').toggleClass('ss');                           /*方法2*/
+    });
 
