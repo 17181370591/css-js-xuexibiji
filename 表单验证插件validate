@@ -97,4 +97,12 @@ f12里回车要按shift+enter
 
 var tem=$.validator.format('{0}好，我是{1}，今天{2}');
 alert(tem(1,2,3));                          /*1好，我是2，今天3*/
-相当于python里的format，js文件里要写在$(function(){})
+相当于python里的format，js文件里要写在$(function(){})+
+
+$.validator.setDefaults对所有表单进行通用设置
+$(function () {
+    $.validator.setDefaults({debug:true})
+    $('#f1').validate()
+      $('#f2').validate();
+});
+
