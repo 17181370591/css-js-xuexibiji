@@ -198,7 +198,8 @@ type类型是post，data是 post的数据，  success 是请求 成功时调�
         $('form').validate，rules是对各个输入框的name添加规则，errorPlacement设置错误显示在哪个地方,
         messages自己定义报错信息。 下面是validate的插件和不设置messages时用中文报错的插件,设置debug:true点提交不会提交数据
         remote是进行异步验证，输入完直接验证（不需要点submit），url是验证的网址，内容只能是true或者false，data是提交的数据，type
-        是提交的方法，可以用f12进行测试
+        是提交的方法，可以用f12进行测试；messages里的remote是验证失败的提示
+        messages会被插件以<label class='error'></label>标签包裹放入html，所以可以提前设置css
         <script type="text/javascript" src="https://www.imooc.com/data/jquery.validate.js"></script>
         <script type="text/javascript" src="https://www.imooc.com/data/jquery.validate.messages_cn.js"></script>
        
