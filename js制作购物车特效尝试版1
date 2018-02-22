@@ -126,6 +126,7 @@ $(function() {
         var n = parseInt($(e.target).parent().find('input').val());
         if (!n) {
             $(e.target).parent().find('input').val(1).change()
+            /*这里直接给input text修改val不会触发change时间，所以change（）触发*/
         }
         else if ($(this).index() == 2) {
             n += 1
