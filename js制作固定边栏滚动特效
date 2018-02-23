@@ -1,0 +1,117 @@
+https://www.imooc.com/learn/52
+学习了scrollTop和scroll事件，scroll事件直接绑定在$(window)上，window有scrollTop()方法，$(this).height() - $('.b').height()
+是fixed定位元素的设置top距离的负值，和如何判断scrollTop多大是修改position属性。
+attr('style')++';bottom:0'后赋值回去，可以设置元素的style。initial指最初的值
+
+
+html代码
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="11.css" type="text/css" rel="stylesheet"></link>
+    <script type="text/javascript" src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="11.js"></script>
+    <script src="11cookie.js"></script>
+    <script src="https://www.imooc.com/data/jquery.validate.js"></script>
+</head>
+<body>
+<div class="a"></div>
+<div class="b">
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">cccc</div>
+    <div class="c">aa</div>
+    <div class="c">aaa</div>
+</div>
+</body>
+</html>
+
+js代码
+方法1：
+$(function() {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() + $(this).height() >= $('.b').height()) {
+            $('.b').css({'position': 'fixed', 'bottom':0})
+        }
+        else {
+            $('.b').css({'position': 'absolute', 'bottom': 'initial'})
+        }
+    })
+})
+
+方法2：
+$(function() {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() + $(this).height() >= $('.b').height()) {
+            $('.b').css({'position': 'fixed', 'top':$(this).height() - $('.b').height()})
+        }
+        else {
+            $('.b').css({'position': 'absolute', 'top': 'initial'})   /*或者top：0*/
+        }
+    })
+})
+方法3：
+$(function() {
+    var r= $('.b').attr('style');
+    $(window).scroll(function () {     
+        if ($(this).scrollTop() + $(this).height() >= $('.b').height()) {
+            $('.b').attr('style',r+';bottom:0').css('position','fixed')
+        }
+        else {
+           $('.b').attr('style',r)
+        }
+    })
+    
+css代码
+.a{height:3300px;background:#f00;width:50%;position: absolute}
+.b{height:1100px;background:#ff0;width:40%;right:0;position: absolute}
+
+})
