@@ -1,0 +1,60 @@
+https://www.imooc.com/learn/56
+
+html代码
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="11.css" type="text/css" rel="stylesheet"></link>
+    <script type="text/javascript" src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="11.js"></script>
+    <script src="11cookie.js"></script>
+    <script src="https://www.imooc.com/data/jquery.validate.js"></script>
+</head>
+<body>
+<div class="a a1" id="a1"></div>
+<div class="a a2" id="a2"></div>
+<div class="a a3" id="a3"></div>
+<div class="a a4" id="a4"></div>
+<div class="a5">
+    <a href="#a1" style="background:#f00">a1<br></a>
+    <a href="#a2">a2<br></a>
+    <a href="#a3">a3<br></a>
+    <a href="#a4">a4<br></a>
+</div>
+
+
+</body>
+</html>
+
+js代码
+
+$(function(){
+    $('.a').click(function(){console.log($(this).offset().top)});
+    var l=new Array();
+    $('.a').each(function(i,e){
+             l.push($(this).offset().top)});
+    $(window).scroll(function(){
+        var ll=$(this).scrollTop()+$(this).height()/2;
+        for(var i=0;i<l.length;i++){
+            if(ll<=l[i+1]&&ll>=l[i]){break}
+            else if(ll>=l[l.length-1]){i=length-1;break}
+
+        }
+        $('.a5 a').css('background','transparent');
+        $('.a5 a').eq(i).css('background','#f00');
+         })
+})
+
+css代码
+
+.a{height:800px;width:800px;margin:0 auto;}
+.a1{background: #f00;}
+.a2{background: #ff0;}
+.a3{background: #f0f;}
+.a4{background: #0ff;}
+.a5{position: fixed;border:2px solid #f00;right:500px;top:300px;}
+/*.a5 a{display: inline-block;}*/
