@@ -114,3 +114,25 @@ css代码
 .menuaaa{position: fixed;top:0;}
 li{list-style-type: none}
 
+
+
+
+方法：
+$.fn.fullpage.moveTo(a,b);      /*移动到页面a的幻灯片b（a，b都是index）*/
+silentMoveto(a);            /*无动画移动到页面a*/
+moveSectionUp();        /*移动到上个页面）*/
+moveSectionDown();   
+moveSlideLeft(); 
+allowScrolling(false,'all');        /*禁止所有scroll，可以用锚点和按键移动页面*/
+allowScrolling(true,'up');          /*允许向上移动）*/
+
+
+回调函数：（放在fullpage的字典里）
+    
+afterLoad:function(e,i){
+    console.log(e,i);
+    if(i==5){
+        $(this).find('img').css('display','none');
+        $(this).find('img') .fadeIn(1111);
+        }
+}
