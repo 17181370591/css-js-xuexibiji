@@ -129,10 +129,16 @@ allowScrolling(true,'up');          /*允许向上移动）*/
 
 回调函数：（放在fullpage的字典里）
     
-afterLoad:function(e,i){
-    console.log(e,i);
-    if(i==5){
-        $(this).find('img').css('display','none');
-        $(this).find('img') .fadeIn(1111);
-        }
-}
+onLeave在离开页面时触发，参数是当前index，将要前往的页面的index，方向
+afterLoad在当前页面载入触发，参数是锚点，index
+
+        onLeave:function(index,nextindex,direction){
+                      if(index==5){$(this).find('img').css('display','none')}}
+        ,
+
+        afterLoad:function(anchorlink,index){
+            console.log(e,i);
+            if(index==5){
+                   $(this).find('img') .fadeIn(1111);
+                }
+        },
