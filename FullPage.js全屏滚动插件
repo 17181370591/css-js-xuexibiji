@@ -142,3 +142,4 @@ afterLoad在当前页面载入触发，参数是锚点，index
                    $(this).find('img') .fadeIn(1111);
                 }
         },
+ 
