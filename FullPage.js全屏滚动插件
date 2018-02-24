@@ -1,0 +1,116 @@
+https://www.imooc.com/learn/514
+https://github.com/alvarotrigo/fullPage.js
+
+html代码
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="11.css" type="text/css" rel="stylesheet"></link>
+    <script type="text/javascript" src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="11.js"></script>
+    <script src="11cookie.js"></script>
+    <script src="https://cdn.bootcss.com/fullPage.js/2.9.6/jquery.fullpage.extensions.min.js"></script>
+    <link href="https://cdn.bootcss.com/fullPage.js/2.9.6/jquery.fullpage.css" rel="stylesheet">
+
+</head>
+<body>
+<div id="fullpage">
+    <ul class="menuaaa">
+        <li data-menuanchor="page1"><a href="#page1">page1</a></li>
+        <li data-menuanchor="page2"><a href="#page2">page2</a></li>
+        <li data-menuanchor="page3"><a href="#page3">page3</a></li>
+        <li data-menuanchor="page4"><a href="#page4">page4</a></li>
+        <li data-menuanchor="page5"><a href="#p55">page5</a></li>
+    </ul>
+    <div class="section" id="p1">屏幕1</div>
+     <!--<div class="s">ssssssssssss</div>        中间不能插入其他节点，不然会出bug-->
+    <div class="section"  id="p2">
+        <div class="slide">幻灯片1</div>
+        <div class="asd slide">幻灯片2</div>
+        <div class="slide">幻灯片3</div>
+        <div class="slide">幻灯片4</div>
+        <div class="slide active">幻灯片5</div>            /*active属性表示展示当前页面*/
+
+    </div>
+    <div class="dsa section"  id="p3">屏幕3</div>
+    <div class="section"  id="p4">屏幕4</div>
+    <div class="section"  id="p5">屏幕5</div>
+</div>
+
+</body>
+</html>
+
+js代码
+$(function(){
+    $('#fullpage').fullpage({
+        sectionsColor:['#f00','#f0f','#0ff','#ff0','rgba(0,0,0,0.2)'],
+        //设置每一页的background颜色
+        controlArrows:false,
+        /*是否显示幻灯片箭头，默认为true*/
+        verticalCentered:false,
+         // 文本是否垂直居中，默认为true
+        scrollingSpeed:222,
+        //翻页速度，单位ms
+        anchors:['page1','page2','page3','page4','p55'],
+        //为不同的页面添加对应的anchors生成不同的url，可以通过url直接打开该页面，非常有用
+        loopTop:true,
+        //到顶部继续上划回到底部，默认为false
+        loopBottom:true,
+        //到底部继续上划回到顶部，默认为false
+        loopHorizontal:true,
+        //幻灯片是否循环滚动，默认为false
+        // autoscrolling:false,
+        //不知道干什么用
+        scrollBar:true,
+        //是否出现右侧滚动条
+        paddingTop:'100px',
+        paddingBottom:'200px',
+        //可以配合fixedElements制作固定定位的头部尾部
+        fixedElements:'.menuaaa',
+        //对于已经fixed元素设置是否fixed显示，非常有用
+        keyboardScrolling:false,
+        //能否用方向键对页面和幻灯片翻页，默认为true
+        touchSensitivity:5,
+        //设置移动设备的滑动液面的敏感性，默认为5，最大100，以百分比衡量，数值越大越难以滑动
+        // continuousVertical:true,
+        //貌似无效
+        // recordHistory:true,
+        //貌似无效
+        menu:'.menuaaa',    //这里用id更好
+        //是否展示menu，通过menu可以点击对应的li进入页面；对应的html代码如下，href用id或者anchors对应的值都可以
+        // <ul class="menuaaa">
+        // <li><a href="#page1">page1</a></li>
+        // <li><a href="#page2">page2</a></li>
+        // <li><a href="#page3">page3</a></li>
+        // <li><a href="#page4">page4</a></li>
+        // <li><a href="#p55">page5</a></li></ul>
+        navigation:true,
+        navigationPosition:'right',
+        navigationTooltips:['p1','p2','第三页','第4页','第5页'],
+        //是否显示小圆点导航，默认false.position设置导航栏的位置，tooltips表示鼠标移动到小圆点时是否显示提示
+        showActiveTooltip:true,
+        //是否一直显示当前页面的tooltip，默认false
+        slidesNavigation:true,
+        slidesNavPosition:'bottom',
+        //是否显示幻灯片的小圆点导航和设置位置，只有top和bottom
+
+
+
+});
+    $('.slide').each(function(){
+        var a=Math.round(255*Math.random()),b=Math.round(255*Math.random()),c=Math.round(255*Math.random());
+        $(this).css('background','rgba('+a+','+b+','+c+',0.2)')
+    })
+})
+
+
+css代码
+#fullpage{background:#fff;}
+.s{position: fixed;top:0;}
+.menuaaa{position: fixed;top:0;}
+li{list-style-type: none}
+
