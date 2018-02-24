@@ -49,4 +49,5 @@ inherit：规定应从父元素继承 box-sizing 属性的值。
 
 10.float元素寻找其上一个兄弟元素，并在左边有空间是保持高度左浮动
 
-11,Math.min(1,2,3),math.min不能作用于数组，Math.min.apply(null,new Array(1,2,3))可以
+11,Math.min(1,2,3),math.min不能作用于数组，Math.min.apply(null,new Array(1,2,3))可以。
+第一个参数是null的情况下，this指向window,调用全局函数Math.min()方法。求出最小值
