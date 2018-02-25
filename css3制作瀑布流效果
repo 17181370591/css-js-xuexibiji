@@ -7,6 +7,9 @@ html代码
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script type="text/javascript" src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <link href="11.css" type="text/css" rel="stylesheet"></link>
+    <script type="text/javascript" src="11.js"></script>
 </head>
 <body>
 <div class="wrap">
