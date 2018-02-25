@@ -51,3 +51,5 @@ inherit：规定应从父元素继承 box-sizing 属性的值。
 
 11,Math.min(1,2,3),math.min不能作用于数组，Math.min.apply(null,new Array(1,2,3))可以。
 第一个参数是null的情况下，this指向window,调用全局函数Math.min()方法。求出最小值
+
+12，两个网址协议(http)，子域名(www)，主域名(baidu)，端口号(8080)任意一个不同时，都算不同域，相互请求资源都算跨域
