@@ -33,8 +33,8 @@ inherit：规定应从父元素继承 box-sizing 属性的值。
      jQuery(document).height()则代表了整个文档的高度，可视具体情况使用.
 
     注意：当浏览器窗口大小改变时(如最大化或拉大窗口后) ，
-     jQuery(window).height() 随之改变，但是
-     jQuery(document).height()是不变的。
+     jQuery(window).height() 随之改变，但是          /*chrome下测试有误*/
+     jQuery(document).height()是不变的。               /*chrome下测试有误*/
      
 8,$(document).ready(function(){})可以简写成$(function(){});
 
