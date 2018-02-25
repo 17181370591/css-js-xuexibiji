@@ -37,7 +37,7 @@ inherit：规定应从父元素继承 box-sizing 属性的值。
      jQuery(document).height()是不变的。               /*chrome下测试有误*/
      
 8,$(document).ready(function(){})可以简写成$(function(){});
-
+ 
 9,jquery关于transform的动画：
   方法1：.css（）
   方法2：.toggleClass('ss')
