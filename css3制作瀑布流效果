@@ -1,0 +1,35 @@
+使用css3的columns可以轻松实现，其他设置到时再看
+
+html代码
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="wrap">
+</div>
+</body>
+</html>
+
+js代码
+
+$(function(){
+    var num=99;
+    for(var i=0;i<num;i++){
+        var a=Math.round(Math.random()*200+100);
+        $('<img src="1.jpg">').height(a).appendTo($('.wrap'))
+    }
+})
+
+css代码
+
+.wrap {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #f00;
+    column-width:300px;
+}
+img{width:300px;}
