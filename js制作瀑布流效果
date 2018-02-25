@@ -1,0 +1,109 @@
+https://www.imooc.com/learn/101
+
+全部采用position定位，因为可以根据index乘以百分比计算left的值，top和left的值使用outerHeight和outerWidth，因为定位需要考虑padding和
+border
+.wrap使用了min-width和相对宽度
+封装函数时发现如果函数要传的参数在$(function)内部，函数似乎也必须放在$(function)内部，不然会报错
+
+
+html代码
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="11.css" type="text/css" rel="stylesheet"></link>
+    <script type="text/javascript" src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="11.js"></script>
+    <script src="11cookie.js"></script>
+    <script src="https://cdn.bootcss.com/fullPage.js/2.9.6/jquery.fullpage.extensions.min.js"></script>
+    <link href="https://cdn.bootcss.com/fullPage.js/2.9.6/jquery.fullpage.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="wrap">
+</div>
+</body>
+</html>
+
+js代码
+
+$(function () {
+    var num=5;                                            /*自定义需要展示多少列*/
+    var f = firsth(num);                          /*生成一个num维数组，内容是对应的元素高度*/
+    $(window).load(function(){water(num)})        /*页面载入后马上加载瀑布流*/
+    $(window).scroll(function () {
+        if ($(this).scrollTop() + $(this).height() > Math.min.apply(null,f)) {    /*当高度最低的元素要看到底部时加载瀑布流*/
+            water(num)
+        }
+    })
+    
+    function water(num){
+        var per=Math.round(100/num);                  /*计算百分值，用于left属性和width属性*/
+        var data = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg'];   /*需要新载入的数据*/
+            for (var i = 0; i < data.length; i++) {
+                var h = Math.round(Math.random() * 200) + 100;      /*产生100到300的高度*/
+                var minh = getminh(f);                          /*获取高度最低的index*/
+                var abox = $('<div class="a">').height(h)       /*貌似不能用append，不然要分两列写。这里的赋值很有意思，要注意*/
+                    .css({'position': 'absolute', 'top': f[minh], 'left': minh * per + '%',
+                        'width': per + '%'}).appendTo($('.wrap'));
+                var bbox = $('<div class="b">').appendTo($(abox));      
+                $('<img src=' + data[i] + '>').appendTo($(bbox));
+                f[minh] += $(abox).outerHeight();           /*增加新元素后，对应的高度也要增加*/
+    }}
+    
+    function firsth(num) {            /*获取最初的元素的高度，这里元素只能排成一排，不然会重叠，元素是.a*/
+        var a = $('.a');
+        var f = Array();
+        if(a.length==0){                  /*如果没有元素，则返回高度全是0的数组。这样页面首次加载时会调用一次water并按从左到右的顺序排列*/
+            for (var i = 0; i <num; i++){f.push(0)};
+            return f
+        };
+        for (var i = 0; i < a.length; i++) {
+            f.push(a.eq(i).offset().top + a.eq(i).outerHeight())
+        }
+        return f;
+    }
+})
+
+function getminh(f) {               /*获取f数组里数值最小的元素的index*/
+    return f.indexOf(Math.min.apply(null, f));
+}
+
+css代码
+
+html, body {
+    height: auto
+}
+
+.wrap {
+    width: 80%;
+    margin: 0 auto;
+    /*border: 1px solid #f00;*/
+    min-width: 800px;
+    position: relative;
+}
+
+.b, .a {
+    box-sizing: border-box;
+}
+
+.a {
+    padding-left: 1em;
+    /*border: 1px solid #f0f;*/
+    position: absolute;
+}
+.b {
+    padding: 15px;
+    border: 1px solid #ff0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 5px #ff0;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
