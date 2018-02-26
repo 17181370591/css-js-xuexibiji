@@ -54,4 +54,4 @@ inherit：规定应从父元素继承 box-sizing 属性的值。
 
 12，两个网址协议(http)，子域名(www)，主域名(baidu)，端口号(8080)任意一个不同时，都算不同域，相互请求资源都算跨域
 
-13，line-height撑开div的高度，在最外边的div设置line-height，内部所有块级元素就会得到最低高度
+13，line-height撑开div的高度，在最外边的div设置line-height，内部所有块级元素就会得到最低高度，非常重要！
