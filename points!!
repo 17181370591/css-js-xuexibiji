@@ -55,3 +55,6 @@ inherit：规定应从父元素继承 box-sizing 属性的值。
 12，两个网址协议(http)，子域名(www)，主域名(baidu)，端口号(8080)任意一个不同时，都算不同域，相互请求资源都算跨域
 
 13，line-height撑开div的高度，在最外边的div设置line-height，内部所有块级元素就会得到最低高度，非常重要！
+
+14，visibility:hidden隐藏元素后，该元素的位置不会改变，不会被其他元素填充，display:none则会被填充。opacoty:0的元素依旧可以触发事件，
+例如被点击。不管用什么方法隐藏，document里依旧可以找到该元素。（这里指计算index时会被计入）
