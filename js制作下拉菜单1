@@ -1,0 +1,81 @@
+https://www.imooc.com/learn/12
+
+
+html代码
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript" src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <link href="11.css" type="text/css" rel="stylesheet"></link>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="11.js"></script>
+    <script src="11cookie.js"></script>
+    <script src="https://cdn.bootcss.com/fullPage.js/2.9.6/jquery.fullpage.extensions.min.js"></script>
+    <link href="https://cdn.bootcss.com/fullPage.js/2.9.6/jquery.fullpage.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="wrap">
+    <ul>
+        <li><a href="">首页</a></li>
+        <li class="a">
+            <a href="">&nbsp;&nbsp;课程大&nbsp;&nbsp;</a>
+            <ul>
+                <li><a href="">js</a></li>
+                <li><a href="">java</a></li>
+                <li><a href="">android</a></li>
+            </ul>
+        </li>
+        <li class="d"><a href="">学习中心</a>
+            <ul class="d1">
+                <li>bad</li>
+            </ul>
+        </li>
+        <li class="a"><a href="">经典案例厅</a>
+            <ul>
+                <li><a href="">1号<br>1号</a></li>
+                <li><a href="">j2号明白</a></li>
+                <li><a href="">android</a></li>
+            </ul>
+        </li>
+        <li class="a b"><a href="">关于我们关于我们</a>
+            <ul class="c">
+                <li><a href="">good</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+
+
+js代码
+
+$(function(){
+    $('a').click(function(e){
+        e.preventDefault()
+    })
+    $('.a').on('mouseenter mouseleave',function(e){
+        $(this).find('ul').stop().slideToggle(222);
+    })
+
+})
+
+css
+
+ul,li{margin:0;padding:0;}
+.wrap{width:80%;margin:15px auto;background:#eee;height:40px;text-align: center;line-height: 40px;}
+ul{list-style-type: none;}
+.wrap>ul>li{float:left;background: #8dad62;border-left:1px solid #fff;}
+a:link,a:visited{text-decoration: none;padding:0 30px;display: inline-block;color:#000;}
+a:hover,a:active{color:#fff;}
+li{border-top:1px solid #fff;}
+ul>li ul{display: none;}
+.b{position: relative}
+.c{position: absolute;width:100%;background: #8dad62;top:-1px;}
+.d:hover .d1{background: #8dad62;display: block;margin-top:-41px;color:#fff;}
+.d:hover a{opacity:0;}
