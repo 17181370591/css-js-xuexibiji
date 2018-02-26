@@ -1,6 +1,7 @@
 https://www.imooc.com/learn/12
 
 visibility:hidden隐藏元素后，该元素的位置不会改变，不会被其他元素填充，display:none则会被填充。此例也可以用opacity:0。
+更简单的思路：    li:hover > ul{display:block;}  无论多少级都可以
 
 html代码
 
