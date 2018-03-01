@@ -1,0 +1,40 @@
+text-left/center/right/justify
+
+有人说text-justify去掉了
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>文本对齐风格</title>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+<script>
+    var r='暂停服务天数皆为90天。违规行为累计分数在每年的十二月三十一日二十四时清零，但正在执行的违规处理不会随着累计分数清零而撤销。<hr>';
+    
+    $('body').append($('<div>').addClass('text-left').html('text-left'+r));
+    $('body').append($('<div>').addClass('text-right').html('text-right'+r));
+    $('body').append($('<div>').addClass('text-center').html('text-center'+r));
+    $('body').append($('<div>').addClass('text-justify').html('text-justify'+r));   
+    
+</script>
+</body>
+</html>  
+
+==========================================
+
+列表：
+通过给无序列表添加一个类名“.list-unstyled”,这样就可以去除默认的列表样式的风格。
+通过添加类名“.list-inline”来实现内联列表，简单点说就是把垂直列表换成水平列表，而且去掉项目符号（编号），保持水平显示，
+也可以说内联列表就是为制作水平导航而生。
+
+表格（table）：
+   .table：基础表格
+   .table-striped：斑马线表格
+   .table-bordered：带边框的表格
+   .table-hover：鼠标悬停高亮的表格
+   .table-condensed：紧凑型表格
+   .table-responsive：响应式表格。响应式表格外面要加一层div，并且table-responsive的类是加在div上
+   
+   
