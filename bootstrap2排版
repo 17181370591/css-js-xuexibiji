@@ -103,7 +103,7 @@ role="form"是form必须的属性，class="form-group"是把盒子里的标签�
    </form>
    
 表单控件大小
-input-lg和input-sm设置高度，.col-xs-5设置宽度，bts把width分成12部分，col-xs-X的X表示宽度占几个部分
+input-lg和input-sm设置高度，col-xs-X的X表示宽度占其父元素的12分之X
 
     <form role="form" class="form-horizontal">
       <div class="form-group">
