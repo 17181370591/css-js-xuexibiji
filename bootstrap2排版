@@ -132,3 +132,83 @@ input-lg和input-sm设置高度，col-xs-X的X表示宽度占其父元素的12�
         </div>
       </div> 
     </form>
+
+表单控件状态(禁用状态)
+标签设置disabled会被禁用
+在Bootstrap框架中，如果fieldset设置了disabled属性，整个域（<fieldset disabled>到</fieldset>之间的部分）
+都将处于被禁用状态。
+在 Bootstrpa 框架中，如果 fieldset 设置了disabled 属性，整个域都将处于被禁用状态，
+但是 如果 fieldset 后面紧跟着的是legend标签，那么legend 内部的 input在表面看是 颜色变成灰色的了，
+但是 并没有被禁用，还是可以进行输入的。注意 只有 fieldset后面第一个就是 legend(而不是其他的标签，比如 label) 的时候，
+才会出现 变灰但不禁用 的情况，而且只有第一个 legend 是 灰色不禁用 的状态，后面的legend 照样是 灰色禁用  的。
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>表单控件状态——禁用状态</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+<body>
+<h3>示例1</h3>
+<form role="form" class="form-horizontal">
+  <div class="form-group" disabled>
+    <div class="col-xs-6" >
+      <input class="form-control input-lg" type="text" placeholder="不是焦点状态下效果">
+    </div>
+    <div class="col-xs-6">
+      <input class="form-control input-lg" id="disabledInput" type="text" placeholder="表单已被禁用，不可输入" >
+    </div>
+  </div> 
+</form> 
+<br>
+<br>
+<br> 
+<h3>示例2</h3>   
+<form role="form">
+  <fieldset disabled>
+    <div class="form-group">
+      <label for="disabledTextInput">禁用的输入框</label>
+      <input type="text" id="disabledTextInput" class="form-control" placeholder="禁止输入">
+    </div>
+    <div class="form-group">
+      <label for="disabledSelect">禁用的下拉框</label>
+      <select id="disabledSelect" class="form-control">
+        <option>不可选择</option>
+      </select>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> 无法选择
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">提交</button>
+  </fieldset>
+</form> 
+<br>
+<br>
+<br>
+<h3>示例3</h3>
+<form role="form">
+  <fieldset disabled>
+    <legend><input type="text" class="form-control" placeholder="显然我颜色变灰了，但是我没被禁用，不信？单击试一下" /></legend>
+    <div class="form-group">
+      <label for="disabledTextInput">禁用的输入框</label>
+      <legend><input type="text" id="disabledTextInput" class="form-control" placeholder="禁止输入"></legend>
+    </div>
+    <div class="form-group">
+      <label for="disabledSelect">禁用的下拉框</label>
+      <select id="disabledSelect" class="form-control">
+        <option>不可选择</option>
+      </select>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> 无法选择
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">提交</button>
+  </fieldset>
+</form>  
+</body>
+</html>
