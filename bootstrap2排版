@@ -234,3 +234,14 @@ input-lg和input-sm设置高度，col-xs-X的X表示宽度占其父元素的12�
     <input type="text" class="form-control" id="inputError1" placeholder="错误状态">
   </div>
 </form>  
+
+块状按钮
+Bootstrap框架中提供了一个类名“btn-block”。按钮使用这个类名就可以让按钮充满整个容器，
+并且这个按钮不会有任何的padding和margin值。在实际当中，常把这种按钮称为块状按钮。
+
+<body>
+    <button class="btn btn-primary btn-lg btn-block" type="button">大型按钮.btn-lg</button>   
+    <button class="btn btn-primary col-xs-9" type="button">正常按钮</button>
+    <button class="btn btn-primary btn-sm" type="button">小型按钮.btn-sm</button>
+    <button class="btn btn-primary btn-xs" type="button">超小型按钮.btn-xs</button>   
+</body>
