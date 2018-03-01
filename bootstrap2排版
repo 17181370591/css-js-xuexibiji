@@ -37,4 +37,15 @@ text-left/center/right/justify
    .table-condensed：紧凑型表格
    .table-responsive：响应式表格。响应式表格外面要加一层div，并且table-responsive的类是加在div上
    
-   
+内联表单：在Bootstrap框架中实现这样的表单效果是轻而易举的，你只需要在<form>元素中添加类名“form-inline”即可。  
+<form class="form-inline" role="form">
+  <div class="form-group">
+    <label class="sr-onl1y" for="exampleInputEmail2">邮箱</label>
+    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="请输入你的邮箱地址">
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputPassword2">密码</label>
+    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="请输入你的邮箱密码">
+  </div>
+</form>  
+
