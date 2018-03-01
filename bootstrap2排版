@@ -212,3 +212,25 @@ input-lg和input-sm设置高度，col-xs-X的X表示宽度占其父元素的12�
 </form>  
 </body>
 </html>
+
+表单控件状态(验证状态)
+在制作表单时，不免要做表单验证。同样也需要提供验证状态样式，在Bootstrap框架中同样提供这几种效果。
+1、.has-warning:警告状态（黄色）
+2、.has-error：错误状态（红色）
+3、.has-success：成功状态（绿色）
+使用的时候只需要在form-group容器上对应添加状态类名。
+
+<form role="form">
+  <div class="has-success">
+    <label class="control-label" for="">成功状态</label>
+    <input type="text" class="form-control" id="inputSuccess1" placeholder="成功状态" >
+  </div>
+  <div class="form-group has-warning">
+    <label class="control-label" for="inputWarning1">警告状态</label>
+    <input type="text" class="form-control" id="inputWarning1" placeholder="警告状态">
+  </div>
+  <div class="form-group has-error">
+    <label class="control-label" for="inputError1">错误状态</label>
+    <input type="text" class="form-control" id="inputError1" placeholder="错误状态">
+  </div>
+</form>  
