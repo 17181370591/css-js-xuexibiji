@@ -245,3 +245,12 @@ Bootstrap框架中提供了一个类名“btn-block”。按钮使用这个类�
     <button class="btn btn-primary btn-sm" type="button">小型按钮.btn-sm</button>
     <button class="btn btn-primary btn-xs" type="button">超小型按钮.btn-xs</button>   
 </body>
+
+按钮状态——禁用状态
+
+	<button class="btn btn-primary btn-lg btn-block" type="button" disabled="disabled">通过disabled属性禁用按钮</button> 
+	<button class="btn btn-primary btn-block disabled" type="button">通过添加类名disabled禁用按钮</button>
+	<button class="btn btn-primary btn-sm btn-block" type="button">未禁用的按钮</button>
+	<a href="https://www.baidu.com/" class="btn btn-danger disabled">我被禁用了</a>
+	
+	
