@@ -101,4 +101,34 @@ role="form"是form必须的属性，class="form-group"是把盒子里的标签�
         <label class='checkbox-inline'><input type='checkbox'>1</label>
       </div> 
    </form>
+   
+表单控件大小
+input-lg和input-sm设置高度，.col-xs-5设置宽度，bts把width分成12部分，col-xs-X的X表示宽度占几个部分
 
+    <form role="form" class="form-horizontal">
+      <div class="form-group">
+        <div class="col-xs-4">
+          <input class="form-control input-lg" type="text" placeholder=".col-xs-4">
+
+        </div>
+        <div class="col-xs-4">
+          <input class="form-control input-lg" type="text" placeholder=".col-xs-4">
+        </div>
+        <div class="col-xs-4">
+          <input class="form-control input-lg" type="text" placeholder=".col-xs-4">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-6"><input class="form-control" type="text" placeholder=".col-xs-6"></div>
+        <div class="col-xs-6"><input class="form-control" type="text" placeholder=".col-xs-6"></div>
+
+      </div>  
+      <div class="form-group">
+        <div class="col-xs-5">
+          <input class="form-control input-sm" type="text" placeholder=".col-xs-5">
+        </div>
+        <div class="col-xs-7">
+          <input class="form-control input-sm" type="text" placeholder=".col-xs-7">
+        </div>
+      </div> 
+    </form>
