@@ -68,3 +68,37 @@ role="form"是form必须的属性，class="form-group"是把盒子里的标签�
       </select>
     </div>
     </form>
+    
+表单控件(复选框checkbox和单选择按钮radio)
+1、不管是checkbox还是radio都使用label包起来了
+2、checkbox连同label标签放置在一个名为“.checkbox”的容器内
+3、radio连同label标签放置在一个名为“.radio”的容器内
+在Bootstrap框架中，主要借助“.checkbox”和“.radio”样式，来处理复选框、单选按钮与标签的对齐方式。
+1.radio是按组来区分选择框的，“name”其实是组名，只有选择框的“name”相同才表明同组；
+2.“value”代表的是这个选择框的值，是提交服务器用的，因为服务器要识别选择框的值，所以“value”的值必须不同这样才能区分不同选择框；
+3.选择框文本直接在<input>标签后写上就行。总结一句就是"name"必须相同，"value"必须不同，文本在标签之后。
+
+    <form role="form">
+      <h3>案例1</h3>
+      <div class="checkbox">
+        <label><input type="checkbox" value="">记住密码</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" name="optionsRadios" id="optionsRadios1" value="love" checked>喜欢</label>
+      </div>
+        <div class="radio">
+        <label><input type="radio" name="optionsRadios" id="optionsRadios2" value="hate">不喜欢</label>
+      </div>
+    </form>  
+
+表单控件(复选框和单选按钮水平排列)
+1、如果checkbox需要水平排列，只需要在label标签上添加类名“checkbox-inline”
+2、如果radio需要水平排列，只需要在label标签上添加类名“radio-inline”
+
+    <form role="form">
+      <div class='form-group'>
+        <label class='checkbox-inline'><input type='checkbox'>1</label>
+        <label class='checkbox-inline'><input type='checkbox'>1</label>
+      </div> 
+   </form>
+
