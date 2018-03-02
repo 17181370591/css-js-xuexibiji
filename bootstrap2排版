@@ -339,6 +339,7 @@ dropdown-menu-right使下列菜单右对齐
 导航nav
 Bootstrap框架中制作导航条主要通过“.nav”样式。默认的“.nav”样式不提供默认的导航样式，必须附加另外一个样式才会有效，
 比如“nav-tabs”、“nav-pills”之类
+nav-pills：块状放歌；nav-tabs：线条风格；nav-stacked：竖直；
 
 	<!DOCTYPE HTML>
 	<html>
@@ -353,17 +354,17 @@ Bootstrap框架中制作导航条主要通过“.nav”样式。默认的“.nav
 		$(function(){
 		    $('li').on('click',function(e){
 			console.log($('li').index($(this)),$(this).index(),e.target);
-			$('li').removeClass('active');
-			$(this).addClass('active');
+			$('li').removeClass('active  col-md-3');
+			$(this).addClass('active  col-md-3');
 		    })
 		})
 	</script>
 	</head>
 	<body>
-	<div class="nav nav-pills nav-tabs">
+	<div class="nav nav-pills nav-tabs nav-stacked">
 		<li class="active"><a href="##">Home</a></li>
 		<li><a href="##">CSS3</a></li>
-		<li class="disabled"></liclass><a href="##">Sass</a></li>
+		<li class="disabled"><a href="##">Sass</a></li>
 		<li><a href="##">jQuery</a></li>
 		<li><a href="##" disabled>Responsive</a></li>       //这个disabled无效
 	</div>
