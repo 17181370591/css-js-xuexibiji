@@ -340,6 +340,7 @@ dropdown-menu-right使下列菜单右对齐
 Bootstrap框架中制作导航条主要通过“.nav”样式。默认的“.nav”样式不提供默认的导航样式，必须附加另外一个样式才会有效，
 比如“nav-tabs”、“nav-pills”之类
 nav-pills：块状放歌；nav-tabs：线条风格；nav-stacked：竖直；
+nav-justified：自适应布局；
 
 	<!DOCTYPE HTML>
 	<html>
@@ -371,3 +372,33 @@ nav-pills：块状放歌；nav-tabs：线条风格；nav-stacked：竖直；
 	</div>
 	</body>
 	</html>
+
+
+导航加下拉菜单（二级导航）
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>等分按钮</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="11.css">
+    <script src="http://img.mukewang.com/down/53c6484f00013d9300000000.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+    <ul  class="nav nav-tabs  nav-justify">
+        <li class="active"><a>shourye</a></li>
+        <li>
+            <a href='' class="dropdown-toggle dropdown" data-toggle="dropdown">aha<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li><a>1</a></li>
+                <li><a>2</a></li>
+                <li><a>3</a></li>
+                <li><a>4</a></li>
+            </ul>
+        </li>
+        <li><a>guanyuwomen</a></li>
+    </ul>
+</body>
+</html>
