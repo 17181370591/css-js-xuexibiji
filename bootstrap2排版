@@ -365,7 +365,7 @@ Bootstrap框架中制作导航条主要通过“.nav”样式。默认的“.nav
 		<li><a href="##">CSS3</a></li>
 		<li class="disabled"></liclass><a href="##">Sass</a></li>
 		<li><a href="##">jQuery</a></li>
-		<li><a href="##" disabled>Responsive</a></li>
+		<li><a href="##" disabled>Responsive</a></li>       //这个disabled无效
 	</div>
 	</body>
 	</html>
