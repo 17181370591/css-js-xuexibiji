@@ -363,6 +363,7 @@ nav-pills：块状放歌；nav-tabs：线条风格；nav-stacked：竖直；
 	<body>
 	<div class="nav nav-pills nav-tabs nav-stacked">
 		<li class="active"><a href="##">Home</a></li>
+		<li class="nav-divider"></li>
 		<li><a href="##">CSS3</a></li>
 		<li class="disabled"><a href="##">Sass</a></li>
 		<li><a href="##">jQuery</a></li>
