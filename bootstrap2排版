@@ -317,3 +317,20 @@ dropdown-menu-right使下列菜单右对齐
 </div> 
 </body>
 </html>
+
+按钮（等分按钮）
+等分按钮的效果在移动端上特别的实用。整个按钮组宽度是容器的100%，而按钮组里面的每个按钮平分整个容器宽度。
+例如，如果你按钮组里面有五个按钮，那么每个按钮是20%的宽度，如果有四个按钮，那么每个按钮是25%宽度，以此类推。
+等分按钮也常被称为是自适应分组按钮，其实现方法也非常的简单，只需要在按钮组“btn-group”上追加一个“btn-group-justified”类名
+
+<style>.btn{text-overflow:ellipsis;overflow:hidden;}</style>
+</head>
+<body>
+<div class="btn-wrap">
+    <div class="btn-group btn-group-justified">
+    <a class="btn btn-default" href="#">首页</a>
+    <a class="btn btn-default" href="#">产品展示</a>
+    <a class="btn btn-default" href="#">案例分析</a>
+    <a class="btn btn-default" href="#">联系我联系我联系我联系我联系我们</a>
+  </div>
+</div>
