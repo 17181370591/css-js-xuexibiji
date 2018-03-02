@@ -335,3 +335,37 @@ dropdown-menu-right使下列菜单右对齐
     <a class="btn btn-default" href="#">联系我联系我联系我联系我联系我们</a>
   </div>
 </div>
+
+导航nav
+Bootstrap框架中制作导航条主要通过“.nav”样式。默认的“.nav”样式不提供默认的导航样式，必须附加另外一个样式才会有效，
+比如“nav-tabs”、“nav-pills”之类
+
+	<!DOCTYPE HTML>
+	<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>导航(基础样式)</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="11.css">
+	<script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script>
+		$(function(){
+		    $('li').on('click',function(e){
+			console.log($('li').index($(this)),$(this).index(),e.target);
+			$('li').removeClass('active');
+			$(this).addClass('active');
+		    })
+		})
+	</script>
+	</head>
+	<body>
+	<div class="nav nav-pills nav-tabs">
+		<li class="active"><a href="##">Home</a></li>
+		<li><a href="##">CSS3</a></li>
+		<li class="disabled"></liclass><a href="##">Sass</a></li>
+		<li><a href="##">jQuery</a></li>
+		<li><a href="##" disabled>Responsive</a></li>
+	</div>
+	</body>
+	</html>
