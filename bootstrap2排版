@@ -327,7 +327,7 @@ dropdown-menu-right使下列菜单右对齐
 </head>
 <body>
 <div class="btn-wrap">
-    <div class="btn-group btn-group-justified">
+    <div class="btn-group-justified">
     <a class="btn btn-default" href="#">首页</a>
     <a class="btn btn-default" href="#">产品展示</a>
     <a class="btn btn-default" href="#">案例分析</a>
