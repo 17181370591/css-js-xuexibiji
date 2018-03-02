@@ -287,8 +287,9 @@ Bootstrap框架中提供了一个类名“btn-block”。按钮使用这个类�
 	  </div> 
 	</div> 
 
-下拉菜单放在dropdown盒子里，点击data-toggle="dropdown"按钮时这个盒子会toggle "sow"属性，
+点击data-toggle="dropdown"按钮时这个盒子会toggle "sow"属性，
 show dropdown-menu会display:block。dropdown-menu里是菜单内容，需要设置块级元素成，ul/li的格式比较好
+dropdown-menu-right使下列菜单右对齐
 
 <!DOCTYPE HTML>
 <html>
@@ -300,11 +301,11 @@ show dropdown-menu会display:block。dropdown-menu里是菜单内容，需要设
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
 </head>
 <body>
-<div class="dropdown">
+<div class="btn-group">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
     下拉菜单
   </button>
-  <ul class="dropdown-menu">
+  <ul class="dropdown-menu dropdown-menu-right">
     <li class="active"><a  href="#">下拉菜单项</a></li>
     <li><a href="#">下拉菜单项</a></li>
     <li><a href="#">下拉菜单项</a></li>
