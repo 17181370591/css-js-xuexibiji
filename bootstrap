@@ -829,3 +829,37 @@ thumbnail写在外层div里，可以包裹全部内容。外层div里的内容�
 </div>
 </body>
 </html>
+
+警示框：alert-dismissable可以关闭
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>警示框</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h2>默认警示框</h2>
+<div class="alert alert-success" >恭喜您<a href="1.jpg">操作成功！</a>123</div>
+<div class="alert alert-info" >请输入正确的密码</div>
+<div class="alert alert-warning" >您已操作失败两次，还有最后一次机会</div>
+<div class="alert alert-danger" >对不起，您输入的密码有误</div>
+
+<h2>可关闭的警示框</h2>
+<div class="alert alert-success alert-dismissable" >
+    <button class="close" type="button" data-dismiss="alert">&times;</button>
+    恭喜您操作成功！
+</div>
+
+<h2>警示框的链接</h2>
+<div class="alert alert-success" >
+    <strong>Well done!</strong>
+    You successfully read
+	<a href="#" class="alert-link">this important alert message</a>
+	.
+</div>
+</body>
+</html>
