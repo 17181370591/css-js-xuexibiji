@@ -908,3 +908,78 @@ progress-bar默认的蓝色，progress-bar-success/info/warning/danger分别是�
 </div>
 </body>
 </html>
+
+==============================================================================================================================
+媒体对象--默认媒体对象
+媒体对象一般是成组出现，而一组媒体对象常常包括以下几个部分：
+  ☑  媒体对像的容器：常使用“media”类名表示，用来容纳媒体对象的所有内容
+  ☑  媒体对像的对象：常使用“media-object”表示，就是媒体对象中的对象，常常是图片
+  ☑  媒体对象的主体：常使用“media-body”表示，就是媒体对像中的主体内容，可以是任何元素，常常是图片侧边内容
+  ☑  媒体对象的标题：常使用“media-heading”表示，就是用来描述对象的一个标题，此部分可选
+  
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>媒体对象--默认媒体对象</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+      <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="media">
+    <a class="media-left" href="#">
+    	<img class="media-object" src="http://img.mukewang.com/52e1d29d000161fe06000338-300-170.jpg" alt="...">
+  	</a>
+  	<div class="media-body">
+    	<h4 class="media-heading">系列：十天精通CSS3</h4>
+    	<div>全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</div>
+  	</div>
+</div>
+</body>
+</html>
+
+==============================================================================================================================
+媒体对象--媒体对象的嵌套
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>媒体对象--媒体对象的嵌套</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script> 
+</head>
+<body>
+<div class="media">
+    <a class="media-left" href="#">
+		<img class="media-object" src="http://a.disquscdn.com/uploads/users/3740/2069/avatar92.jpg?1406972031" alt="...">
+	</a>
+	<div class="media-body">
+		<h4 class="media-heading">我是大漠</h4>
+		<div>我是W3cplus站长大漠，我在写Bootstrap框中的媒体对象测试用例</div>
+		<div class="media">
+			<a class="media-left" href="#">
+				<img class="media-object" src="http://tp2.sinaimg.cn/3306361973/50/22875318196/0" alt="...">
+			</a>
+			<div class="media-body">
+				<h4 class="media-heading">慕课网</h4>
+				<div>大漠写的《玩转Bootstrap》系列教程即将会在慕课网上发布</div>
+				<div class="media">
+					<a class="media-left" href="#">
+						<img class="media-object" src="http://tp4.sinaimg.cn/1167075935/50/22838101204/1" alt="...">
+					</a>
+					<div class="media-body">
+						<h4 class="media-heading">W3cplus</h4>
+						<div>W3cplus站上还有很多教程....</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+
