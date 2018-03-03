@@ -1036,3 +1036,54 @@ progress-bar默认的蓝色，progress-bar-success/info/warning/danger分别是�
 </ul>
 </body>
 </html>
+
+
+==============================================================================================================================
+列表组
+列表有disabled和active属性
+列表项的class有list-group-item-success，list-group-info等
+
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>列表组</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+      <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+<style>
+    body{padding:50px;}
+</style>
+</head>
+
+<body>
+<h3>带disabled 带徽章 带链接 带active 的列表组</h3>
+<ul class="list-group">
+    <li class="list-group-item disabled">
+    	揭开CSS3的面
+	</li>
+	<li class="list-group-item list-group-item-success">
+		<a href>CSS3选择器</a><span class="badge">456</span>
+	</li>
+	<li class="list-group-item list-group-item-warning">
+		CSS3边框&nbsp;<span class="label label-danger">892</span>
+	</li>
+	<li class="list-group-item active">
+		<span class="badge">90</span>CSS3背景
+	</li>
+</ul>
+<h3>自定义列表组</h3>
+<div class="list-group">
+    <a href="##" class="list-group-item">
+    	<h4 class="list-group-item-heading">图解CSS3</h4>
+		<p class="list-group-item-text">详细讲解了选择器、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性...</p>
+	</a>
+	<a href="##" class="list-group-item">
+		<h4 class="list-group-item-heading">Sass中国</h4>
+		<p class="list-group-item-text">致力于为中国开发者提供最全面，最具影响力，最前沿的Sass相关技术与教程...</p>
+	</a>
+</div>
+</body>
+</html>
