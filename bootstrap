@@ -680,3 +680,29 @@ previous左浮动，next右浮动
 </ul>
 </body>
 </html>
+
+标签:vartical-align：super可以使标签处于右上角
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>基本导航条</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<p>标签<span class="label label-danger" style="vertical-align:super;display:inline-block;">pp</span></p>
+<p>标签<span class="label label-warning" style="vertical-align:super;;">pp</span></p>
+
+<span class="label label-default">默认标签</span>
+<span class="label label-primary">主要标签</span>
+<span class="label label-success">成功标签</span>
+<span class="label label-info">信息标签</span>
+<span class="label label-warning">警告标签</span>
+<span class="label label-danger">错误标签</span>
+</body>
+</html>
