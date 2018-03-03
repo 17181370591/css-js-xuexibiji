@@ -993,3 +993,46 @@ progress-bar默认的蓝色，progress-bar-success/info/warning/danger分别是�
 </body>
 </html>
 
+==============================================================================================================================
+媒体对象--媒体对象列表
+这里ul的class  ：  .media-list {padding-left: 0;list-style: none;}
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>媒体对象--媒体对象列表</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<ul class="media-list">
+    <li class="media">
+        <a class='media-object media-left'>
+            <img alt='1.jpg' src='http://a.disquscdn.com/uploads/users/3740/2069/avatar92.jpg?1406972031'></a>
+        <div class='media-body'>
+            <div class='media-heading'>原理分析</div>
+            <p>媒体对象列表，在样式上也并没有做过多的特殊处理，只是把列表的左间距置０以及去掉了项目列表符号：</p>
+        </div>
+    </li>
+        <li class="media">
+        <a class='media-object media-left'>
+            <img alt='1.jpg' src='http://tp2.sinaimg.cn/3306361973/50/22875318196/0'></a>
+        <div class='media-body'>
+            <div class='media-heading'>原理分析</div>
+            <p>媒体对象列表，在样式上也并没有做过多的特殊处理，只是把列表的左间距置０以及去掉了项目列表符号：</p>
+        </div>
+    </li>
+        <li class="media">
+        <a class='media-object media-left'>
+            <img alt='1.jpg' src='http://tp4.sinaimg.cn/1167075935/50/22838101204/1'></a>
+        <div class='media-body'>
+            <div class='media-heading'>原理分析</div>
+            <p>媒体对象列表，在样式上也并没有做过多的特殊处理，只是把列表的左间距置０以及去掉了项目列表符号：</p>
+        </div>
+    </li>
+</ul>
+</body>
+</html>
