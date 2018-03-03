@@ -831,6 +831,11 @@ thumbnail写在外层div里，可以包裹全部内容。外层div里的内容�
 </html>
 
 警示框：alert-dismissable可以关闭
+使用方法：只需要在默认的警示框里面添加一个关闭按钮。然后进行三个步骤：
+  1、需要在基本警示框“alert”的基础上添加“alert-dismissable”样式。
+  2、在button标签中加入class="close"类，实现警示框关闭按钮的样式。
+  3、要确保关闭按钮元素上设置了自定义属性：“data-dismiss="alert"”（因为可关闭警示框需要借助于Javascript来检测该属性，从而控制警示框的关闭）。
+alert-dismissable不加也有效，close类是改变关闭按钮样式，不加也有效但样式有问题，data-dismiss=alert必须要
 
 <!DOCTYPE HTML>
 <html>
