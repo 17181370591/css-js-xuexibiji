@@ -754,6 +754,8 @@ previous左浮动，next右浮动
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>缩略图</title>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 <h1>简单的缩略图</h1>
@@ -781,9 +783,47 @@ previous左浮动，next右浮动
 		</div>
 	</div>
 </div>
-<!--下面是任务部分-->
+</body>
+</html>
 
+缩略图（二）
+thumbnail写在外层div里，可以包裹全部内容。外层div里的内容如果高度不一样，float的时候会出现bug
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>缩略图</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1>简单的缩略图</h1>
+<div class="container">
+    <div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 thumbnail">
+			<a href="#" >
+				<img alt="100%x180" src="http://img.mukewang.com/5434eba100014fe906000338.png" style="height: 180px; width: 100%; display: block;" >
+			</a><div class="caption">&nbsp;<hr>&nbsp;<hr>&nbsp;</div>
+
+		</div>
+	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 thumbnail">
+			<a href="#">
+				<img alt="100%x180" src="http://img.mukewang.com/5434eba100014fe906000338.png" style="height: 180px; width: 100%; display: block;">
+			</a><div class="caption">11<hr>11<hr>11</div>
+		</div>
+	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 thumbnail">
+			<a href="#" >
+				<img alt="100%x180" src="http://img.mukewang.com/5434eba100014fe906000338.png" style="height: 180px; width: 100%; display: block;">
+	</a><div class="caption">11<hr> &nbsp;<hr>&nbsp;</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 thumbnail">
+			<a href="#" >
+				<img alt="100%x180" src="http://img.mukewang.com/5434eba100014fe906000338.png" style="height: 180px; width: 100%; display: block;">
+	</a><div class="caption">&nbsp;<hr>&nbsp;<hr>11</div>
+		</div>
+	</div>
+</div>
 </body>
 </html>
