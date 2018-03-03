@@ -421,6 +421,14 @@ Bootstrap实现面包屑的方式也很简单，只需要在ul上添加类名bre
 第一步：首先在制作导航的列表(<ul class=”nav”>)基础上添加类名“navbar-nav”
 第二步：在列表外部添加一个容器（div），并且使用类名“navbar”和“navbar-default”
 
+nav navbar-default默认导航条 nav-inverse反色导航条
+navbar-fixed-top/bottom固定导航条
+nav navbar-nav 导航条中的导航链接
+navbar-form 导航表单
+navbar-left左对齐
+navbar-right右对齐
+
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -616,3 +624,4 @@ Bootstrap实现面包屑的方式也很简单，只需要在ul上添加类名bre
 </div>
 </body>
 </html>
+
