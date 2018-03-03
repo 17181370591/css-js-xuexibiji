@@ -951,6 +951,7 @@ progress-bar默认的蓝色，progress-bar-success/info/warning/danger分别是�
 <link rel="stylesheet" href="css/bootstrap.min.css">
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script> 
+  <style>.media{border:1px solid #f00;}</style>
 </head>
 <body>
 <div class="media">
@@ -976,6 +977,15 @@ progress-bar默认的蓝色，progress-bar-success/info/warning/danger分别是�
 						<div>W3cplus站上还有很多教程....</div>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="media">
+			<a class="media-left" href="#">
+			    <img class="media-object" src="http://tp4.sinaimg.cn/1167075935/50/22838101204/1" alt="...">
+			</a>
+			<div class="media-body">
+			    <h4 class="media-heading">W3cplus</h4>
+			    <div>W3cplus站上还有很多教程....</div>
 			</div>
 		</div>
 	</div>
