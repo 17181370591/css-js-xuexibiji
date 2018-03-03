@@ -852,19 +852,42 @@ alert-dismissable不加也有效，close类是改变关闭按钮样式，不加�
 <div class="alert alert-info" >请输入正确的密码</div>
 <div class="alert alert-warning" >您已操作失败两次，还有最后一次机会</div>
 <div class="alert alert-danger" >对不起，您输入的密码有误</div>
-
 <h2>可关闭的警示框</h2>
 <div class="alert alert-success alert-dismissable" >
     <button class="close" type="button" data-dismiss="alert">&times;</button>
     恭喜您操作成功！
 </div>
-
 <h2>警示框的链接</h2>
 <div class="alert alert-success" >
     <strong>Well done!</strong>
     You successfully read
-	<a href="#" class="alert-link">this important alert message</a>
-	.
+	<a href="#" class="alert-link">this important alert message</a>	.
+</div>
+</body>
+</html>
+
+进度条
+progress-bar默认的蓝色，progress-bar-success/info/warning/danger分别是绿蓝黄红，progress-bar-striped是条纹
+状，progress-bar-striped active是动态条纹状，data-dismiss="alert"可以删除该标签
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>进度条--基本样式</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h2>层叠条纹进度条</h2>
+<div class="progress">
+	<div class="progress-bar"  style="width:20%"></div>
+	<div class="progress-bar progress-bar-success" style="width:22%"></div>
+	<div class="progress-bar progress-bar-info progress-bar-striped" style="width:18%"></div>
+	<div class="progress-bar progress-bar-warning" style="width:17%"></div>
+	<div class="progress-bar progress-bar-danger progress-bar-striped active" style="width:18%"></div>
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
 </div>
 </body>
 </html>
