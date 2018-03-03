@@ -788,6 +788,8 @@ previous左浮动，next右浮动
 
 缩略图（二）
 thumbnail写在外层div里，可以包裹全部内容。外层div里的内容如果高度不一样，float的时候会出现bug
+.caption的作用如下
+.thumbnail .caption {padding: 9px;color: #333;}
 
 <!DOCTYPE HTML>
 <html>
