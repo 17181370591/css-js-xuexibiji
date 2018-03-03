@@ -706,3 +706,37 @@ previous左浮动，next右浮动
 <span class="label label-danger">错误标签</span>
 </body>
 </html>
+
+
+徽章：像标签一样，使用span标签来制作，然后为他加入badge类：
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>徽章</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<ul class="nav nav-pills">
+  <li class="active"><a href="#">Home <span class="badge">42</span></a></li>
+  <li><a href="#">Profile<span class="badge"  style="vertical-align:super">0</span></a></li>
+  <li><a href="#">Messages <span class="badge"></span></a></li>
+</ul><hr>
+<ul class="nav nav-pills nav-stacked" style="max-width: 260px;">
+      <li class="active"><a href="#"><span class="badge pull-right">42</span>Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#"><span class="badge pull-right">3</span>Messages</a></li>
+</ul>
+<br />
+<!--按钮勋章-->
+<button class="btn btn-primary" type="button">
+      Messages <span class="badge">4</span>
+</button>
+
+
+</body>
+</html>
