@@ -1062,8 +1062,8 @@ progress-bar默认的蓝色，progress-bar-success/info/warning/danger分别是�
 <body>
 <h3>带disabled 带徽章 带链接 带active 的列表组</h3>
 <ul class="list-group">
-    <li class="list-group-item disabled">
-    	揭开CSS3的面
+    	<li class="list-group-item disabled">
+    		揭开CSS3的面
 	</li>
 	<li class="list-group-item list-group-item-success">
 		<a href>CSS3选择器</a><span class="badge">456</span>
@@ -1077,8 +1077,8 @@ progress-bar默认的蓝色，progress-bar-success/info/warning/danger分别是�
 </ul>
 <h3>自定义列表组</h3>
 <div class="list-group">
-    <a href="##" class="list-group-item">
-    	<h4 class="list-group-item-heading">图解CSS3</h4>
+   	<a href="##" class="list-group-item">
+    		<h4 class="list-group-item-heading">图解CSS3</h4>
 		<p class="list-group-item-text">详细讲解了选择器、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性...</p>
 	</a>
 	<a href="##" class="list-group-item">
