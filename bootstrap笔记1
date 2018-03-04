@@ -121,12 +121,14 @@ class="form-group"是把盒子里的标签与外边部分间隔空间，class="f
 ==============================================================================================================================
 表单控件大小
 input-lg和input-sm设置高度，col-xs-X的X表示宽度占其父元素的12分之X
+.well：Bootstrap 有一个well属性,它能是你创建的列有一种视觉深度的层次感。
 
     <form role="form" class="form-horizontal">
       <div class="form-group">
         <div class="col-xs-4">
-          <input class="form-control input-lg" type="text" placeholder=".col-xs-4">
-
+	  <div class='well'>
+              <input class="form-control input-lg" type="text" placeholder=".col-xs-4">
+	  </div>
         </div>
         <div class="col-xs-4">
           <input class="form-control input-lg" type="text" placeholder=".col-xs-4">
