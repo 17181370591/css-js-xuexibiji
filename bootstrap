@@ -1199,6 +1199,7 @@ Bootstrap框架中的模态弹出框，分别运用了“modal”、“modal-dia
 
 ==============================================================================================================================
 带透明的黑色蒙层的动画alert模态弹出框
+注意：<div class="modal fade" id="mymodal">一行里，.fade添加动画效果，去掉.fade则是普通弹出
 
 <!DOCTYPE html>
 <html>
@@ -1210,8 +1211,8 @@ Bootstrap框架中的模态弹出框，分别运用了“modal”、“modal-dia
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-<button class="btn btn-primary" data-toggle='modal' data-target='#modal' type="button">点击我</button>
-<div class="modal" id="mymodal">
+<button class="btn btn-primary" data-toggle='modal' data-target='#mymodal' type="button">点击我</button>
+<div class="modal fade" id="mymodal">
     <div class="modal-dialog  modal-lg">
         <div class="modal-content">
     		<div class="modal-header">
