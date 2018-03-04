@@ -1,6 +1,7 @@
 https://www.imooc.com/learn/141
 
 text-left/center/right/justify
+给div加上text-center能让div内文字全部居中
 
 有人说text-justify去掉了
 <!DOCTYPE HTML>
