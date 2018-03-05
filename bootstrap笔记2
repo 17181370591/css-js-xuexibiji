@@ -1,0 +1,105 @@
+https://www.imooc.com/learn/262
+
+==============================================================================================================================
+滚动监控器--滚动监控器的设计
+在Web页面中实现Bootstrap滚动监控器其实非常简单，接下来我们一步一步来看滚动监控器是如何设计的。
+第一步：使用滚动监控器，首要的条件是在页面中加载对应的插件。
+
+第二步：设计一个带有下拉菜单的导航条。分别为导航条和下拉菜单项定义一个锚点链接，锚点分别为“#blog”,“html”,“#css”,“#sass”,
+“#js”,“php”,“#about”。同时为导航条定义一个id值“navbar-menu”（id名称可自由定义），方便滚动监控。
+
+第三步：设计监控对象。这里将监控对象内容都放置在一个div名为co（这个类名可自由定义）的容器中，
+其中放了多个子内容框。每个子内容框有一个标题，而且每个标题的ID值与导航菜单项中的锚点链接名相对应，
+并且注意加入“data-target="#q1"”属性（这个属性值要与前面的nav标签的id名称保持一致）
+
+第四步：为监控对象定义样式，设置容器scrollspy大小（设置高度目的是为了产生垂直滚动条）。
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>下拉菜单--属性声明式方法（一）</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <style>
+        .co {
+            height: 300px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+
+//下面是navbar的navbar-header部分，放置导航栏的标题和三横线
+<div class="navbar navbar-default" id="q1">
+    <div class="navbar-header">
+        <a href="##" class="navbar-brand">慕课网</a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#q2">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+    </div>
+    
+//下面是导航栏的其他部分
+    <div class="collapse navbar-collapse" id="q2">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#a">系列教程</a></li>
+            <li><a href="#b">名师介绍</a></li>
+            <li><a href="#c">成功案例</a></li>
+            <li><a href="#d" data-toggle="dropdown">
+                关于我们
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#d1">asd</a></li>
+                    <li><a href="#d2">asd</a></li>
+                    <li><a href="#d3">asd</a></li>
+                    <li><a href="#d4">asd</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+//下面是被监控对象
+<div class="co scrollspy-example" data-target="#q1" data-spy="scroll">
+    <p id="a">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+    </p><hr>
+    <p id="b">bbbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+    </p><hr>
+    <p id="c">cccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+    </p><hr>
+    <p id="d1">111aaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+    </p>
+    <hr>
+    <p id="d2">2222aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+    </p><hr>
+    <p id="d3">3333aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+    </p><hr>
+    <p id="d4">4444aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+    </p><hr>
+</div>
+</body>
+</html>
