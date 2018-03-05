@@ -442,6 +442,7 @@ data-dismiss="alert"的2种情况：
 </html>
 
 ==============================================================================================================================
+
 按钮插件--模拟单选择按钮
 data-toggle="buttons"把单选框样式变成button，貌似没用？
 
@@ -467,6 +468,47 @@ data-toggle="buttons"把单选框样式变成button，貌似没用？
     <label class="btn btn-primary">
         <input type="radio" name="options" id="options3">未知
     </label>
+</div>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+==============================================================================================================================
+
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title> </title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<style>
+    body{padding:10px;margin:10px;}
+    .btn.active{background: red}
+</style>
+</head>
+<body>
+<div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-primary">
+        <input type="checkbox" name="options" id="options1">电影
+    </label>
+    <label class="btn btn-primary">
+        <input type="checkbox" name="options" id="options2">音乐
+    </label>
+    <label class="btn btn-primary">
+        <input type="checkbox" name="options" id="options3">游戏
+    </label>
+    <label class="btn btn-primary">
+        <input type="checkbox" name="options" id="options4">摄影
+    </label>
+</div><hr>
+<div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-info">电影</label>
+    <label class="btn btn-danger">音乐</label>
+    <label class="btn btn-success">游戏</label>
+    <label class="btn btn-warning">摄影</label>
 </div>
 <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
