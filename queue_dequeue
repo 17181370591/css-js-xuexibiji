@@ -1,0 +1,17 @@
+cc.queue("myAnimation",FUNC)表示在cc（元素）上绑定func（函数或者数组）到data myAnimation（文本）
+cc.dequeue("myAnimation")表示运行绑定在cc的data myAnimation上的函数数组，先进先出
+
+var cc=$('.cc').eq(0);
+var FUNC=[
+    function() {$(this).animate({'width':"+=100"},aniCB);},
+    function() {$(this).animate({'margin-left':"+=100"},aniCB);},
+    function() {$(this).animate({'width':"+=100"},aniCB);},
+    function() {$(this).animate({'margin-left':"+=100"},aniCB);},
+    function() {$(this).animate({'width':"+=100"},aniCB);},
+    function(){alert("动画结束")}
+];
+var aniCB=function() {
+    cc.dequeue("myAnimation");
+}
+cc.queue("myAnimation",FUNC);
+aniCB();
