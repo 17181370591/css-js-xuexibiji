@@ -1273,6 +1273,7 @@ Bootstrap框架中的模态弹出框，分别运用了“modal”、“modal-dia
 模态弹出框--JavaScript触发时的参数设置（二）
 show.bs.modal，shown.bs.modal，hide.bs.modal，hidden.bs.modal分别在弹出框弹出前，弹出后，关闭前，关闭后调用，
 必须在.modal设置fade后，shown.bs.modal和hidden.bs.modal才会生效
+设置data-dismiss="modal"用来关闭modal
 
 
 <!DOCTYPE html>
