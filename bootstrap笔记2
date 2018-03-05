@@ -257,6 +257,85 @@ data-offset用来设置滚动条的偏移距离，有时标签和内容对不上
     });
   });
   </script>
-  
 </body>
 </html>
+
+==============================================================================================================================
+
+提示框--其他的自定义属性
+animation有什么用现在还不知道，默认值true
+data-html="true"可以将提示内容按html()的方法显示，默认值false
+data-trigger="click hover"是触发提示的方法，多种方法时用空格隔开
+data-delay='{"show":300,"hide":500}'表示 要显示提示框时延时300ms出现,不显示时延时500ms消失
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    padding: 100px;
+  }
+  .btn {
+    margin: 20px 10px 20px;
+  }
+  </style>
+</head>
+<body>
+  <h4>data-animation="true"</h4>
+  <button type="button"
+  class="btn btn-default"
+  data-toggle="tooltip"
+  data-placement="left"
+  data-original-title="data-animation='true'"
+  data-animation
+  data-animation="true">data-animation="true"</button>
+
+  <h4>data-html="true"</h4>
+  <button type="button"
+  class="btn btn-default"
+  data-toggle="tooltip"
+  data-placement="top"
+  data-original-title="<h1>data-html='true'</h1><button type=submit class=btn btn-primary>2b</button>"
+  data-html="true">data-html="true"</button>
+
+    <h4>data-html="false"</h4>
+  <button type="button"
+  class="btn btn-default"
+  data-toggle="tooltip"
+  data-placement="top"
+  data-original-title="<h1>data-html='false'</h1>"
+  data-html="false">data-html="true"</button>
+
+  <h4>data-trigger="click hover""</h4>
+  <button type="button"
+  class="btn btn-default"
+  data-toggle="tooltip"
+  data-placement="bottom"
+  data-original-title="data-trigger='clic hover"
+  data-trigger="click hover">data-trigger="click hover"</button>
+
+  <h4>data-delay="300"</h4>
+  <button type="button"
+          class="btn btn-default"
+          data-toggle="tooltip"
+          data-placement="right"
+          data-original-title="data-delay='300'"
+          data-delay='{"show":300,"hide":500}'>
+  提示框延时300ms出现,移开时延时500ms消失
+  </button>
+
+  <script>
+  $(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+
+  });
+  </script>
+
+</body>
+</html>
+
