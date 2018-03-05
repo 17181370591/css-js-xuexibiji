@@ -32,7 +32,7 @@ https://www.imooc.com/learn/262
 </head>
 <body>
 
-//下面是navbar的navbar-header部分，放置导航栏的标题和三横线
+<!--下面是navbar的navbar-header部分，放置导航栏的标题和三横线-->
 <div class="navbar navbar-default" id="q1">
     <div class="navbar-header">
         <a href="##" class="navbar-brand">慕课网</a>
@@ -42,7 +42,7 @@ https://www.imooc.com/learn/262
         </button>
     </div>
     
-//下面是导航栏的其他部分
+<!--下面是导航栏的其他部分-->
     <div class="collapse navbar-collapse" id="q2">
         <ul class="nav navbar-nav">
             <li class="active"><a href="#a">系列教程</a></li>
@@ -62,7 +62,7 @@ https://www.imooc.com/learn/262
     </div>
 </div>
 
-//下面是被监控对象
+<!--下面是被监控对象-->
 <div class="co scrollspy-example" data-target="#q1" data-spy="scroll">
     <p id="a">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
         aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
