@@ -515,3 +515,39 @@ data-toggle="buttons"把单选框样式变成button，貌似没用？
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+==============================================================================================================================
+按钮插件--JavaScript用法
+$("#mybutton").button("任意字符参数名")：替换“按钮上显示的文本值”为 data-任意字符参数名-text 的属性值。
+$("#mybutton").button("reset")：重新恢复按钮
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>按钮插件--按钮状态切换</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<style>body{padding:10px;margin:10px}</style>
+</head>
+<body>
+<div class="btn-group" data-toggle="buttons">
+    <button type="button" data-toggle="button" class="btn btn-primary" id="mybutton"  data-dd-text='正在载入ddd'
+            data-complete-text="Loading finished" data-loading-text="Loading...">确认</button>
+</div>
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script>
+ $(function() {
+     var c=0;
+     $("#mybutton").click(function () {
+         var th=$(this);
+         if(c){th.button('dd');c+=1}else{th.button('reset');c-=1}
+         // th.button('dd').delay(2222)
+         //     .queue(function () {th.button('reset');th.dequeue();})
+
+     })
+ })
+  </script>
+</body>
+</html> 
