@@ -398,3 +398,42 @@ $(function(){
 </script>
 </body>
 </html>
+
+==============================================================================================================================
+警告框--使用声明式触发警告框
+data-dismiss="alert"的2种情况：
+1，若没有设置data-target，对某标签设置data-dismiss="alert"，即可点击该标签关闭其父元素
+2，若设置data-target，则关闭target的标签，设置多个时中间用逗号隔开
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>警告框--使用声明式触发警告框</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h3>使用&times;作为关闭按</h3>
+<div class="alert alert-success" >
+    <button class="close"   type="button" data-dismiss="alert" data-target="#aa">&times;</button>
+    <p>恭喜您操作成功！</p>
+</div>
+
+<h3>使用a标签作为关闭按钮</h3>
+<div class="alert alert-warning" >
+	<h4>谨防被骗</h4>
+	<p>请确认您转账的信息是你的亲朋好友，不要轻意相信不认识的人...</p>
+	<a href="#" class="btn btn-danger" data-dismiss="alert" >关闭</a>
+</div>
+
+<h3>使用button按钮作为关闭按钮</h3>
+<div class="alert alert-warning"  id="myAlert">
+	<h4>谨防被骗</h4>
+	<p>请确认您转账的信息是你的亲朋好友，不要轻意相信不认识的人...</p>
+</div>
+<button type="button" id='me' data-target="#myAlert,#me" class="btn btn-danger" data-dismiss="alert">关闭</button>
+<div id="aa" style="border:1px solid #f00;" class="col-md-12">123</div><hr>
+</body>
+</html>
