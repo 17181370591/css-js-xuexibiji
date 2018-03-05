@@ -405,6 +405,8 @@ data-dismiss="alert"的2种情况：
 1，若没有设置data-target，对某标签设置data-dismiss="alert"，即可点击该标签关闭其父元素
 2，若设置data-target，则关闭target的标签，设置多个时中间用逗号隔开
 
+要实现data-dismiss="alert"关闭的淡入淡出效果，依旧是添加fade和in
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -422,7 +424,7 @@ data-dismiss="alert"的2种情况：
 </div>
 
 <h3>使用a标签作为关闭按钮</h3>
-<div class="alert alert-warning" >
+<div class="alert alert-warning fade in" >
 	<h4>谨防被骗</h4>
 	<p>请确认您转账的信息是你的亲朋好友，不要轻意相信不认识的人...</p>
 	<a href="#" class="btn btn-danger" data-dismiss="alert" >关闭</a>
