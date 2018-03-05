@@ -328,14 +328,21 @@ data-delay='{"show":300,"hide":500}'表示 要显示提示框时延时300ms出�
           data-delay='{"show":300,"hide":500}'>
   提示框延时300ms出现,移开时延时500ms消失
   </button>
+	
+  <button type="button" id='haha'>haha</button>
 
   <script>
   $(function(){
     $('[data-toggle="tooltip"]').tooltip();
-
+     $('#haha').tooltip({
+            title: "<button>我在顶部出现</button>",
+            placement: "right",
+            html: 'true',
+            trigger: 'click',
+            delay: {'show': 333},
+        });
   });
   </script>
-
 </body>
 </html>
 
