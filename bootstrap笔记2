@@ -105,3 +105,36 @@ data-offset用来设置滚动条的偏移距离，有时标签和内容对不上
 </div>
 </body>
 </html>
+
+==============================================================================================================================
+选项卡（Tabs）
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>选项卡（Tabs）</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <style>body{padding:10px;}</style>
+</head>
+<body>
+<!-- 选项卡组件（菜单项nav-tabs）-->
+<ul  class="nav nav-tabs">
+    <li class="active"><a href="#a1"  data-toggle="tab">公告</a></li>
+    <li><a href="#a2"  data-toggle="tab">规则</a></li>
+    <li><a href="#a3" data-toggle="tab">论坛</a></li>
+	<li><a href="#a4" data-toggle="tab">安全</a></li>
+	<li><a href="#a5"  data-toggle="tab">公益</a></li>
+</ul>
+<!-- 选项卡面板 -->
+<div class="tab-content">
+	<div class="tab-pane active" id="a1">公告内容面板</div>
+	<div class="tab-pane" id="a2">规则内容面板</div>
+	<div class="tab-pane" id="a3">论坛内容面板</div>
+	<div class="tab-pane" id="a4">安全内容面板</div>
+	<div class="tab-pane" id="a5">公益内容面板</div>
+</div>
+</body>
+</html>
