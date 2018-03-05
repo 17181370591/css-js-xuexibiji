@@ -400,6 +400,7 @@ $(function(){
 </html>
 
 ==============================================================================================================================
+
 警告框--使用声明式触发警告框
 data-dismiss="alert"的2种情况：
 1，若没有设置data-target，对某标签设置data-dismiss="alert"，即可点击该标签关闭其父元素
@@ -437,5 +438,37 @@ data-dismiss="alert"的2种情况：
 </div>
 <button type="button" id='me' data-target="#myAlert,#me" class="btn btn-danger" data-dismiss="alert">关闭</button>
 <div id="aa" style="border:1px solid #f00;" class="col-md-12">123</div><hr>
+</body>
+</html>
+
+==============================================================================================================================
+按钮插件--模拟单选择按钮
+data-toggle="buttons"把单选框样式变成button，貌似没用？
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>模拟单选择按钮</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<style>
+    body{padding:10px;margin:10px;}
+</style>
+</head>
+<body>
+<h3>示例</h3>
+<div class="btn-group"  data-toggle="buttons">
+    <label class="btn btn-primary">
+        <input type="radio" name="options" id="options1">男
+    </label>
+    <label class="btn btn-primary">
+        <input type="radio" name="options" id="options2">女
+    </label>
+    <label class="btn btn-primary">
+        <input type="radio" name="options" id="options3">未知
+    </label>
+</div>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
