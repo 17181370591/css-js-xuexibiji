@@ -346,3 +346,55 @@ data-delay='{"show":300,"hide":500}'表示 要显示提示框时延时300ms出�
 </body>
 </html>
 
+==============================================================================================================================
+弹出框--自定义结构属性
+弹出框中HTML自定义的 data 属性和提示框中的自定义的 data 属性基本相同，
+只不过在其基础上增加了一个 data-content 属性，用来设置弹出框的内容。其实两插件也有略微的不同：
+
+提示框 tooltip 的默认触发事件是 hover 和 focus，而弹出框 popover 是 click
+提示框 tooltip 只有一个内容(title)，而弹出框不仅可以设置标题（title）还可以设置内容(content)
+
+貌似系统自己会识别tooltip和popover
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>提示框和弹出框的异同</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <style>
+  body{
+    padding: 5%;
+  }
+  </style>
+</head>
+<body>
+  <h3>提示框</h3>
+  <button type="button"
+   		<!--data-toggle="tooltip"-->
+          class="btn btn-default"
+          data-placement="right"
+          data-original-title="提示框居左"
+          title="">
+          提示框居左
+  </button>
+  <h3>弹出框</h3>
+  <button type="button"
+  		<!--data-toggle="popover"-->	
+          class="btn btn-default"
+          data-placement="right"
+          title="提示框居左"
+          data-content="我是弹出框的内容">
+          猛击我吧
+  </button>
+
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script>
+$(function(){
+    $('button:eq(0)').tooltip();
+    $('button:eq(1)').popover();
+});
+</script>
+</body>
+</html>
