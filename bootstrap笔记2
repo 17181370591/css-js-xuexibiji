@@ -614,7 +614,7 @@ collapse是设置初始状态是否打开折叠区
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script>    $(function(){$('.carousel').carousel()}    </script>
+    <script>    $(function(){$('.carousel').carousel()})    </script>
   </head>
   
   <body>
@@ -632,21 +632,21 @@ collapse是设置初始状态是否打开折叠区
             <div class="item active">
                 <img src="http://images3.c-ctrip.com/rk/201407/ll580x145.jpg" alt="">
                 <div class="carousel-caption">
-                  <h4>标题一</h4>
+                  <h3>标题一</h3>
                   <p>图片一内容简介</p>
                 </div>
             </div>
             <div class="item">
                 <img src="http://images3.c-ctrip.com/dj/201408/zj/zj_580145.jpg" alt="">
                 <div class="carousel-caption">
-                   <h4>标题二</h4>
+                   <h3>标题二</h3>
                    <p>图片二内容简介</p>
                 </div>
             </div>
             <div class="item">
             	<img src="http://images3.c-ctrip.com/rk/201403/yfdd580145a.png" alt="">
                 <div class="carousel-caption">
-                  <h4>标题三</h4>
+                  <h3>标题三</h3>
                   <p>图片三内容简介</p>
                 </div>
             </div>
@@ -654,8 +654,14 @@ collapse是设置初始状态是否打开折叠区
         <!--图片容器开始-->
 	
         <!--左右箭头开始-->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		&lsaquo;
+	  	<span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+		&rsaquo;
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	</a>
         <!--左右箭头结束-->
     </div>
    </body>
