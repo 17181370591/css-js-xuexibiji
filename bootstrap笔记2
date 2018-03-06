@@ -18,6 +18,8 @@ data-offset用来设置滚动条的偏移距离，有时标签和内容对不上
 
 第四步：为监控对象定义样式，设置容器scrollspy大小（设置高度目的是为了产生垂直滚动条）。
 
+visible-md表示md屏幕下才显示，同理还有visible-xs，visible-sm，visible-lg
+
 
 <!DOCTYPE HTML>
 <html>
@@ -36,6 +38,8 @@ data-offset用来设置滚动条的偏移距离，有时标签和内容对不上
     </style>
 </head>
 <body>
+
+<button class='btn btn-lg btn-danger visible-xs'>test</button> 
 
 <!--下面是navbar的navbar-header部分，放置导航栏的标题和三横线-->
 <div class="navbar navbar-default" id="q1">
