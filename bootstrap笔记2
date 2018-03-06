@@ -560,6 +560,7 @@ $("#mybutton").button("reset")：重新恢复按钮
 下面的代码有三个panel面板，将这三个面板组合在一起，就是一个面板组合 panel-group，也就是手风琴的结构。
 <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#c1">标题一</a></h4>是触发器
 <div id="c1" class="panel-collapse collapse fade in">是折叠区
+貌似打开data-parent="#accordion"的触发器会关闭其他的触发器
 
 <!DOCTYPE HTML>
 <html>
