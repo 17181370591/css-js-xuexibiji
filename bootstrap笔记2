@@ -12,7 +12,7 @@ https://www.imooc.com/learn/262
 
 第三步：设计监控对象。这里将监控对象内容都放置在一个div名为co（这个类名可自由定义）的容器中，
 其中放了多个子内容框。每个子内容框有一个标题，而且每个标题的ID值与导航菜单项中的锚点链接名相对应，
-并且注意加入“data-target="#q1"”属性（这个属性值要与前面的nav标签的id名称保持一致），data-spy="scroll"必须加，
+并且注意加入“data-target="#q1"”属性（这个属性值要与前面的nav标签的id名称保持一致，这里也可以写#q2），data-spy="scroll"必须加，
 还要设置position: relative，不然有时标签和内容对不上。
 data-offset用来设置滚动条的偏移距离，有时标签和内容对不上用这个调节（计算时可以用scrollTop()）
 
