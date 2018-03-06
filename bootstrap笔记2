@@ -1,6 +1,7 @@
 https://www.imooc.com/learn/262
 
 ==============================================================================================================================
+
 滚动监控器--滚动监控器的设计
 在Web页面中实现Bootstrap滚动监控器其实非常简单，接下来我们一步一步来看滚动监控器是如何设计的。
 
@@ -551,3 +552,49 @@ $("#mybutton").button("reset")：重新恢复按钮
   </script>
 </body>
 </html> 
+
+==============================================================================================================================
+
+手风琴--手风琴结构
+手风琴最关键的部分，就是每个标题对应有一个内容，在Bootstrap框架中将这两个部分组合起来称为一个panel页板，
+下面的代码有三个panel面板，将这三个面板组合在一起，就是一个面板组合 panel-group，也就是手风琴的结构。
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>手风琴（Collapse）</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<style>body{padding:10px;margin:10px}</style>
+</head>
+<body>
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">标题一</a></h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse fade in">
+            <div class="panel-body">标题一对应的内容</div>
+        </div>
+    </div>
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">标题二</a></h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">标题二对应的内容</div>
+        </div>
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h4 class="panel-title"><a data-toggle="collapse"data-parent="#accordion"href="#collapseThree">标题三</a></h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">标题三对应的内容</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
