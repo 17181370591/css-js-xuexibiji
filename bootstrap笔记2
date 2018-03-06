@@ -561,6 +561,7 @@ $("#mybutton").button("reset")：重新恢复按钮
 <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#c1">标题一</a></h4>是触发器
 <div id="c1" class="panel-collapse collapse fade in">是折叠区
 打开data-parent="#haha"的触发器会关闭其他的触发器，#haha是整个手风琴的结构的容器
+collapse是设置初始状态是否打开折叠区
 
 <!DOCTYPE HTML>
 <html>
