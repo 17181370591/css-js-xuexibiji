@@ -1,0 +1,323 @@
+基于bootstrap的网页开发
+https://www.imooc.com/learn/182
+
+使用了nav，导航栏navbar（顶部固定），tab，下拉菜单dropdown，模拟框modal，轮播图carousel
+学习了tab的tab('show')方法，.row的div可以设置百分比width，col-md-X的地方可以同时设置（xs/sm/lg）进行自适应
+style里设置@media (min-width: 768px){.asd {padding: 0 20%;}}来进行自适应
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>导航条</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            var ndli = $('.navbar-fixed-top .dropdown-menu li');
+            ndli.click(function (e) {
+                e.preventDefault()
+                var i = $(this).find('a').attr('href');
+                $('.nav-tabs a[href="' + i + '"]').tab('show');
+                // 上面这句代码这里必须在监控内容对象的a标签上使用tab('show')，效果和下面注释掉的一段js代码效果一样
+                // $('.nav-tabs li').each(function(){
+                //     if($(this).find('a').attr('href'),'#'+$(this).prop('id')==i){
+                //         $(this).addClass('active');$(this).addClass('in');}
+                //         else{$(this).removeClass('active');$(this).removeClass('in');}
+                // })
+                // $('.tab-pane').each(function(){
+                //     if($(this).attr('id'),'#'+$(this).prop('id')==i){
+                //         $(this).addClass('active');$(this).addClass('in');}
+                //         else{$(this).removeClass('active');$(this).removeClass('in');}
+                // })
+            })
+        })
+    </script>
+    <style>
+        /*下面的样式是因为全部给20%padding的话，屏幕缩小后不好看*/
+        @media (min-width: 768px) {
+            .asd {
+                padding: 0 20%;
+            }
+        }
+
+        /*给图片不能覆盖区域加上黑色背景*/
+        .carousel {
+            background-color: #eee
+        }
+
+        /*原色调是淡灰色，看不清楚*/
+        .carousel-indicators li {
+            background-color: #00a2d4
+        }
+
+        /*原色调是白色，看不清楚*/
+        .carousel-indicators li.active {
+            background-color: #c9302c
+        }
+
+        /*轮播图限高300，不用!important无法设置；margin：0 auto是为了使图片水平居中*/
+        .carousel img {
+            height: 300px !important;
+            margin: 0 auto;
+        }
+
+        /*body上面的50padding是因为上方有fixed的头部，和使下方footer不贴底部，很难看需要改footer颜色*/
+        body {
+            padding: 50px 0;
+        }
+
+        /*轮播图的按钮与控制轮播图的ul的小圆点太近了*/
+        .carousel-caption > button {
+            margin-bottom: 15px;
+        }
+
+        /*sm一行显示两列的情况下竖直方向贴的太近*/
+        .aaa div {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+<!--顶部固定导航栏开始，navbar-fixed-top固定顶部，navbar-inverse反转颜色-->
+<div class="navbar navbar-fixed-top asd navbar-inverse">
+    <!--顶部固定导航栏的header部分开始-->
+    <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="sr-only">Toggle Navigation</span>
+            <!--三道杠-->
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <a href="##" class="navbar-brand">慕课网</a>
+    </div>
+    <!--顶部固定导航栏的header部分结束-->
+    <div class="collapse navbar-collapse navbar-responsive-collapse">
+        <!--nav部分-->
+        <ul class="nav navbar-nav">
+            <li><a href="##">综述</a></li>
+            <li><a href="##">简述</a></li>
+            <!--下拉列表开始-->
+            <li><a href="##" data-toggle="dropdown">
+                特点
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li class="disabled"><a href="#a1">PHP</a></li>
+                    <li class="disabled"><a href="#a2">PHP</a></li>
+                    <li><a href="#a3">CSS3</a></li>
+                    <li><a href="#a4">JavaScript</a></li>
+                    <li class="disabled"><a href="#a5">PHP</a></li>
+                </ul>
+            </li>
+            <!--下拉列表结束-->
+            <!--下句代码是模拟框（modal）的控制器-->
+            <li><a href="##" data-toggle='modal' data-target='#mymodal' type="button">关于</a></li>
+        </ul>
+    </div>
+</div>
+<!--模拟框（modal）部分开始，不放在上面的div是因为该div是绝对定位-->
+<div class="modal fade" id="mymodal">
+    <div class="modal-dialog  modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">模态弹出窗标题</h4>
+            </div>
+            <div class="modal-body">
+                <p>模态弹出窗主体内容</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模拟框结束-->
+<!--顶部固定导航栏结束-->
+<!--轮播图开始。data-ride="carousel" 属性用于标记轮播在页面加载时就开始动画播放，不知道有什么用-->
+<div class="row" style="height:300px;">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2222">
+        <!--控制轮播图的ul部分开始-->
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        </ol>
+        <!--控制轮播图的ul部分结束-->
+        <!--轮播图的图片部分开始-->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="1.jpg" style=''>
+                <div class="carousel-caption">
+                    <h3>标题二</h3>
+                    <p>图片二内容简介</p>
+                    <button class="btn btn-danger">xiazai</button>
+                </div>
+            </div>
+            <div class="item">
+                <img src="2.jpg" alt="Second slide">
+                <div class="carousel-caption">
+                    <h3>标题二</h3>
+                    <p>图片二内容简介</p>
+                    <button class="btn btn-danger">xiazai</button>
+                </div>
+            </div>
+            <div class="item">
+                <img src="3.jpg" alt="Third slide">
+                <div class="carousel-caption">
+                    <h3>标题二</h3>
+                    <p>图片二内容简介</p>
+                    <button class="btn btn-danger">xiazai</button>
+                </div>
+            </div>
+            <div class="item">
+                <img src="4.jpg" alt="Third slide">
+                <div class="carousel-caption">
+                    <h3>标题二</h3>
+                    <p>图片二内容简介</p>
+                    <button class="btn btn-danger">xiazai</button>
+                </div>
+            </div>
+            <div class="item">
+                <img src="5.jpg" alt="Third slide">
+                <div class="carousel-caption">
+                    <h3>标题二</h3>
+                    <p>图片二内容简介</p>
+                    <button class="btn btn-danger">xiazai</button>
+                </div>
+            </div>
+        </div>
+        <!--轮播图的图片部分结束-->
+        <!--左右箭头开始-->
+        <a class="left carousel-control" href="#carouselExampleIndicators" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carouselExampleIndicators" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+        <!--左右箭头结束-->
+    </div>
+</div>
+<!--轮播图结束-->
+<hr>
+<!--三个并排的图片说明部分开始-->
+<div class="container aaa" style="width:60%;">
+    <div class="row text-center">
+        <div class="col-lg-4 col-md-4  col-sm-6"><img alt="140x140" src="http://placehold.it/140x140"/>
+            <h3>响应式图片</h3>
+            <p>很多Dreamweaver的版本是不支持HTML5的，能不能在讲案例之前先讲一下你自己用的开发环境？</p>
+            <button class="btn btn-default">xiazai</button>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6"><img alt="140x140" src="http://placehold.it/140x140"/>
+            <h3>响应式图片</h3>
+            <p>很多Dreamweaver的版本是不支持HTML5的，能不能在讲案例之前先讲一下你自己用的开发环境？</p>
+            <button class="btn btn-default">xiazai</button>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6"><img alt="140x140" src="http://placehold.it/140x140"/>
+            <h3>响应式图片</h3>
+            <p>很多Dreamweaver的版本是不支持HTML5的，能不能在讲案例之前先讲一下你自己用的开发环境？</p>
+            <button class="btn btn-default">xiazai</button>
+        </div>
+    </div>
+    <hr>
+    <hr>
+</div>
+<!--三个并排的图片说明部分结束-->
+<!--tab部分开始-->
+<div class="container text-center">
+    <div class="row col-lg-8 col-lg-offset-2">
+        <!--tab的控制ul开始-->
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#a1" data-toggle="tab">公告</a></li>
+            <li><a href="#a2" data-toggle="tab">规则</a></li>
+            <li><a href="#a3" data-toggle="tab">论坛</a></li>
+            <li><a href="#a4" data-toggle="tab">安全</a></li>
+            <li><a href="#a5" data-toggle="tab">公益</a></li>
+        </ul>
+        <!--tab的控制ul结束-->
+        <!-- 选项卡面板开始 -->
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="a1">
+                <div class="row">
+                    <div class="col-lg-7 col-md-7  col-sm-7">
+                        <h3>1111111
+                            <small>aaaaaaaaaaaaa</small>
+                        </h3>
+                        很多Dreamweaver的版本是不支持HTML5的，能不能在讲案例之前先讲一下你自己用的开发环境？
+                        很多Dreamweaver的版本是不支持HTML5的，能不能在讲案例之前先讲一下你自己用的开发环境？
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-5">
+                        <img alt="140x140" src="http://placehold.it/140x140"/></div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="a2">
+                <div class="row">
+                    <div class="col-lg-7 col-md-7 col-sm-7">
+                        <h3>2222
+                            <small>aaaaaaaaaaaaa</small>
+                        </h3>
+                        很多Dreamweaver的版本是不支持HTML5的，能不能在讲案例之前先讲一下你自己用的开发环境？
+                        很多Dreamweaver的版本是不支持HTML5的，能不能在讲案例之前先讲一下你自己用的开发环境？
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-5">
+                        <img alt="140x140" src="http://placehold.it/140x140"/></div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="a3">
+                <div class="row">
+                    <div class="col-lg-7 col-md-7 col-sm-7">
+                        <h3>33333
+                            <small>aaaaaaaaaaaaa</small>
+                        </h3>
+                        很多Dreamweaver的版本是不支持HTML5的，能不能在讲案例之前先讲一下你自己用的开发环境？
+                        很多Dreamweaver的版本是不支持HTML5的，能不能在讲案例之前先讲一下你自己用的开发环境？
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-5">
+                        <img alt="140x140" src="http://placehold.it/140x140"/></div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="a4">
+                <div class="row">
+                    <div class="col-lg-7 col-md-7 col-sm-7">
+                        <h3>4444
+                            <small>aaaaaaaaaaaaa</small>
+                        </h3>
+                        很多Dreamweaver的版本是不支持HTML5的，能不能在讲案例之前先讲一下你自己用的开发环境？
+                        很多Dreamweaver的版本是不支持HTML5的，能不能在讲案例之前先讲一下你自己用的开发环境？
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-5">
+                        <img alt="140x140" src="http://placehold.it/140x140"/></div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="a5">
+                <div class="row">
+                    <div class="col-lg-7 col-md-7 col-sm-7">
+                        <h3>555
+                            <small>aaaaaaaaaaaaa</small>
+                        </h3>
+                        很多Dreamweaver的版本是不支持HTML5的，能不能在讲案例之前先讲一下你自己用的开发环境？
+                        很多Dreamweaver的版本是不支持HTML5的，能不能在讲案例之前先讲一下你自己用的开发环境？
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-5">
+                        <img alt="140x140" src="http://placehold.it/140x140"/></div>
+                </div>
+            </div>
+        </div> <!-- 选项卡面板结束-->
+    </div>
+</div>
+<!--tab部分结束-->
+<hr>
+<footer class="panel-footer">
+    <div class="container" style="width:60%;">
+        &copy; myhorse</label>
+        <a class="pull-right" href="">back</a>
+    </div>
+</footer>
+</body>
+</html>
