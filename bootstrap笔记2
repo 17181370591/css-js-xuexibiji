@@ -70,7 +70,7 @@ visible-md表示md屏幕下才显示，同理还有visible-xs，visible-sm，vis
 </div>
 
 <!--下面是被监控对象-->
-<div class="co scrollspy-example" data-target="#q1" data-spy="scroll" data-offset='0'>
+<div class="co" data-target="#q1" data-spy="scroll" data-offset='0'>
     <p id="a">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
         aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
         aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
