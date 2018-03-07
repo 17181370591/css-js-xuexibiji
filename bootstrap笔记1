@@ -312,6 +312,7 @@ Bootstrap框架中提供了一个类名“btn-block”。按钮使用这个类�
 	</div> 
 
 ==============================================================================================================================
+下拉菜单：
 点击data-toggle="dropdown"按钮时这个盒子会toggle "show"属性，
 show dropdown-menu会display:block。dropdown-menu里是菜单内容，需要设置块级元素成，ul/li的格式比较好
 dropdown-menu-right使下列菜单右对齐
