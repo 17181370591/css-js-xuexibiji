@@ -633,7 +633,7 @@ collapse是设置初始状态是否打开折叠区
   </head>
   
   <body>
-    <div id="myCarousel" class="carousel slide  data-wrap="true" data-interval="333" data-pause="hover"">
+    <div id="myCarousel" class="carousel slide"  data-wrap="true" data-interval="333" data-pause="hover"">
         <!--小圆点开始-->
         <ol class="carousel-indicators">
            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
