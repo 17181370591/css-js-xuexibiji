@@ -1,4 +1,6 @@
 animate用回调函数设置css，可以实现animate后再改变样式，但点太多次会出现bug所以没有使用
+水平竖直居中可以使用外部盒子设置position属性，fixed等都可以，内部用absolute，width:60%  left:50%  margin-left:30%;
+也可以width:60%  left:20%  right:20%;
 
 
 <!DOCTYPE html>
