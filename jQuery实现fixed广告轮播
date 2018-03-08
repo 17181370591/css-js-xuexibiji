@@ -1,0 +1,177 @@
+animate用回调函数设置css，可以实现animate后再改变样式，但点太多次会出现bug所以没有使用
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+        ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .d {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            font-size: 2rem;
+        }
+
+        hr {
+            margin: 33px 0
+        }
+
+        .c {
+            border: 1px solid #f00;
+            width: 600px;
+            height: 300px;
+            position: fixed;
+            top: 0;
+            left: 300px;
+            overflow: hidden;
+        }
+
+        .b {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        .b img {
+            width: 100%;
+            height: 100%;
+        }
+
+        ul {
+            border: 1px solid #f0f;
+            position: absolute;
+            /*left:50%; margin-left:-30%;width:60%;*/
+            left: 20%;
+            right: 20%;
+            text-align: center;
+            list-style: none;
+            font-size: 2rem
+        }
+
+        ul > li.mi {
+            border: 1px solid #000;
+            position: relative;
+            top: -2px;
+            border-radius: 1rem;
+        }
+
+        ul > li:not(.mi) {
+            margin: 0 7px;
+        }
+
+        ul > li {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            cursor: pointer
+        }
+
+        .b.active {
+            display: block;
+        }
+
+        .mi.active {
+            background-color: #ff0
+        }
+    </style>
+    <script>
+
+        $(function () {
+            var se = setInterval(cl, 3000);
+            $('.c').mouseenter(function () {
+                clearInterval(se)
+            });
+            $('.c').mouseleave(function () {
+                se = setInterval(cl, 2000)
+            });
+            $('li').click(function () {
+                var i1 = $('.mi.active').attr('da');
+                var i2;
+                i2 = $(this).hasClass('mi') ? $(this).attr('da') : parseInt($(this).attr('da')) + parseInt(i1);
+                i3 = i2 < 0 ? i2 + 5 : i2 % 5;
+                console.log('old:', i1, 'new', i2);
+                $('.mi.active').removeClass('active');
+                $('.mi[da=' + i3 + ']').addClass('active');
+                $('.b[da=' + i3 + ']').addClass('active');
+                if (i1 < i2) {
+                    $('.b[da=' + i1 + ']').stop(true, true).animate({'left': '100%'}, 1000);
+                    $('.b[da=' + i3 + ']').stop(true, true).css('left', '-100%').animate({'left': '0'}, 1000);
+                } else {
+                    $('.b[da=' + i1 + ']').stop(true, true).animate({'left': '-100%'}, 1000);
+                    $('.b[da=' + i3 + ']').stop(true, true).css('left', '100%').animate({'left': '0'}, 1000);
+                }
+            })
+
+            function cl() {
+                $('.c li:last-child').click()
+            }
+        })
+    </script>
+</head>
+<body>
+
+<div class="c">
+    <div class="b active" da="0"><p class='d'>1</p><img src="1.jpg"></div>
+    <div class="b" da="1"><p class='d'>2</p><img src="2.jpg"></div>
+    <div class="b" da="2"><p class='d'>3</p><img src="3.jpg"></div>
+    <div class="b" da="3"><p class='d'>4</p><img src="4.jpg"></div>
+    <div class="b" da="4"><p class='d'>5</p><img src="5.jpg"></div>
+    <ul>
+        <li da="-1">&lt;</li>
+        <li class="mi active" da="0"></li>
+        <li class="mi" da="1"></li>
+        <li class="mi" da="2"></li>
+        <li class="mi" da="3"></li>
+        <li class="mi" da="4"></li>
+        <li da="1">&gt;</li>
+    </ul>
+</div>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+
+</body>
+</html>
+
+
+
+
