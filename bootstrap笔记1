@@ -58,6 +58,12 @@ text-left/center/right/justify
 .table-light浅灰色，可以是表格行的背景
 .table-dark深灰色，可以是表格行的背景
 
+<div class="input-group">
+    <span class="input-group-addon">$金额</span>
+    <input type="text" class="form-control" placeholder="250.00">
+</div>
+的作用是添加一个控件组（同一行显示span和input:text）
+
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -69,6 +75,10 @@ text-left/center/right/justify
 </head>
 
 <body>
+<div class="input-group">
+    <span class="input-group-addon">$金额阿萨德</span>
+    <input type="text" class="form-control" placeholder="asd">
+</div><hr>
 <div class="table-responsive">
  <table class="table table-bordered table-hover table-striped">
          <thead>
