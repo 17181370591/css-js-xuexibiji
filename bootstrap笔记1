@@ -333,6 +333,7 @@ input-lg和input-sm设置高度，col-xs-X的X表示宽度占其父元素的12�
 1、.has-warning:警告状态（黄色）
 2、.has-error：错误状态（红色）
 3、.has-success：成功状态（绿色）
+这些在4.0版本没有了
 使用的时候只需要在form-group容器上对应添加状态类名。
 
 <form role="form">
