@@ -46,7 +46,101 @@ text-left/center/right/justify
    .table-condensed：紧凑型表格
    .table-responsive：响应式表格。响应式表格外面要加一层div，并且table-responsive的类是加在div上
    colspan可以设置几个td合并
-   
+
+通过指定意义的颜色类可以为表格的行或者单元格设置颜色：
+.table-primary蓝色: 指定这是一个重要的操作
+.table-success绿色: 指定这是一个允许执行的操作
+.table-danger红色: 指定这是可以危险的操作
+.table-info浅蓝色: 表示内容已变更
+.table-warning橘色: 表示需要注意的操作
+.table-active灰色: 用于鼠标悬停效果
+.table-secondary灰色: 表示内容不怎么重要
+.table-light浅灰色，可以是表格行的背景
+.table-dark深灰色，可以是表格行的背景
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+
+</head>
+
+<body>
+<div class="table-responsive">
+ <table class="table table-bordered table-hover table-striped">
+         <thead>
+        <tr class="table-primary">
+            <td>数字</td>
+            <td>卦名</td>
+            <td>方位</td>
+            <td>属性</td>
+        </tr></thead>
+       <tbody><tr class="table-sucess">
+            <td>1</td>
+            <td>坎</td>
+            <td>北</td>
+            <td>水</td>
+        </tr>
+        <tr class="table-danger">
+            <td>2</td>
+            <td>坤</td>
+            <td>西南</td>
+            <td></td>
+        </tr>
+        <tr class="table-warning">
+            <td>3</td>
+            <td>震</td>
+            <td>东</td>
+            <td>木</td>
+        </tr>
+        <tr class="table-info">
+            <td>4</td>
+            <td>巽</td>
+            <td>东南</td>
+            <td></td>
+        </tr>
+        <tr class="table-active">
+            <td colspan="3">5</td>
+            <td>土</td>
+        </tr>
+        <tr class="table-secondary">
+            <td>6</td>
+            <td>乾</td>
+            <td>西北</td>
+            <td></td>
+        </tr>
+        <tr class="table-dark">
+            <td>7</td>
+            <td>兑</td>
+            <td>西</td>
+            <td>金</td>
+        </tr>
+        <tr class="table-light">
+            <td>8</td>
+            <td>艮</td>
+            <td>东北</td>
+            <td></td>
+        </tr>
+        <tr class="table-active">
+            <td>9</td>
+            <td>离</td>
+            <td>南</td>
+            <td>火</td>
+        </tr>
+        <tr  class="disabled">
+            <!--<td>占位a</td><td>占位a</td><td>占位a</td>-->
+            <td>占位abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</td>
+            <td>占位abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</td>
+            <td>占位abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</td>
+            <td>占位abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</td>
+        </tr></tbody>
+    </table></div>
+</body>
+</html>
+
 ==============================================================================================================================
 内联表单：在Bootstrap框架中实现这样的表单效果是轻而易举的，你只需要在<form>元素中添加类名“form-inline”即可。  
 role="form"是给盲人用的，不用添加，
