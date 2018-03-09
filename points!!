@@ -60,6 +60,7 @@ inherit：规定应从父元素继承 box-sizing 属性的值。
 例如被点击。不管用什么方法隐藏，document里依旧可以找到该元素。（这里指计算index时会被计入）
 
 ============================================================================================================================
+
 当设计一个页面时，你在里面放置了一个div元素，你希望它占满整个窗口高度，最自然的做法，你会给这个div添加height: 100%;的css属性。
 然而，如果你要是设置宽度为width: 100%;，那这个元素的宽度会立刻扩展到窗口的整个横向宽度。高度也会这样吗？
 
@@ -74,3 +75,34 @@ inherit：规定应从父元素继承 box-sizing 属性的值。
 因为页面并没有缺省的高度值，所以，当你让一个元素的高度设定为百分比高度时，无法根据获取父元素的高度，也就无法计算自己的高度。
 换句话说，父元素的高度只是一个缺省值：height: auto;。当你要求浏览器根据这样一个缺省值来计算百分比高度时，只能得到undefined的结果。
 也就是一个null值，浏览器不会对这个值有任何的反应。 所以，使height:100%生效的根本解决办法就是父级一定要有显式定义的高度
+
+
+============================================================================================================================
+
+如果用来设置宽和高等非字体尺寸，则以百分比为单位的长度值是基于具有相同属性的父元素的长度值。
+
+何为父元素，相对定位（relative），绝对定位（absolute），浮动（float），固定（fixed）中如何找寻父元素？
+1.相对定位元素，它的父元素符合标签嵌套。
+2.绝对定位元素，它的父元素是离它最近的定位元素（绝对定位，相对定位，固定，但不包括浮动）或者视窗尺寸（没找到定位元素时）。
+3.浮动元素，它的父元素也符合标签嵌套。
+4.固定元素（特殊的绝对定位），它的父元素是视窗（浏览器默认用来展示内容的区域的尺寸，不是html 或body 的尺寸）。
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>响</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <style>body { padding: 100px;}</style>
+</head>
+<body>
+<div style="margin:0 500px;width:300px;height:300px;border:1px solid #f00;position: absolute">
+    <div style="width:200px;height:200px;border:1px solid #ff0;">
+        <div style="width:100px;height:100px;border:1px solid #f00;position: relative;right:100%;">
+        </div>
+    </div>
+</div>
+</body>
+</html>
