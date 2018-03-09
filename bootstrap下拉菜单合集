@@ -1,3 +1,7 @@
+控制下拉菜单的button 和 下拉菜单 需要放在同一个容器，容器必须设置position:relative，因为dropdown dorpdowm-menu设置了top:100%和left:0 ；
+dropup dorpdowm-menu设置了bottom:100%和top:auto ，下拉菜单（position:absolute）这些值按照最近的relative计算
+btn-group和dropdown含有position:relative
+
 单独的下拉菜单：
 
 点击data-toggle="dropdown"按钮时这个盒子会toggle "show"属性，
