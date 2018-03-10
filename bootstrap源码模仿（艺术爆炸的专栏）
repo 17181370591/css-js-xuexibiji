@@ -4,14 +4,62 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>菜单项状态</title>
     <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+    <script>
+        $(function () {
+            $('.navbar-toggle').click(function () {
+                $('.navbar-responsive-collapse').slideToggle()
+            })
+            $('a').click(function(e){
+                e.preventDefault();
+            })
+        })
+    </script>
     <style>body {
         border: 1px solid #ff0;
-        padding-bottom: 30px;
+        padding: 60px 0;
+    }.container{
+    /*padding-right:15px;*/
+    /*padding-left:15px;*/
+    /*margin-right:auto;*/
+    /*margin-left:auto*/
+        padding:0 15px;
+    margin:0 auto;
+                }
+     @media (max-width:768px){
+    .container{
+        width:100%;
+    }
+}
+@media (min-width:768px){
+    .container{
+        width:750px
     }
 
+}
+
+@media (min-width:992px){
+    .container{
+        width:970px
+    }
+    .col-md-3{width: 25%;}
+
+}
+
+@media (min-width:1200px){
+    .container{
+        width:1170px
+    }
+
+}
     ul, li {
         margin: 0;
         padding: 0;
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        transition: all .3s;
     }
 
     * {
@@ -24,9 +72,13 @@
         cursor: pointer;
         vertical-align: middle;
         color: #333;
-        background-color: #fff;
+
         border: 1px solid #ccc;
         font-size: 14px;
+    }
+
+    .btn-default {
+        background-color: #fff;
     }
 
     .btn:hover, .btn:focus {
@@ -37,15 +89,9 @@
         border: 1px solid #00a2d4;
     }
 
-    .contain {
-        border: 1px solid #f00;
-        width: 100%;
-        /*height: 30px;*/
-        padding: 0 15px;
-        margin-bottom: 15px;
-    }
 
-    .contain:after {
+
+    .container:after,.row:after {
         content: '';
         clear: both;
         display: block;
@@ -53,9 +99,7 @@
 
     .row {
         margin: 0 -15px;
-        /*height: 100%;*/
-        border: 1px solid #000;
-
+        /*border: 1px solid #000;*/
     }
 
     .col-md-6 {
@@ -68,7 +112,6 @@
 
     .col-md-3 {
         border: 1px solid #f0f;
-        width: 25%;
         height: 100%;
         float: left;
         position: relative;
@@ -91,7 +134,7 @@
     }
 
     .dropdown-menu {
-        list-style: none;
+
         border: 1px solid #ccc;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         border-radius: 4px;
@@ -113,7 +156,7 @@
     .dropdown-menu a {
         display: inline-block;
         padding: 3px 20px;
-        text-decoration: none;
+
     }
 
     .dropdown-menu li:hover {
@@ -140,12 +183,8 @@
         float: left;
     }
 
-    .nav ul {
-        list-style: none;
-    }
-
     .nav a {
-        text-decoration: none;
+
         padding: 10px 15px;
         color: #428bca;
         margin-left: 2px;
@@ -169,10 +208,6 @@
         color: #000;
     }
 
-    .nav a:hover {
-        background-color: #eee;
-    }
-
     .disabled a {
         cursor: not-allowed;
     }
@@ -183,6 +218,7 @@
 
     .nav-tabs li.disabled a {
         background-color: #999;
+        color: #fff;
     }
 
     .nav-pills a {
@@ -210,12 +246,12 @@
         color: #2a6496;
     }
 
-    .nav-stacked a:focus {
-        background-color: #eee;
+    a:focus, a:hover {
+        background-color: #eee;color:#777;
     }
 
     .breadcrumb {
-        list-style: none;
+
         padding: 8px 15px;
         text-align: center;
         background-color: #f5f5f5;
@@ -248,11 +284,6 @@
         min-height: 50px;
     }
 
-    .navbar-nav li {
-        list-style: none;
-        margin-left: -5px;
-    }
-
     .navbar-nav a {
         color: #777;
         padding: 15px;
@@ -262,18 +293,25 @@
         background-color: #e7e7e7;
     }
 
-    .navbar-brand {
-        text-decoration: none;
-        font-weight: 500;
-        color: #777;
-        font-size: 1.4rem;
-    }
-
     .navbar-nav {
         width: auto;
     }
 
+    /*.navbar-header{margin-bottom:-2px;}*/
     .navbar-header, .navbar-nav, .navbar-nav li, .navbar-nav a, .navbar form, .form-group {
+        display: inline-block;
+    }
+
+    .navbar-header {
+        height: 50px;
+    }
+
+    .navbar-brand {
+        padding: 7px 15px;
+        font-weight: 500;
+        color: #777;
+        font-size: 1.4rem;
+        height: 100%;
         display: inline-block;
     }
 
@@ -284,23 +322,156 @@
         border: 1px solid #ccc;
     }
 
-    .navbar-fixed-bottom {
+    .navbar-fixed-top {
         position: fixed;
-        bottom: 0;
+        overflow: hidden;
+        top: 0;
     }
 
+    .navbar-toggle {
+        display: none;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+
+    .navbar-toggle.btn {
+        padding: 9px 10px;
+    }
+
+    .collapse {
+        display: inline-block;
+    }
+
+    .icon-bar {
+        height: 2px;
+        background-color: #888;
+        width: 22px;
+        display: block;
+        cursor: pointer;
+        margin: 3px 0;
+        border-radius: 1px;
+    }
+
+    @media screen and (max-width: 500px) {
+        body {
+            padding: 150px 0;
+        }
+
+        .navbar-responsive-collapse {
+            display: none;
+        }
+
+        .navbar-responsive-collapse ul {
+            position: relative;
+            z-index: 2;
+            background-color: #fff;
+            top: 2px;
+        }
+
+        .navbar-collapse .navbar-nav, .navbar-collapse .navbar-nav li, .navbar-collapse .navbar-nav a {
+            display: block;
+            float: left;
+            width: 100%;
+            margin-left: 0;
+        }
+
+        .navbar-toggle {
+            display: block;
+        }
+    }
+
+    .pagination a {
+        float: left;
+        border: 1px solid #ddd;
+        color: #428bca;
+        padding: 6px 12px;
+    }
+
+    .pagination li.active a {
+        color: #fff;
+        background-color: #428bca;
+        border-color: #428bca
+    }
+
+    .pagination li.disabled a {
+        color: #777;
+    }
+
+    .pagination li:first-child a {
+        border-radius: 5px 0 0 5px
+    }
+
+    .pagination li:last-child a {
+        border-radius: 0 5px 5px 0
+    }
+            .pager a {
+        float: left;
+        border: 1px solid #ddd;
+        color: #428bca;
+        padding: 5px 14px;
+                border-radius: 15px;
+    }
+            a:focus, a:hover {
+        background-color: #eee;color:#777;
+    }
+        .label {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
+        .label-danger{background-color: #d9534f}
+        /*.label a{background-color: #fff}*/
+    /*.badge {*/
+        /*background-color: #777;color:#fff;font-size: .8rem;*/
+        /*font-weight: 700;padding:1px 6px;display: inline-block;border-radius: 55px;*/
+    /*}*/
+        .badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #777;
+  border-radius: 10px;
+}
+.thumbnail {
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: border .2s ease-in-out;
+       -o-transition: border .2s ease-in-out;
+          transition: border .2s ease-in-out;
+}
+        a.thumbnail:hover{background-color: #fff;border-color: #428bca;}
     </style>
 </head>
 <body>
 
-<div class="contain">
+<div class="container">
     <div class="row">
         <div class="col-md-6">col-md-6</div>
         <div class="col-md-3 col-md-offset-3">col-md-3 col-md-offset-3</div>
         <div class="col-md-3 col-md-pull-3">col-md-3 col-md-offset-3</div>
     </div>
 </div>
-<div class="contain">
+<div class="container">
     <div class="row">
         <div class="dropdown">
             <button class="btn" target="ul1">12356asdasdasdasd7</button>
@@ -312,7 +483,7 @@
         </div>
     </div>
 </div>
-<div class="contain" style="border:none">
+<div class="container" style="border:none">
     <div class="row" style="border:none">
         <div class="nav nav-tabs">
             <ul>
@@ -323,7 +494,7 @@
         </div>
     </div>
 </div>
-<div class="contain" style="border:none">
+<div class="container" style="border:none">
     <div class="row" style="border:none">
         <div class="nav nav-pills">
             <ul>
@@ -361,16 +532,13 @@
 </div>
 <hr>
 <ol class="breadcrumb">
-    <li><a href="#">111</a></li>
-    <li><a href="#">222</a></li>
+    <li><a href="##">111</a></li>
+    <li><a href="##">222</a></li>
     <li class="active">333</li>
 </ol>
 <hr>
-<div class="navbar navbar-default  navbar-fixed-bottom">
-    <div class="navbar-header">
-        　 <a href="##" class="navbar-brand">标题</a>
-        　
-    </div>
+<div class="navbar navbar-default  navbar-fixed-top">
+    <div class="navbar-header"><a href="##" class="navbar-brand">标题</a></div>
     <ul class="nav navbar-nav">
         <li class="active"><a href="##">首页</a></li>
         <li><a href="##">网站内容</a></li>
@@ -383,6 +551,66 @@
         </form>
     </ul>
 
+</div>
+<hr>
+<div class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <!-- .navbar-toggle样式用于toggle收缩的内容，即nav-collapse collapse样式所在元素 -->
+        <button class="navbar-toggle btn" type="button" data-toggle="collapse"
+                data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <!-- 确保无论是宽屏还是窄屏，navbar-brand都显示 -->
+        <a href="##" class="navbar-brand">Bootstrap中文</span>网</a>
+    </div>
+    <!-- 屏幕宽度小于768px时，div.navbar-responsive-collapse容器里的内容都会隐藏，显示icon-bar图标，当点击icon-bar图标时，再展开。屏幕大于768px时，默认显示。 -->
+    <div class="collapse navbar-collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="##">Bootstrap2</a></li>
+            <li><a href="##">Bootstrap3</a></li>
+            <li><a href="##">Bootstrap4</a></li>
+            <li><a href="##">网站实例</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+<div class="row">
+    <ul class="pagination">
+        <li><a href="##">&laquo;第一页</a></li>
+        <li><a href="##">2</a></li>
+        <li><a href="##">3</a></li>
+        <li class="active"><a href="##">4</a></li>
+        <li><a href="##">5</a></li>
+        <li class="disabled"><a href="##">最后一页&raquo;</a></li>
+    </ul>
+    <span class="label label-danger"><a href>标签</a></span>
+    <a href="#" style="display: inline-block">未读消息<span class="badge">3</span></a>
+</div>
+<div class="row">
+    <ul class="pager">
+        <li><a href="#">&laquo;上一页</a></li>
+        <li><a href="#">下一页&raquo;</a></li>
+    </ul>
+</div></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="5.jpg" style="height: 180px; width: 100%; display: block;" alt="">
+            </a>
+            <div class="caption">
+                <h3>Bootstrap</h3>
+                <p>Bootstrap框架是一个优秀的前端框架，快来学习吧！</p>
+                <p>
+                    <a href="##" class="btn btn-primary">按钮1</a>
+                    <a href="##" class="btn btn-info">按钮2</a>
+                </p>
+            </div>
+        </div>
+        ...
+    </div>
 </div>
 </body>
 </html>
