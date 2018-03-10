@@ -9,48 +9,59 @@
             $('.navbar-toggle').click(function () {
                 $('.navbar-responsive-collapse').slideToggle()
             })
-            $('a').click(function(e){
+            $('a').click(function (e) {
                 e.preventDefault();
+            })
+            $('[data-dismiss*=alert]').click(function () {
+                $(this).parent().css('display', 'none')
             })
         })
     </script>
     <style>body {
         border: 1px solid #ff0;
         padding: 60px 0;
-    }.container{
-    /*padding-right:15px;*/
-    /*padding-left:15px;*/
-    /*margin-right:auto;*/
-    /*margin-left:auto*/
-        padding:0 15px;
-    margin:0 auto;
-                }
-     @media (max-width:768px){
-    .container{
-        width:100%;
-    }
-}
-@media (min-width:768px){
-    .container{
-        width:750px
     }
 
-}
-
-@media (min-width:992px){
-    .container{
-        width:970px
-    }
-    .col-md-3{width: 25%;}
-
-}
-
-@media (min-width:1200px){
-    .container{
-        width:1170px
+    .container {
+        /*padding-right:15px;*/
+        /*padding-left:15px;*/
+        /*margin-right:auto;*/
+        /*margin-left:auto*/
+        padding: 0 15px;
+        margin: 0 auto;
     }
 
-}
+    @media (max-width: 768px) {
+        .container {
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            width: 750px
+        }
+
+    }
+
+    @media (min-width: 992px) {
+        .container {
+            width: 970px
+        }
+
+        .col-md-3 {
+            width: 25%;
+        }
+
+    }
+
+    @media (min-width: 1200px) {
+        .container {
+            width: 1170px
+        }
+
+    }
+
     ul, li {
         margin: 0;
         padding: 0;
@@ -89,9 +100,7 @@
         border: 1px solid #00a2d4;
     }
 
-
-
-    .container:after,.row:after {
+    .container:after, .row:after {
         content: '';
         clear: both;
         display: block;
@@ -247,7 +256,8 @@
     }
 
     a:focus, a:hover {
-        background-color: #eee;color:#777;
+        background-color: #eee;
+        color: #777;
     }
 
     .breadcrumb {
@@ -326,6 +336,7 @@
         position: fixed;
         overflow: hidden;
         top: 0;
+        z-index: 11;
     }
 
     .navbar-toggle {
@@ -405,61 +416,233 @@
     .pagination li:last-child a {
         border-radius: 0 5px 5px 0
     }
-            .pager a {
+
+    .pager a {
         float: left;
         border: 1px solid #ddd;
         color: #428bca;
         padding: 5px 14px;
-                border-radius: 15px;
+        border-radius: 15px;
     }
-            a:focus, a:hover {
-        background-color: #eee;color:#777;
+
+    a:focus, a:hover {
+        background-color: #eee;
+        color: #777;
     }
-        .label {
-  display: inline;
-  padding: .2em .6em .3em;
-  font-size: 75%;
-  font-weight: bold;
-  line-height: 1;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: .25em;
-}
-        .label-danger{background-color: #d9534f}
-        /*.label a{background-color: #fff}*/
+
+    .label {
+        display: inline;
+        padding: .2em .6em .3em;
+        font-size: 75%;
+        font-weight: bold;
+        line-height: 1;
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: .25em;
+    }
+
+    .label-danger {
+        background-color: #d9534f
+    }
+
+    /*.label a{background-color: #fff}*/
     /*.badge {*/
-        /*background-color: #777;color:#fff;font-size: .8rem;*/
-        /*font-weight: 700;padding:1px 6px;display: inline-block;border-radius: 55px;*/
+    /*background-color: #777;color:#fff;font-size: .8rem;*/
+    /*font-weight: 700;padding:1px 6px;display: inline-block;border-radius: 55px;*/
     /*}*/
-        .badge {
-  display: inline-block;
-  min-width: 10px;
-  padding: 3px 7px;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 1;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  background-color: #777;
-  border-radius: 10px;
-}
-.thumbnail {
-  display: block;
-  padding: 4px;
-  margin-bottom: 20px;
-  line-height: 1.42857143;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  -webkit-transition: border .2s ease-in-out;
-       -o-transition: border .2s ease-in-out;
-          transition: border .2s ease-in-out;
-}
-        a.thumbnail:hover{background-color: #fff;border-color: #428bca;}
+    .badge {
+        display: inline-block;
+        min-width: 10px;
+        padding: 3px 7px;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 1;
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        background-color: #777;
+        border-radius: 10px;
+    }
+
+    .thumbnail {
+        display: block;
+        padding: 4px;
+        margin-bottom: 20px;
+        line-height: 1.42857143;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        -webkit-transition: border .2s ease-in-out;
+        -o-transition: border .2s ease-in-out;
+        transition: border .2s ease-in-out;
+    }
+
+    a.thumbnail:hover {
+        background-color: #fff;
+        border-color: #428bca;
+    }
+
+    .alert {
+        padding: 15px;
+        border: 1px solid transparent;
+        margin-bottom: 20px;
+        border-radius: 4px;
+    }
+
+    .alert-success {
+        background-color: #dff0d8;
+        color: #3c763d;
+        border-color: #d6e9c6
+    }
+
+    .close {
+        float: right;
+        background: 0 0;
+        border: none;
+        font-size: 1.5rem;
+        opacity: .2;
+        line-height: 1;
+        cursor: pointer
+    }
+
+    .progress {
+        border-radius: 4px;
+        background-color: #f5f5f5;
+        height: 20px;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .progress-bar {
+        text-align: center;
+        font-size: 12px;
+        line-height: 20px;
+        float: left;
+        width: 100%;
+        height: 20px;
+        color: #fff;
+    }
+
+    .progress-bar-success {
+        background-color: #5cb85c;
+    }
+
+    .progress-bar-info {
+        background-color: #5bc0de;
+    }
+
+    .progress-bar-warning {
+        background-color: #f0ad4e;;
+    }
+
+    .progress-bar-danger {
+        background-color: #d9534f;
+    }
+
+    .progress-striped .progress-bar {
+        background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%,
+        rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-size: 40px 40px;
+    }
+
+    .progress-striped.active .progress-bar, .progress-bar.active {
+        animation: gobar 1s linear infinite;
+    }
+
+    @keyframes gobar {
+        100% {
+            background-position: 40px 0;
+        }
+    }
+
+    .media {
+        overflow: hidden
+    }
+
+    .media .pull-left {
+        float: left;
+        margin-right: 10px;
+    }
+
+    .media:first-child {
+        margin-top: 0;
+    }
+
+    .list-group {
+        padding-left: 0;
+        margin-bottom: 20px;
+    }
+
+    .list-group-item {
+        position: relative;
+        padding: 10px 15px;
+        display: block;
+        margin-bottom: -1px;
+        background-color: #fff;
+        border: 1px solid #ddd;;
+        border-radius: 4px;
+    }
+
+    .panel {
+        margin-bottom: 20px;
+        background-color: #fff;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        /*box-shadow: 0 1px 1px rgba(0,0,0,.05);*/
+    }
+
+    .panel-primary {
+        border-color: #428bca;
+    }
+
+    .panel-primary > .panel-heading {
+        color: #fff;
+        background-color: #428bca;
+        border-color: #428bca;
+    }
+
+    .panel-heading {
+        padding: 10px 15px;
+        border-bottom: 1px solid transparent;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    .panel-body {
+        padding: 15px;
+    }
+
+    .panel-footer {
+        padding: 10px 15px;
+        background-color: #f5f5f5;
+        border-top: 1px solid #ddd;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+
+    .table {
+        border-collapse: collapse;
+        width: 100%;
+        text-align: left;
+    }
+
+    .table-bordered th, .table-bordered td {
+        border: 1px solid #ddd;
+        padding: 8px 15px;
+        border-left: none;
+    }
+
+    th:last-child, td:last-child {
+        border-right: none;
+    }
+
+    .table-bordered tr:last-child td {
+        border-bottom: none;
+    }
+
     </style>
 </head>
 <body>
@@ -576,24 +759,25 @@
     </div>
 </div>
 <div class="container">
-<div class="row">
-    <ul class="pagination">
-        <li><a href="##">&laquo;第一页</a></li>
-        <li><a href="##">2</a></li>
-        <li><a href="##">3</a></li>
-        <li class="active"><a href="##">4</a></li>
-        <li><a href="##">5</a></li>
-        <li class="disabled"><a href="##">最后一页&raquo;</a></li>
-    </ul>
-    <span class="label label-danger"><a href>标签</a></span>
-    <a href="#" style="display: inline-block">未读消息<span class="badge">3</span></a>
+    <div class="row">
+        <ul class="pagination">
+            <li><a href="##">&laquo;第一页</a></li>
+            <li><a href="##">2</a></li>
+            <li><a href="##">3</a></li>
+            <li class="active"><a href="##">4</a></li>
+            <li><a href="##">5</a></li>
+            <li class="disabled"><a href="##">最后一页&raquo;</a></li>
+        </ul>
+        <span class="label label-danger"><a href>标签</a></span>
+        <a href="#" style="display: inline-block">未读消息<span class="badge">3</span></a>
+    </div>
+    <div class="row">
+        <ul class="pager">
+            <li><a href="#">&laquo;上一页</a></li>
+            <li><a href="#">下一页&raquo;</a></li>
+        </ul>
+    </div>
 </div>
-<div class="row">
-    <ul class="pager">
-        <li><a href="#">&laquo;上一页</a></li>
-        <li><a href="#">下一页&raquo;</a></li>
-    </ul>
-</div></div>
 <div class="container">
     <div class="row">
         <div class="col-md-3">
@@ -611,6 +795,101 @@
         </div>
         ...
     </div>
+</div>
+<div class="alert alert-success alert-dismissable">
+    <button class="close" type="button" data-dismiss="alert">&times;</button>
+    请输入正确的密码
+</div>
+<hr>
+<div class="progress">
+    <div class="progress-bar progress-bar-success" style="width:20%">20</div>
+    <div class="progress-bar progress-bar-info" style="width:10%">10</div>
+    <div class="progress-bar progress-bar-warning" style="width:30%">30</div>
+    <div class="progress-bar progress-bar-danger" style="width:15%">15</div>
+</div>
+<div class="progress progress-striped active">
+    <div class="progress-bar progress-bar-success" style="width:50%">50%</div>
+</div>
+<div>
+    <div class="media">
+        <a class="pull-left" href="#">
+            <img class="media-object" src="http://placehold.it/350x150" alt="...">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">系列：十天精通CSS3</h4>
+            <div>全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</div>
+        </div>
+    </div>
+    <div class="media">
+        <a class="pull-left" href="#">
+            <img class="media-object" src="http://placehold.it/350x150" alt="...">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">系列：十天精通CSS32222</h4>
+            <div>全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</div>
+        </div>
+    </div>
+</div>
+<ul class="list-group">
+    <li class="list-group-item">
+        <a href="##" style="display: block"> <span class="badge">2</span>111</a>
+    </li>
+    <li class="list-group-item">
+        <span class="badge">3</span>列表项2
+    </li>
+    <li class="list-group-item">
+        <span class="badge">4</span>列表项3
+    </li>
+</ul>
+<div class="list-group">
+    <a href="##" class="list-group-item">列表项1</a>
+    <a href="##" class="list-group-item">列表项2</a>
+    <a href="##" class="list-group-item">列表项3</a>
+</div>
+<div class="list-group">
+    <a href="##" class="list-group-item">
+        <h4 class="list-group-item-heading">标题1</h4>
+        <p class="list-group-item-text">内容1内容1内容1</p>
+    </a>
+    <a href="##" class="list-group-item">
+        <h4 class="list-group-item-heading">标题2</h4>
+        <p class="list-group-item-text">内容2内容2内容2</p>
+    </a>
+</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">这里是标题</div>
+    <div class="panel-body">
+        <p>这里是正文</p>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>表头1</th>
+            <th>表头2</th>
+            <th>表头3</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>表内容1</td>
+            <td>表内容2</td>
+            <td>表内容3</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="panel-footer">这里是尾巴</div>
+</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">这里是标题</div>
+    <div class="panel-body">
+        <p>这里是正文</p>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">列表项1</li>
+        <li class="list-group-item">列表项2</li>
+        <li class="list-group-item">列表项3</li>
+    </ul>
+    <div class="panel-footer">这里是尾巴</div>
 </div>
 </body>
 </html>
