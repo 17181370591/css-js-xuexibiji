@@ -291,6 +291,14 @@ data-delay='{"show":300,"hide":500}'表示 要显示提示框时延时300ms出�
   </style>
 </head>
 <body>
+  <button type="button"
+          class="btn btn-default"
+          data-toggle="tooltip"
+          data-placement="top"
+          data-html="true"
+          data-original-title="<span class='glyphicon glyphicon-user'></span>">
+	  <span class="glyphicon glyphicon-earphone"></span>
+  </button>
   <h4>data-animation="true"</h4>
   <button type="button"
   class="btn btn-default"
