@@ -106,3 +106,89 @@ inherit：规定应从父元素继承 box-sizing 属性的值。
 </div>
 </body>
 </html>
+
+
+============================================================================================================================
+
+jQuery事件命名空间
+
+jQuery支持事件命名空间，以方便事件管理。例如，在下面的示例中，为div元素绑定多个事件类型，然后使用命名空间进行规范，从而方便管理。
+所谓事件命名空间，就晨事件类型后面以点语法附加一个别名，以便引用事件，如”click.a”，其中”a”就是click当前事件类型的别名，即事件命名空间
+如：$(“div”).bind(“click.a”,function(){});
+$(“div”).bind(“dbclick.a”,function(){});
+$(“div”).bind(“mouseover.a”,function(){});
+$(“div”).bind(“mouseout.a”,function(){});
+若在所有绑定的事件类型后面附加命名空间，这样在删除事件时，就可以直接指定命名空间。如$(“div”).unbind(“.a”);
+同样，如果相同的事件类型设置不同的命名空间，如果仅删除某一个事件处理程序，则只需要指定命名空间即可。
+另外，在trigger()方法中，如果事件类型后面附加感叹号，则表示触发不包含命名空间的特定事件类型。
+$(“div”).bind(“click”,function(){});
+$(“div”).bind(“click.a”,function(){});
+$(“div”).trigger(“click!”)//注意click类型后面的感叹号，它将触发第一个注册
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>警示框</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            padding: 110px;
+        }
+
+    </style>
+    <script>
+        $(function () {
+            var $ul = $('ul');
+            console.log($ul.length);
+            var i = $('<i>').attr('title', 'good').text('haha').appendTo($ul);
+            $ul.wrapInner('<a></a>')
+        })
+    </script>
+</head>
+<body>
+<ul></ul>
+<ul></ul>
+<script type="text/javascript">
+    $(function () {
+        $('#btn').on("click", f1 = function () {
+            $('#test').append("<p>我的绑定函数1</p>");
+        }).on("click.a", f2 = function () {
+            $('#test').append("<p>我的绑定函数a2</p>");
+        }).on("mouseenter", f3 = function () {
+            $('#test').append("<p>我的绑定函数3</p>");
+        }).on("mouseenter.a", f4 = function () {
+            $('#test').append("<p>我的绑定函数a4</p>");
+        });
+        $('#delAll').click(function () {
+            $('#btn').trigger("click");
+        });
+        $('#delAll2').click(function () {
+            $('#btn').trigger("click.a");
+        });
+        $('#delAll3').click(function () {
+            $('#btn').off("click");
+        });
+        $('#delAll4').click(function () {
+            $('#btn').off(".a");
+        });
+
+    })
+</script>
+</head>
+<body>
+<button id="btn">点击我</button>
+<div id="test"></div>
+<button id="delAll">删除所有事件</button>
+<button id="delAll2">删除所有事件2</button>
+<button id="delAll3">删除所有事件3</button>
+<button id="delAll4">删除所有事件4</button>
+</body>
+</body>
+</html>
+
+============================================================================================================================
+
