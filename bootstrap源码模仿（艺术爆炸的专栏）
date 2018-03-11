@@ -1,3 +1,6 @@
+http://blog.csdn.net/lianjiww/article/category/6639345
+
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -12,9 +15,49 @@
             $('a').click(function (e) {
                 e.preventDefault();
             })
-            $('[data-dismiss*=alert]').click(function () {
-                $(this).parent().css('display', 'none')
+            $('[data-dismiss]:not(.fade-modal1)').click(function (e) {
+                if (!$(this).hasClass('data-target')) {
+                    console.log('.' + $(this).attr('data-dismiss'));
+                    $(this).closest('.' + $(this).attr('data-dismiss')).css('display', 'none')
+                }
             })
+            $('button[data-toggle=modal]').click(function () {
+                var s1 = $(this).attr('data-target');
+                if ($(s1).hasClass('fade')) {
+                    $(s1).stop().css({'opacity': '0', 'display': 'block', 'top': 0}).animate({
+                        'opacity': '1',
+                        'top': '30px'
+                    }, 200);
+                    var mb = $('<div>').addClass('modal-backdrop').css({'opacity': '0'})
+                        .animate({'opacity': '.7'}, 300).appendTo($('body'));
+                    $('#mymodal').click(function (e) {
+                        if (!$(e.target).closest('.modal-dialog').length || $(e.target).closest('button').attr('data-dismiss')) 
+                        {
+                            $(s1).stop().animate({'opacity': 0, 'top': 0}, 300, function () {
+                                $(this).css('display', 'none')
+                            });
+                            $('.modal-backdrop').animate({'opacity': '0'}, 400, function () {
+                                $(this).remove()
+                            });
+
+                        }
+                    })
+                }
+                else {
+                    $(s1).css('display', 'block');
+                    var mb = $('<div>').addClass('modal-backdrop').appendTo($('body'));
+                    $('#mymodal').click(function (e) {
+                        if (!$(e.target).closest('.modal-dialog').length || $(e.target).closest('button').attr('data-dismiss'))
+                        {
+                            $(s1).css('display', 'none');
+                            $('.modal-backdrop').remove();
+
+                        }
+                    })
+                }
+
+            })
+
         })
     </script>
     <style>body {
@@ -643,10 +686,43 @@
         border-bottom: none;
     }
 
+    .modal-content {
+        position: relative;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #999;
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-radius: 6px;
+        outline: 0;
+        /*outline: 0;可以让input获得焦点时边框不变色*/
+        box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    }
+
+    .modal {
+        position: fixed;
+        top: 30px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1040;
+        display: none;
+        overflow: hidden;
+        outline: 0;
+    }
+
+    .modal-backdrop {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: .7;
+        z-index: 111;
+        background-color: #000;
+    }
     </style>
 </head>
 <body>
-
 <div class="container">
     <div class="row">
         <div class="col-md-6">col-md-6</div>
@@ -748,7 +824,8 @@
         <!-- 确保无论是宽屏还是窄屏，navbar-brand都显示 -->
         <a href="##" class="navbar-brand">Bootstrap中文</span>网</a>
     </div>
-    <!-- 屏幕宽度小于768px时，div.navbar-responsive-collapse容器里的内容都会隐藏，显示icon-bar图标，当点击icon-bar图标时，再展开。屏幕大于768px时，默认显示。 -->
+    <!-- 屏幕宽度小于768px时，div.navbar-responsive-collapse容器里的内容都会隐藏，显示icon-bar图标，当点击icon-bar图标时，
+    再展开。屏幕大于768px时，默认显示。 -->
     <div class="collapse navbar-collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
             <li class="active"><a href="##">Bootstrap2</a></li>
@@ -891,5 +968,28 @@
     </ul>
     <div class="panel-footer">这里是尾巴</div>
 </div>
+<!--模态弹出窗modal开始-->
+<button type="button" data-toggle="modal" data-target="#mymodal" class="btn btn-primary">触发模态弹出窗</button>
+<div class="modal fade" id="mymodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close fade-modal1" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">模态弹出窗标题</h4>
+            </div>
+            <div class="modal-body">
+                <p>模态弹出窗主体</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default fade-modal1" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态弹出窗modal结束-->
 </body>
 </html>
