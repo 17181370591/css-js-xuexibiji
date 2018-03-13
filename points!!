@@ -192,3 +192,8 @@ $(“div”).trigger(“click!”)//注意click类型后面的感叹号，它将
 
 ============================================================================================================================
 
+var a=$('<a></a>',{css:{background:'red'},title:'asd',html:123,ba:'bab'}).appendTo('.class')
+第一个参数必须是单标签且无内容（？）
+var b=$($.parseHTML("<li>1</li>"<li>3</li><script>alert(9)<\/script>",document,true)).appendTo('.class')
+第二个参数是位置（？），第三个参数为true则可以加入js代码
+
