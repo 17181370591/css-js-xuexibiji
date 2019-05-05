@@ -140,7 +140,8 @@ jQuery事件对象的作用
 	
 	this和event.target的区别：
 	js中事件是会冒泡的，所以this是可以变化的，但event.target不会变化，它永远是直接接受事件的目标DOM元素
-
+	下面的例子可以发现，点击li的话打印li和ul，点击ul会打印ul和ul。
+	
 	<div class="left">
 		<div class="aaron">
 			<ul>
@@ -148,7 +149,7 @@ jQuery事件对象的作用
 				<li>点击：触发二</li>
 				<li>点击：触发三</li>
 				<li>点击：触发四</li>
-		    	</ul>
+		    </ul>
 		</div>
 	</div>
 
@@ -158,6 +159,7 @@ jQuery事件对象的作用
 			alert('触发的元素是内容是: ' + $(this).prop('tagName'))		#ul
 		})
 	</script>
+	
 	
 event.stopPropagation() 方法：阻止事件冒泡
 
